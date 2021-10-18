@@ -1,6 +1,9 @@
 package com.noah.app.quant.controller;
 
-public class ManagerController {
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController
+public class ManagerController {
+	
 }
  
