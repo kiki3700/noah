@@ -1,5 +1,5 @@
 package com.noah.app.vo;
 
-public class orderStockWrpper {
+public class StockWrpper {
 
 }
