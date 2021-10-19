@@ -13,15 +13,14 @@ import io.netty.handler.ssl.SslContextBuilder;
 import io.netty.handler.ssl.util.InsecureTrustManagerFactory;
 import io.netty.handler.timeout.ReadTimeoutHandler;
 import io.netty.handler.timeout.WriteTimeoutHandler;
-import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Mono;
 import reactor.netty.http.client.HttpClient;
 
 @Configuration
-@Slf4j
 public class WebClientConfig {
 
-    @Bean
+    @SuppressWarnings("deprecation")
+	@Bean
     public WebClient webClient() {
 
         ExchangeStrategies exchangeStrategies = ExchangeStrategies.builder()
@@ -55,14 +54,14 @@ public class WebClientConfig {
                 .exchangeStrategies(exchangeStrategies)
                 .filter(ExchangeFilterFunction.ofRequestProcessor(
                     clientRequest -> {
-                        log.debug("Request: {} {}", clientRequest.method(), clientRequest.url());
-                        clientRequest.headers().forEach((name, values) -> values.forEach(value -> log.debug("{} : {}", name, value)));
+                        //log.debug("Request: {} {}", clientRequest.method(), clientRequest.url());
+                        //clientRequest.headers().forEach((name, values) -> values.forEach(value -> log.debug("{} : {}", name, value)));
                         return Mono.just(clientRequest);
                     }
                 ))
                 .filter(ExchangeFilterFunction.ofResponseProcessor(
                     clientResponse -> {
-                        clientResponse.headers().asHttpHeaders().forEach((name, values) -> values.forEach(value -> log.debug("{} : {}", name, value)));
+                        //clientResponse.headers().asHttpHeaders().forEach((name, values) -> values.forEach(value -> log.debug("{} : {}", name, value)));
                         return Mono.just(clientResponse);
                     }
                 ))
