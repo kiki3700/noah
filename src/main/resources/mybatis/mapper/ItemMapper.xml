@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.noah.app.quantItemDao">
+	<select id = 'selectItemDtoList' parameterType ='HashMap' resultType = 'com.noah.app.vo.ItemDto'>
+		SELECT *
+			FROM ITEM
+			WHERE IS_ACTIVE ='CPC_STOCK_STATUS_NORMAL'
+			<if test = "market !=null and market!=''">
+				AND MARKET = #{market}
+			</if>
+			<if test = "sector != null and sector != ''">
+				AND SECTOR = #{sector}
+			</if>
+			<if test = "corpSize != null and corpSize!= ''">
+				And corp_size = #{corpSize}
+			</if>
+	</select>
+	<select id = "selectHistoryDataByItemId" parameterType = "com.noah.app.vo.ItemDto" resultType ="java.util.LinkedHashMap">
+		SELECT * FROM HISTORY_DATA WHERE ITEM_ID = #{ID}
+	</select>
+</mapper>

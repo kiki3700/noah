@@ -12,7 +12,11 @@ import java.util.Set;
  */
 
 public class StockWrapper {
+	private int itemId;
 	private String ticker; // 종목명
+	private String name;
+	private String market;
+
 	private boolean position; // 판매
 	private String portfolioId;
 	private String industry;
@@ -35,12 +39,45 @@ public class StockWrapper {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	public StockWrapper(ItemDto item) {
+		this.itemId = item.getId();
+		this.ticker = item.getTicker();
+		this.name = item.getName();
+		this.industry =item.getIndustry();
+	}
+	
+	
+	public int getItemId() {
+		return itemId;
+	}
+	public void setItemId(int itemId) {
+		this.itemId = itemId;
+	}
+	
 	public String getTicker() {
 		return ticker;
 	}
 	public void setTicker(String ticker) {
 		this.ticker = ticker;
 	}
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getMarket() {
+		return market;
+	}
+
+	public void setMarket(String market) {
+		this.market = market;
+	}
+	
+	
 	public boolean isPosition() {
 		return position;
 	}
