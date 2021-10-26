@@ -16,6 +16,9 @@
 			</if>
 	</select>
 	<select id = "selectHistoryDataByItemId" parameterType = "com.noah.app.vo.ItemDto" resultType ="java.util.LinkedHashMap">
-		SELECT * FROM HISTORY_DATA WHERE ITEM_ID = #{ID}
+		SELECT * FROM HISTORY_DATA WHERE ITEM_ID = #{ID} ORDER BY TRADING_DATE DESC LIMIT 255
+	</select>
+		<select id = "selectHistoryDataByItemId" parameterType = "com.noah.app.vo.StockWrapper" resultType ="java.util.LinkedHashMap">
+		SELECT * FROM HISTORY_DATA WHERE ITEM_ID = #{ID} ORDER BY TRADING_DATE DESC LIMIT 255
 	</select>
 </mapper>

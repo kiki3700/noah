@@ -6,14 +6,18 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Set;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.LinkedHashMap;
+import java.util.List;
+
 /*추가로 넣어줘야하는 기능 
  * 가격가져오고 수익률을 구해준다. 가져왔으면 평균 분산을 구해준다.
  * 
  */
 
 public class StockWrapper {
-	private int itemId;
-	private String ticker; // 종목명
+	private String itemId;
 	private String name;
 	private String market;
 
@@ -42,25 +46,18 @@ public class StockWrapper {
 	
 	public StockWrapper(ItemDto item) {
 		this.itemId = item.getId();
-		this.ticker = item.getTicker();
 		this.name = item.getName();
 		this.industry =item.getIndustry();
 	}
 	
 	
-	public int getItemId() {
+	public String getItemId() {
 		return itemId;
 	}
-	public void setItemId(int itemId) {
+	public void setItemId(String itemId) {
 		this.itemId = itemId;
 	}
 	
-	public String getTicker() {
-		return ticker;
-	}
-	public void setTicker(String ticker) {
-		this.ticker = ticker;
-	}
 	public String getName() {
 		return name;
 	}
