@@ -1,5 +1,6 @@
 package com.noah.app.quant.calculator.portfolioStrategy;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -8,7 +9,9 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.noah.app.quant.dao.BalanceSheetDao;
 import com.noah.app.quant.dao.ItemDao;
+import com.noah.app.vo.BalanceSheetDto;
 import com.noah.app.vo.HistoryDataDto;
 import com.noah.app.vo.ItemDto;
 import com.noah.app.vo.StockWrapper;
@@ -17,6 +20,9 @@ public class PortfolioCalulator {
 	
 	@Autowired
 	ItemDao itemDao;
+	
+	@Autowired
+	BalanceSheetDao balanceSheetDao;
 	/*
 	 * 언러키 컨트롤러로 inParam
 	 */
@@ -52,6 +58,7 @@ public class PortfolioCalulator {
 		
 		for(ItemDto item : itemList) {
 			List<HistoryDataDto> historyDataDtoList = itemDao.selectHistoryDataByItemId(item);
+			BalanceSheetDto balanceSheet = balanceSheetDao.selectBalanceSheet(item);
 			//get momentum Value;
 			if(historyDataDtoList.size()<255) {
 				itemList.remove(item);
@@ -65,7 +72,29 @@ public class PortfolioCalulator {
 			SixMonthReturnMap.put(item.getId(), (recentPrice-sixMonthPrePrice)/sixMonthPrePrice);
 			oneYearReturnMap.put(item.getId(), (recentPrice-oneYearPrePrice)/oneYearPrePrice);
 			
+			int averagePrice  = 0;
+			for(int i = 0; i<60; i++) {
+				averagePrice+=historyDataDtoList.get(i).getClose()/60;
+			}
 			
+			BigInteger listedShare = item.getListedShare();
+			double ni = balanceSheet.getNetIncome();
+			double equity = balanceSheet.getEquity();
+			
+			double per = listedShare.multiply(BigInteger.valueOf(averagePrice)).doubleValue()/ni;
+			double pbr = listedShare.multiply(BigInteger.valueOf(averagePrice)).doubleValue()/equity;
+			
+			perMap.put(item.getId(), per);
+			pbrMap.put(item.getId(), pbr);
+			
+			double operateIncome = balanceSheet.getOperatinIncome();
+			double revenue = balanceSheet.getRevenue();
+			
+			double roe = ni/equity;
+			double opm = operateIncome/revenue;
+			
+			roeMap.put(item.getId(), roe);
+			opmMap.put(item.getId(), opm);
 		}
 		return null;
 	}
