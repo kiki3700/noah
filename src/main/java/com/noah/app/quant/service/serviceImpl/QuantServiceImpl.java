@@ -6,7 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.noah.app.quant.calculator.portfolioStrategy.PortfolioCalulator;
+import com.noah.app.quant.calculator.portfolioStrategy.StockPicker;
 import com.noah.app.quant.dao.ItemDao;
 import com.noah.app.quant.service.QuantService;
 import com.noah.app.vo.ItemDto;
@@ -18,7 +18,7 @@ public class QuantServiceImpl implements QuantService{
 	ItemDao itemDao;
 	
 	@Autowired
-	PortfolioCalulator portfolioCalculator;
+	StockPicker StockPicker;
 	
 	/*포트폴리오 생성기
 	 * Author : 이성현
