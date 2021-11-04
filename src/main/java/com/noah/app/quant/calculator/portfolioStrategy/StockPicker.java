@@ -6,19 +6,16 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.noah.app.quant.dao.BalanceSheetDao;
-import com.noah.app.quant.dao.ItemDao;
+import com.noah.app.quant.dao.ItemMapper;
 import com.noah.app.util.Statistics;
 import com.noah.app.vo.BalanceSheetDto;
 import com.noah.app.vo.HistoryDataDto;
 import com.noah.app.vo.ItemDto;
-import com.noah.app.vo.StockWrapper;
 @Component
 public class StockPicker {
 	
@@ -26,7 +23,7 @@ public class StockPicker {
 	Statistics statistics;
 	
 	@Autowired
-	ItemDao itemDao;
+	ItemMapper itemDao;
 	
 	@Autowired
 	BalanceSheetDao balanceSheetDao;

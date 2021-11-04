@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.noah.app.quantItemDao">
+<mapper namespace="com.noah.app.quant.dao.ItemMapper">
 	<select id = 'selectItemDtoList' parameterType ='HashMap' resultType = 'com.noah.app.vo.ItemDto'>
 		SELECT *
 			FROM ITEM
@@ -15,10 +15,18 @@
 				And corp_size = #{corpSize}
 			</if>
 	</select>
+	
+	<!-- 지워버릴것  -->
 	<select id = "selectHistoryDataByItemId" parameterType = "com.noah.app.vo.ItemDto" resultType ="java.util.LinkedHashMap">
 		SELECT * FROM HISTORY_DATA WHERE ITEM_ID = #{ID} ORDER BY TRADING_DATE DESC LIMIT 255
 	</select>
-		<select id = "selectHistoryDataByItemId" parameterType = "com.noah.app.vo.StockWrapper" resultType ="java.util.LinkedHashMap">
-		SELECT * FROM HISTORY_DATA WHERE ITEM_ID = #{ID} ORDER BY TRADING_DATE DESC LIMIT 255
+
+	<!-- 지워버릴것  -->
+	<select id = "selectClosingPrice" parameterType = "com.noah.app.vo.ItemDto" resultType ="com.noah.app.vo.HistoryDataDto">
+		SELECT 
+			TRADING_DATE,  
+			CLOSE
+		FROM HISTORY_DATA 
+		WHERE ITEM_ID = #{id} 
 	</select>
 </mapper>
