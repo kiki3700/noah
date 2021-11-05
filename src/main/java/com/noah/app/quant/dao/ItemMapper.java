@@ -15,5 +15,5 @@ import com.noah.app.vo.ItemDto;
 public interface ItemMapper {
 	List<ItemDto> selectItemDtoList(Map<String, Object> inParams);
 	List<HistoryDataDto> selectHistoryDataByItemId(ItemDto itemDto);
-	List<HistoryDataDto> selectClosingPrice (ItemDto itemDto);
+	List<HistoryDataDto> selectClosingPrice (Map<String, Object> inParam);
 }

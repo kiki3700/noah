@@ -1,1063 +1,386 @@
-2021-11-04 14:36:33.729  INFO 6948 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 6948 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
-2021-11-04 14:36:33.733  INFO 6948 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
-2021-11-04 14:36:35.025  WARN 6948 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
-2021-11-04 14:36:35.605  WARN 6948 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'stockPicker': Unsatisfied dependency expressed through field 'itemDao'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.dao.ItemDao' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-2021-11-04 14:36:35.615  INFO 6948 --- [main] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-11-04 14:36:35.643 ERROR 6948 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field itemDao in com.noah.app.quant.calculator.portfolioStrategy.StockPicker required a bean of type 'com.noah.app.quant.dao.ItemDao' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'com.noah.app.quant.dao.ItemDao' in your configuration.
-
-2021-11-04 14:36:35.650 ERROR 6948 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@e13544] to prepare test instance [com.noah.app.quant.OjAlgoTest@eb1c69]
-
-java.lang.IllegalStateException: Failed to load ApplicationContext
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.3.10.jar:5.3.10]
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.3.10.jar:5.3.10]
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.3.10.jar:5.3.10]
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.3.10.jar:5.3.10]
-	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209) [.cp/:na]
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'stockPicker': Unsatisfied dependency expressed through field 'itemDao'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.dao.ItemDao' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.10.jar:5.3.10]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.10.jar:5.3.10]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-2.5.5.jar:2.5.5]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434) ~[spring-boot-2.5.5.jar:2.5.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338) ~[spring-boot-2.5.5.jar:2.5.5]
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:123) ~[spring-boot-test-2.5.5.jar:2.5.5]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124) ~[spring-test-5.3.10.jar:5.3.10]
-	... 25 common frames omitted
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.dao.ItemDao' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1790) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1346) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657) ~[spring-beans-5.3.10.jar:5.3.10]
-	... 44 common frames omitted
-
-2021-11-04 14:38:20.890  INFO 12380 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 12380 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
-2021-11-04 14:38:20.894  INFO 12380 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
-2021-11-04 14:38:22.230  WARN 12380 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
-2021-11-04 14:38:22.806  WARN 12380 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'stockPicker': Unsatisfied dependency expressed through field 'itemDao'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.dao.ItemDao' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-2021-11-04 14:38:22.816  INFO 12380 --- [main] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-11-04 14:38:22.839 ERROR 12380 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field itemDao in com.noah.app.quant.calculator.portfolioStrategy.StockPicker required a bean of type 'com.noah.app.quant.dao.ItemDao' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'com.noah.app.quant.dao.ItemDao' in your configuration.
-
-2021-11-04 14:38:22.844 ERROR 12380 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@e13544] to prepare test instance [com.noah.app.quant.OjAlgoTest@1037cfc]
-
-java.lang.IllegalStateException: Failed to load ApplicationContext
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.3.10.jar:5.3.10]
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.3.10.jar:5.3.10]
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.3.10.jar:5.3.10]
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.3.10.jar:5.3.10]
-	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209) [.cp/:na]
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'stockPicker': Unsatisfied dependency expressed through field 'itemDao'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.dao.ItemDao' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.10.jar:5.3.10]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.10.jar:5.3.10]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-2.5.5.jar:2.5.5]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434) ~[spring-boot-2.5.5.jar:2.5.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338) ~[spring-boot-2.5.5.jar:2.5.5]
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:123) ~[spring-boot-test-2.5.5.jar:2.5.5]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124) ~[spring-test-5.3.10.jar:5.3.10]
-	... 25 common frames omitted
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.dao.ItemDao' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1790) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1346) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657) ~[spring-beans-5.3.10.jar:5.3.10]
-	... 44 common frames omitted
-
-2021-11-04 14:38:57.172  INFO 20664 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 20664 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
-2021-11-04 14:38:57.176  INFO 20664 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
-2021-11-04 14:38:58.488  WARN 20664 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
-2021-11-04 14:38:59.117  WARN 20664 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'stockPicker': Unsatisfied dependency expressed through field 'itemDao'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.dao.ItemDao' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-2021-11-04 14:38:59.127  INFO 20664 --- [main] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-11-04 14:38:59.152 ERROR 20664 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field itemDao in com.noah.app.quant.calculator.portfolioStrategy.StockPicker required a bean of type 'com.noah.app.quant.dao.ItemDao' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'com.noah.app.quant.dao.ItemDao' in your configuration.
-
-2021-11-04 14:38:59.157 ERROR 20664 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@e13544] to prepare test instance [com.noah.app.quant.OjAlgoTest@1037cfc]
-
-java.lang.IllegalStateException: Failed to load ApplicationContext
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.3.10.jar:5.3.10]
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.3.10.jar:5.3.10]
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.3.10.jar:5.3.10]
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.3.10.jar:5.3.10]
-	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209) [.cp/:na]
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'stockPicker': Unsatisfied dependency expressed through field 'itemDao'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.dao.ItemDao' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.10.jar:5.3.10]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.10.jar:5.3.10]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-2.5.5.jar:2.5.5]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434) ~[spring-boot-2.5.5.jar:2.5.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338) ~[spring-boot-2.5.5.jar:2.5.5]
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:123) ~[spring-boot-test-2.5.5.jar:2.5.5]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124) ~[spring-test-5.3.10.jar:5.3.10]
-	... 25 common frames omitted
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.dao.ItemDao' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1790) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1346) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657) ~[spring-beans-5.3.10.jar:5.3.10]
-	... 44 common frames omitted
-
-2021-11-04 15:20:39.481  INFO 20204 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 20204 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
-2021-11-04 15:20:39.484  INFO 20204 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
-2021-11-04 15:20:40.760  WARN 20204 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
-2021-11-04 15:20:41.283  WARN 20204 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'stockPicker': Unsatisfied dependency expressed through field 'itemDao'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.dao.ItemDao' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-2021-11-04 15:20:41.291  INFO 20204 --- [main] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-11-04 15:20:41.312 ERROR 20204 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field itemDao in com.noah.app.quant.calculator.portfolioStrategy.StockPicker required a bean of type 'com.noah.app.quant.dao.ItemDao' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'com.noah.app.quant.dao.ItemDao' in your configuration.
-
-2021-11-04 15:20:41.320 ERROR 20204 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@e13544] to prepare test instance [com.noah.app.quant.OjAlgoTest@1037cfc]
-
-java.lang.IllegalStateException: Failed to load ApplicationContext
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.3.10.jar:5.3.10]
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.3.10.jar:5.3.10]
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.3.10.jar:5.3.10]
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.3.10.jar:5.3.10]
-	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209) [.cp/:na]
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'stockPicker': Unsatisfied dependency expressed through field 'itemDao'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.dao.ItemDao' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.10.jar:5.3.10]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.10.jar:5.3.10]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-2.5.5.jar:2.5.5]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434) ~[spring-boot-2.5.5.jar:2.5.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338) ~[spring-boot-2.5.5.jar:2.5.5]
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:123) ~[spring-boot-test-2.5.5.jar:2.5.5]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124) ~[spring-test-5.3.10.jar:5.3.10]
-	... 25 common frames omitted
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.dao.ItemDao' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1790) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1346) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657) ~[spring-beans-5.3.10.jar:5.3.10]
-	... 44 common frames omitted
-
-2021-11-04 15:32:00.887  INFO 6136 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 6136 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
-2021-11-04 15:32:00.891  INFO 6136 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
-2021-11-04 15:32:02.236  WARN 6136 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
-2021-11-04 15:32:02.827  WARN 6136 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'stockPicker': Unsatisfied dependency expressed through field 'itemDao'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.dao.ItemDao' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-2021-11-04 15:32:02.836  INFO 6136 --- [main] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-11-04 15:32:02.864 ERROR 6136 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field itemDao in com.noah.app.quant.calculator.portfolioStrategy.StockPicker required a bean of type 'com.noah.app.quant.dao.ItemDao' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'com.noah.app.quant.dao.ItemDao' in your configuration.
-
-2021-11-04 15:32:02.870 ERROR 6136 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@e13544] to prepare test instance [com.noah.app.quant.OjAlgoTest@eb1c69]
-
-java.lang.IllegalStateException: Failed to load ApplicationContext
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.3.10.jar:5.3.10]
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.3.10.jar:5.3.10]
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.3.10.jar:5.3.10]
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.3.10.jar:5.3.10]
-	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209) [.cp/:na]
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'stockPicker': Unsatisfied dependency expressed through field 'itemDao'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.dao.ItemDao' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.10.jar:5.3.10]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.10.jar:5.3.10]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-2.5.5.jar:2.5.5]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434) ~[spring-boot-2.5.5.jar:2.5.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338) ~[spring-boot-2.5.5.jar:2.5.5]
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:123) ~[spring-boot-test-2.5.5.jar:2.5.5]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124) ~[spring-test-5.3.10.jar:5.3.10]
-	... 25 common frames omitted
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.dao.ItemDao' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1790) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1346) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657) ~[spring-beans-5.3.10.jar:5.3.10]
-	... 44 common frames omitted
-
-2021-11-04 15:51:27.659  INFO 20192 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 20192 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
-2021-11-04 15:51:27.662  INFO 20192 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
-2021-11-04 15:51:28.996  WARN 20192 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
-2021-11-04 15:51:29.201 ERROR 20192 --- [main] o.s.boot.SpringApplication               : Application run failed
-
-java.lang.IllegalStateException: Failed to introspect Class [com.noah.app.quant.calculator.portfolioStrategy.StockPicker] from ClassLoader [sun.misc.Launcher$AppClassLoader@67c3bb]
-	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:739) ~[spring-core-5.3.10.jar:5.3.10]
-	at org.springframework.util.ReflectionUtils.doWithFields(ReflectionUtils.java:704) ~[spring-core-5.3.10.jar:5.3.10]
-	at org.springframework.util.ReflectionUtils.doWithFields(ReflectionUtils.java:689) ~[spring-core-5.3.10.jar:5.3.10]
-	at org.springframework.boot.test.mock.mockito.DefinitionsParser.parse(DefinitionsParser.java:65) ~[spring-boot-test-2.5.5.jar:2.5.5]
-	at org.springframework.boot.test.mock.mockito.MockitoPostProcessor.postProcessBeanFactory(MockitoPostProcessor.java:135) ~[spring-boot-test-2.5.5.jar:2.5.5]
-	at org.springframework.boot.test.mock.mockito.MockitoPostProcessor.postProcessBeanFactory(MockitoPostProcessor.java:128) ~[spring-boot-test-2.5.5.jar:2.5.5]
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:325) ~[spring-context-5.3.10.jar:5.3.10]
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:191) ~[spring-context-5.3.10.jar:5.3.10]
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746) ~[spring-context-5.3.10.jar:5.3.10]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564) ~[spring-context-5.3.10.jar:5.3.10]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-2.5.5.jar:2.5.5]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434) ~[spring-boot-2.5.5.jar:2.5.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338) ~[spring-boot-2.5.5.jar:2.5.5]
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:123) [spring-boot-test-2.5.5.jar:2.5.5]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.3.10.jar:5.3.10]
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.3.10.jar:5.3.10]
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.3.10.jar:5.3.10]
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.3.10.jar:5.3.10]
-	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209) [.cp/:na]
-Caused by: java.lang.NoClassDefFoundError: LItemDao;
-	at java.lang.Class.getDeclaredFields0(Native Method) ~[na:1.8.0_301]
-	at java.lang.Class.privateGetDeclaredFields(Unknown Source) ~[na:1.8.0_301]
-	at java.lang.Class.getDeclaredFields(Unknown Source) ~[na:1.8.0_301]
-	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:734) ~[spring-core-5.3.10.jar:5.3.10]
-	... 40 common frames omitted
-Caused by: java.lang.ClassNotFoundException: ItemDao
-	at java.net.URLClassLoader.findClass(Unknown Source) ~[na:1.8.0_301]
-	at java.lang.ClassLoader.loadClass(Unknown Source) ~[na:1.8.0_301]
-	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source) ~[na:1.8.0_301]
-	at java.lang.ClassLoader.loadClass(Unknown Source) ~[na:1.8.0_301]
-	... 44 common frames omitted
-
-2021-11-04 15:51:29.206 ERROR 20192 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@e13544] to prepare test instance [com.noah.app.quant.OjAlgoTest@16e24a]
-
-java.lang.IllegalStateException: Failed to load ApplicationContext
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.3.10.jar:5.3.10]
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.3.10.jar:5.3.10]
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.3.10.jar:5.3.10]
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.3.10.jar:5.3.10]
-	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209) [.cp/:na]
-Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.noah.app.quant.calculator.portfolioStrategy.StockPicker] from ClassLoader [sun.misc.Launcher$AppClassLoader@67c3bb]
-	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:739) ~[spring-core-5.3.10.jar:5.3.10]
-	at org.springframework.util.ReflectionUtils.doWithFields(ReflectionUtils.java:704) ~[spring-core-5.3.10.jar:5.3.10]
-	at org.springframework.util.ReflectionUtils.doWithFields(ReflectionUtils.java:689) ~[spring-core-5.3.10.jar:5.3.10]
-	at org.springframework.boot.test.mock.mockito.DefinitionsParser.parse(DefinitionsParser.java:65) ~[spring-boot-test-2.5.5.jar:2.5.5]
-	at org.springframework.boot.test.mock.mockito.MockitoPostProcessor.postProcessBeanFactory(MockitoPostProcessor.java:135) ~[spring-boot-test-2.5.5.jar:2.5.5]
-	at org.springframework.boot.test.mock.mockito.MockitoPostProcessor.postProcessBeanFactory(MockitoPostProcessor.java:128) ~[spring-boot-test-2.5.5.jar:2.5.5]
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:325) ~[spring-context-5.3.10.jar:5.3.10]
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:191) ~[spring-context-5.3.10.jar:5.3.10]
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746) ~[spring-context-5.3.10.jar:5.3.10]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564) ~[spring-context-5.3.10.jar:5.3.10]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-2.5.5.jar:2.5.5]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434) ~[spring-boot-2.5.5.jar:2.5.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338) ~[spring-boot-2.5.5.jar:2.5.5]
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:123) ~[spring-boot-test-2.5.5.jar:2.5.5]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124) ~[spring-test-5.3.10.jar:5.3.10]
-	... 25 common frames omitted
-Caused by: java.lang.NoClassDefFoundError: LItemDao;
-	at java.lang.Class.getDeclaredFields0(Native Method) ~[na:1.8.0_301]
-	at java.lang.Class.privateGetDeclaredFields(Unknown Source) ~[na:1.8.0_301]
-	at java.lang.Class.getDeclaredFields(Unknown Source) ~[na:1.8.0_301]
-	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:734) ~[spring-core-5.3.10.jar:5.3.10]
-	... 40 common frames omitted
-Caused by: java.lang.ClassNotFoundException: ItemDao
-	at java.net.URLClassLoader.findClass(Unknown Source) ~[na:1.8.0_301]
-	at java.lang.ClassLoader.loadClass(Unknown Source) ~[na:1.8.0_301]
-	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source) ~[na:1.8.0_301]
-	at java.lang.ClassLoader.loadClass(Unknown Source) ~[na:1.8.0_301]
-	... 44 common frames omitted
-
-2021-11-04 15:53:07.518  INFO 11172 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 11172 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
-2021-11-04 15:53:07.521  INFO 11172 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
-2021-11-04 15:53:08.791  WARN 11172 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
-2021-11-04 15:53:09.413  WARN 11172 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'stockPicker': Unsatisfied dependency expressed through field 'itemDao'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.dao.ItemMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-2021-11-04 15:53:09.424  INFO 11172 --- [main] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-11-04 15:53:09.455 ERROR 11172 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field itemDao in com.noah.app.quant.calculator.portfolioStrategy.StockPicker required a bean of type 'com.noah.app.quant.dao.ItemMapper' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'com.noah.app.quant.dao.ItemMapper' in your configuration.
-
-2021-11-04 15:53:09.461 ERROR 11172 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@e13544] to prepare test instance [com.noah.app.quant.OjAlgoTest@2c90c2]
-
-java.lang.IllegalStateException: Failed to load ApplicationContext
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.3.10.jar:5.3.10]
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.3.10.jar:5.3.10]
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.3.10.jar:5.3.10]
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.3.10.jar:5.3.10]
-	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209) [.cp/:na]
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'stockPicker': Unsatisfied dependency expressed through field 'itemDao'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.dao.ItemMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.10.jar:5.3.10]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.10.jar:5.3.10]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-2.5.5.jar:2.5.5]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434) ~[spring-boot-2.5.5.jar:2.5.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338) ~[spring-boot-2.5.5.jar:2.5.5]
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:123) ~[spring-boot-test-2.5.5.jar:2.5.5]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124) ~[spring-test-5.3.10.jar:5.3.10]
-	... 25 common frames omitted
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.dao.ItemMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1790) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1346) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657) ~[spring-beans-5.3.10.jar:5.3.10]
-	... 44 common frames omitted
-
-2021-11-04 16:04:58.142  INFO 2864 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 2864 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
-2021-11-04 16:04:58.145  INFO 2864 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
-2021-11-04 16:04:59.382  WARN 2864 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
-2021-11-04 16:04:59.941  WARN 2864 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'stockDivder': Unsatisfied dependency expressed through field 'itemDao'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.dao.ItemMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-2021-11-04 16:04:59.949  INFO 2864 --- [main] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-11-04 16:04:59.974 ERROR 2864 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field itemDao in com.noah.app.quant.calculator.portfolioStrategy.StockDivder required a bean of type 'com.noah.app.quant.dao.ItemMapper' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'com.noah.app.quant.dao.ItemMapper' in your configuration.
-
-2021-11-04 16:04:59.979 ERROR 2864 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@e13544] to prepare test instance [com.noah.app.quant.OjAlgoTest@87c0c2]
-
-java.lang.IllegalStateException: Failed to load ApplicationContext
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.3.10.jar:5.3.10]
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.3.10.jar:5.3.10]
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.3.10.jar:5.3.10]
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.3.10.jar:5.3.10]
-	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209) [.cp/:na]
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'stockDivder': Unsatisfied dependency expressed through field 'itemDao'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.dao.ItemMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.10.jar:5.3.10]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.10.jar:5.3.10]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-2.5.5.jar:2.5.5]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434) ~[spring-boot-2.5.5.jar:2.5.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338) ~[spring-boot-2.5.5.jar:2.5.5]
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:123) ~[spring-boot-test-2.5.5.jar:2.5.5]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124) ~[spring-test-5.3.10.jar:5.3.10]
-	... 25 common frames omitted
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.dao.ItemMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1790) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1346) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657) ~[spring-beans-5.3.10.jar:5.3.10]
-	... 44 common frames omitted
-
-2021-11-04 16:09:45.533  INFO 20124 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 20124 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
-2021-11-04 16:09:45.536  INFO 20124 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
-2021-11-04 16:09:46.834  WARN 20124 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
-2021-11-04 16:09:47.459  WARN 20124 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'stockDivder': Unsatisfied dependency expressed through field 'itemDao'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.dao.ItemMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-2021-11-04 16:09:47.468  INFO 20124 --- [main] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-11-04 16:09:47.494 ERROR 20124 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field itemDao in com.noah.app.quant.calculator.portfolioStrategy.StockDivder required a bean of type 'com.noah.app.quant.dao.ItemMapper' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'com.noah.app.quant.dao.ItemMapper' in your configuration.
-
-2021-11-04 16:09:47.498 ERROR 20124 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@e13544] to prepare test instance [com.noah.app.quant.OjAlgoTest@87c0c2]
-
-java.lang.IllegalStateException: Failed to load ApplicationContext
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.3.10.jar:5.3.10]
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.3.10.jar:5.3.10]
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.3.10.jar:5.3.10]
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.3.10.jar:5.3.10]
-	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209) [.cp/:na]
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'stockDivder': Unsatisfied dependency expressed through field 'itemDao'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.dao.ItemMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.10.jar:5.3.10]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.10.jar:5.3.10]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-2.5.5.jar:2.5.5]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434) ~[spring-boot-2.5.5.jar:2.5.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338) ~[spring-boot-2.5.5.jar:2.5.5]
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:123) ~[spring-boot-test-2.5.5.jar:2.5.5]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124) ~[spring-test-5.3.10.jar:5.3.10]
-	... 25 common frames omitted
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.dao.ItemMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1790) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1346) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657) ~[spring-beans-5.3.10.jar:5.3.10]
-	... 44 common frames omitted
-
-2021-11-04 16:12:55.468  INFO 11444 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 11444 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
-2021-11-04 16:12:55.471  INFO 11444 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
-2021-11-04 16:12:56.806  WARN 11444 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
-2021-11-04 16:12:57.383  WARN 11444 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'stockDivder': Unsatisfied dependency expressed through field 'itemDao'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.dao.ItemMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-2021-11-04 16:12:57.392  INFO 11444 --- [main] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-11-04 16:12:57.420 ERROR 11444 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field itemDao in com.noah.app.quant.calculator.portfolioStrategy.StockDivder required a bean of type 'com.noah.app.quant.dao.ItemMapper' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'com.noah.app.quant.dao.ItemMapper' in your configuration.
-
-2021-11-04 16:12:57.424 ERROR 11444 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@e13544] to prepare test instance [com.noah.app.quant.OjAlgoTest@8078c]
-
-java.lang.IllegalStateException: Failed to load ApplicationContext
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.3.10.jar:5.3.10]
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.3.10.jar:5.3.10]
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.3.10.jar:5.3.10]
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.3.10.jar:5.3.10]
-	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209) [.cp/:na]
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'stockDivder': Unsatisfied dependency expressed through field 'itemDao'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.dao.ItemMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.10.jar:5.3.10]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.10.jar:5.3.10]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-2.5.5.jar:2.5.5]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434) ~[spring-boot-2.5.5.jar:2.5.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338) ~[spring-boot-2.5.5.jar:2.5.5]
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:123) ~[spring-boot-test-2.5.5.jar:2.5.5]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124) ~[spring-test-5.3.10.jar:5.3.10]
-	... 25 common frames omitted
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.dao.ItemMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1790) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1346) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657) ~[spring-beans-5.3.10.jar:5.3.10]
-	... 44 common frames omitted
-
-2021-11-04 16:20:55.249  INFO 19996 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 19996 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
-2021-11-04 16:20:55.252  INFO 19996 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
-2021-11-04 16:20:56.571  WARN 19996 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
-2021-11-04 16:20:57.188  WARN 19996 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'stockDivder': Unsatisfied dependency expressed through field 'itemDao'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.dao.ItemMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-2021-11-04 16:20:57.197  INFO 19996 --- [main] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-11-04 16:20:57.227 ERROR 19996 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field itemDao in com.noah.app.quant.calculator.portfolioStrategy.StockDivder required a bean of type 'com.noah.app.quant.dao.ItemMapper' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'com.noah.app.quant.dao.ItemMapper' in your configuration.
-
-2021-11-04 16:20:57.233 ERROR 19996 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@1b6aecc] to prepare test instance [com.noah.app.quant.OjAlgoTest@14f5330]
-
-java.lang.IllegalStateException: Failed to load ApplicationContext
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.3.10.jar:5.3.10]
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.3.10.jar:5.3.10]
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.3.10.jar:5.3.10]
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.3.10.jar:5.3.10]
-	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463) [.cp/:na]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209) [.cp/:na]
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'stockDivder': Unsatisfied dependency expressed through field 'itemDao'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.dao.ItemMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.10.jar:5.3.10]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.10.jar:5.3.10]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-2.5.5.jar:2.5.5]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434) ~[spring-boot-2.5.5.jar:2.5.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338) ~[spring-boot-2.5.5.jar:2.5.5]
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:123) ~[spring-boot-test-2.5.5.jar:2.5.5]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) ~[spring-test-5.3.10.jar:5.3.10]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124) ~[spring-test-5.3.10.jar:5.3.10]
-	... 25 common frames omitted
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.dao.ItemMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1790) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1346) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.10.jar:5.3.10]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657) ~[spring-beans-5.3.10.jar:5.3.10]
-	... 44 common frames omitted
-
-2021-11-04 16:22:40.156  INFO 15868 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 15868 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
-2021-11-04 16:22:40.159  INFO 15868 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
-2021-11-04 16:22:41.468  WARN 15868 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
-2021-11-04 16:22:45.419  INFO 15868 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2021-11-04 16:22:46.637  WARN 15868 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2021-11-04 16:22:47.132  INFO 15868 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2021-11-04 16:22:47.183  INFO 15868 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2021-11-04 16:22:47.228  INFO 15868 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2021-11-04 16:22:47.274  INFO 15868 --- [main] com.noah.app.quant.OjAlgoTest            : Started OjAlgoTest in 7.547 seconds (JVM running for 8.726)
-2021-11-04 16:31:49.632  INFO 6868 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 6868 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
-2021-11-04 16:31:49.635  INFO 6868 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
-2021-11-04 16:31:50.909  WARN 6868 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
-2021-11-04 16:31:54.617  INFO 6868 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2021-11-04 16:31:55.681  WARN 6868 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2021-11-04 16:31:56.114  INFO 6868 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2021-11-04 16:31:56.150  INFO 6868 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2021-11-04 16:31:56.203  INFO 6868 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2021-11-04 16:31:56.245  INFO 6868 --- [main] com.noah.app.quant.OjAlgoTest            : Started OjAlgoTest in 7.018 seconds (JVM running for 8.146)
-2021-11-04 16:31:56.587  INFO 6868 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-11-04 16:31:57.161  INFO 6868 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-11-04 16:31:57.550  INFO 6868 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-11-04 16:31:57.645  INFO 6868 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-11-04 16:39:23.236  INFO 22172 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 22172 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
-2021-11-04 16:39:23.240  INFO 22172 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
-2021-11-04 16:39:24.506  WARN 22172 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
-2021-11-04 16:39:28.445  INFO 22172 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2021-11-04 16:39:29.549  WARN 22172 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2021-11-04 16:39:30.005  INFO 22172 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2021-11-04 16:39:30.060  INFO 22172 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2021-11-04 16:39:30.115  INFO 22172 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2021-11-04 16:39:30.186  INFO 22172 --- [main] com.noah.app.quant.OjAlgoTest            : Started OjAlgoTest in 7.38 seconds (JVM running for 8.577)
-2021-11-04 16:39:30.588  INFO 22172 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-11-04 16:39:31.123  INFO 22172 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-11-04 16:39:31.508  INFO 22172 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-11-04 16:39:31.604  INFO 22172 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-11-04 16:49:22.925  INFO 18268 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 18268 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
-2021-11-04 16:49:22.928  INFO 18268 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
-2021-11-04 16:49:24.190  WARN 18268 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
-2021-11-04 16:49:27.875  INFO 18268 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2021-11-04 16:49:28.979  WARN 18268 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2021-11-04 16:49:29.403  INFO 18268 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2021-11-04 16:49:29.435  INFO 18268 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2021-11-04 16:49:29.480  INFO 18268 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2021-11-04 16:49:29.521  INFO 18268 --- [main] com.noah.app.quant.OjAlgoTest            : Started OjAlgoTest in 7.014 seconds (JVM running for 8.206)
-2021-11-04 16:49:29.857  INFO 18268 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-11-04 16:49:30.362  INFO 18268 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-11-04 16:49:30.706  INFO 18268 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-11-04 16:49:30.721  INFO 18268 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-11-04 16:52:04.978  INFO 8088 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 8088 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
-2021-11-04 16:52:04.981  INFO 8088 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
-2021-11-04 16:52:06.286  WARN 8088 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
-2021-11-04 16:52:09.909  INFO 8088 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2021-11-04 16:52:10.942  WARN 8088 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2021-11-04 16:52:11.427  INFO 8088 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2021-11-04 16:52:11.479  INFO 8088 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2021-11-04 16:52:11.539  INFO 8088 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2021-11-04 16:52:11.584  INFO 8088 --- [main] com.noah.app.quant.OjAlgoTest            : Started OjAlgoTest in 7.04 seconds (JVM running for 8.276)
-2021-11-04 16:52:11.907  INFO 8088 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-11-04 16:52:12.346  INFO 8088 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-11-04 16:52:12.725  INFO 8088 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-11-04 16:52:12.826  INFO 8088 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-11-04 16:53:19.311  INFO 7296 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 7296 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
-2021-11-04 16:53:19.314  INFO 7296 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
-2021-11-04 16:53:20.636  WARN 7296 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
-2021-11-04 16:53:24.290  INFO 7296 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2021-11-04 16:53:25.304  WARN 7296 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2021-11-04 16:53:25.813  INFO 7296 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2021-11-04 16:53:25.854  INFO 7296 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2021-11-04 16:53:25.903  INFO 7296 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2021-11-04 16:53:25.936  INFO 7296 --- [main] com.noah.app.quant.OjAlgoTest            : Started OjAlgoTest in 7.077 seconds (JVM running for 8.296)
-2021-11-04 16:53:26.276  INFO 7296 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-11-04 16:53:26.771  INFO 7296 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-11-04 16:53:27.189  INFO 7296 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-11-04 16:53:27.252  INFO 7296 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-11-04 17:23:05.879  INFO 19524 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 19524 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
-2021-11-04 17:23:05.881  INFO 19524 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
-2021-11-04 17:23:07.252  WARN 19524 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
-2021-11-04 17:23:11.234  INFO 19524 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2021-11-04 17:23:12.309  WARN 19524 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2021-11-04 17:23:12.782  INFO 19524 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2021-11-04 17:23:12.828  INFO 19524 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2021-11-04 17:23:12.874  INFO 19524 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2021-11-04 17:23:12.914  INFO 19524 --- [main] com.noah.app.quant.OjAlgoTest            : Started OjAlgoTest in 7.485 seconds (JVM running for 8.68)
-2021-11-04 17:23:13.330  INFO 19524 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-11-04 17:23:13.831  INFO 19524 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-11-04 17:23:14.265  INFO 19524 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-11-04 17:23:14.305  INFO 19524 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-11-04 17:41:30.513  INFO 14284 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 14284 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
-2021-11-04 17:41:30.517  INFO 14284 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
-2021-11-04 17:41:31.597  WARN 14284 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
-2021-11-04 17:41:34.883  INFO 14284 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2021-11-04 17:41:35.728  WARN 14284 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2021-11-04 17:41:36.211  INFO 14284 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2021-11-04 17:41:36.234  INFO 14284 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2021-11-04 17:41:36.273  INFO 14284 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2021-11-04 17:41:36.310  INFO 14284 --- [main] com.noah.app.quant.OjAlgoTest            : Started OjAlgoTest in 6.149 seconds (JVM running for 7.254)
-2021-11-04 17:41:36.573  INFO 14284 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-11-04 17:41:36.968  INFO 14284 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-11-04 17:41:37.338  INFO 14284 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-11-04 17:41:37.415  INFO 14284 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-11-04 17:42:40.956  INFO 16244 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 16244 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
-2021-11-04 17:42:40.958  INFO 16244 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
-2021-11-04 17:42:42.221  WARN 16244 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
-2021-11-04 17:42:45.390  INFO 16244 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2021-11-04 17:42:46.255  WARN 16244 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2021-11-04 17:42:46.592  INFO 16244 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2021-11-04 17:42:46.627  INFO 16244 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2021-11-04 17:42:46.668  INFO 16244 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2021-11-04 17:42:46.690  INFO 16244 --- [main] com.noah.app.quant.OjAlgoTest            : Started OjAlgoTest in 6.136 seconds (JVM running for 7.124)
-2021-11-04 17:42:46.944  INFO 16244 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-11-04 17:42:47.403  INFO 16244 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-11-04 17:42:47.823  INFO 16244 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-11-04 17:42:47.856  INFO 16244 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-05 07:01:17.758  INFO 1368 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 1368 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-05 07:01:17.770  INFO 1368 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
+2021-11-05 07:01:19.456  WARN 1368 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-05 07:01:24.506  INFO 1368 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-05 07:01:25.701  WARN 1368 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-05 07:01:26.113  INFO 1368 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-05 07:01:26.141  INFO 1368 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-05 07:01:26.179  INFO 1368 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-05 07:01:26.204  INFO 1368 --- [main] com.noah.app.quant.OjAlgoTest            : Started OjAlgoTest in 9.018 seconds (JVM running for 10.726)
+2021-11-05 07:01:26.493  INFO 1368 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-05 07:01:27.148  INFO 1368 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-05 07:01:28.580  INFO 1368 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-05 07:01:28.599  INFO 1368 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-05 07:02:43.855  INFO 7212 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 7212 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-05 07:02:43.858  INFO 7212 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
+2021-11-05 07:02:45.725  WARN 7212 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-05 07:02:51.081  INFO 7212 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-05 07:02:52.468  WARN 7212 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-05 07:02:53.024  INFO 7212 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-05 07:02:53.082  INFO 7212 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-05 07:02:53.147  INFO 7212 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-05 07:02:53.205  INFO 7212 --- [main] com.noah.app.quant.OjAlgoTest            : Started OjAlgoTest in 9.882 seconds (JVM running for 11.739)
+2021-11-05 07:02:53.658  INFO 7212 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-05 07:02:54.417  INFO 7212 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-05 07:02:54.895  INFO 7212 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-05 07:02:54.945  INFO 7212 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-05 07:07:25.484  INFO 15524 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 15524 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-05 07:07:25.488  INFO 15524 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
+2021-11-05 07:07:27.006  WARN 15524 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-05 07:07:31.846  INFO 15524 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-05 07:07:32.989  WARN 15524 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-05 07:07:33.340  INFO 15524 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-05 07:07:33.364  INFO 15524 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-05 07:07:33.400  INFO 15524 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-05 07:07:33.427  INFO 15524 --- [main] com.noah.app.quant.OjAlgoTest            : Started OjAlgoTest in 8.469 seconds (JVM running for 10.266)
+2021-11-05 07:07:33.726  INFO 15524 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-05 07:07:34.277  INFO 15524 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-05 07:07:34.660  INFO 15524 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-05 07:07:34.736  INFO 15524 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-05 07:14:52.563  INFO 4028 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 4028 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-05 07:14:52.568  INFO 4028 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
+2021-11-05 07:14:54.113  WARN 4028 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-05 07:14:59.344  INFO 4028 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-05 07:15:00.520  WARN 4028 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-05 07:15:00.972  INFO 4028 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-05 07:15:00.998  INFO 4028 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-05 07:15:01.038  INFO 4028 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-05 07:15:01.064  INFO 4028 --- [main] com.noah.app.quant.OjAlgoTest            : Started OjAlgoTest in 9.079 seconds (JVM running for 10.908)
+2021-11-05 07:15:01.379  INFO 4028 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-05 07:15:01.929  INFO 4028 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-05 07:15:02.222  INFO 4028 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-05 07:15:02.260  INFO 4028 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-05 07:16:36.284  INFO 2260 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 2260 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-05 07:16:36.288  INFO 2260 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
+2021-11-05 07:16:37.854  WARN 2260 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-05 07:16:42.652  INFO 2260 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-05 07:16:43.679  WARN 2260 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-05 07:16:44.031  INFO 2260 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-05 07:16:44.055  INFO 2260 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-05 07:16:44.088  INFO 2260 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-05 07:16:44.114  INFO 2260 --- [main] com.noah.app.quant.OjAlgoTest            : Started OjAlgoTest in 8.465 seconds (JVM running for 10.189)
+2021-11-05 07:16:44.373  INFO 2260 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-05 07:16:44.820  INFO 2260 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-05 07:16:45.098  INFO 2260 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-05 07:16:45.180  INFO 2260 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-05 07:27:41.366  INFO 3948 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 3948 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-05 07:27:41.369  INFO 3948 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
+2021-11-05 07:27:43.286  WARN 3948 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-05 07:27:48.810  INFO 3948 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-05 07:27:50.086  WARN 3948 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-05 07:27:50.853  INFO 3948 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-05 07:27:50.947  INFO 3948 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-05 07:27:51.004  INFO 3948 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-05 07:27:51.047  INFO 3948 --- [main] com.noah.app.quant.OjAlgoTest            : Started OjAlgoTest in 10.202 seconds (JVM running for 12.153)
+2021-11-05 07:27:51.476  INFO 3948 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-05 07:27:52.211  INFO 3948 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-05 07:27:52.540  INFO 3948 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-05 07:27:52.688  INFO 3948 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-05 07:28:51.592  INFO 11212 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 11212 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-05 07:28:51.596  INFO 11212 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
+2021-11-05 07:28:53.246  WARN 11212 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-05 07:28:58.494  INFO 11212 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-05 07:28:59.861  WARN 11212 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-05 07:29:00.369  INFO 11212 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-05 07:29:00.407  INFO 11212 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-05 07:29:00.460  INFO 11212 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-05 07:29:00.497  INFO 11212 --- [main] com.noah.app.quant.OjAlgoTest            : Started OjAlgoTest in 9.447 seconds (JVM running for 11.423)
+2021-11-05 07:29:00.877  INFO 11212 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-05 07:29:01.582  INFO 11212 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-05 07:29:01.920  INFO 11212 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-05 07:29:02.018  INFO 11212 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-05 07:34:41.159  INFO 4148 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 4148 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-05 07:34:41.163  INFO 4148 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
+2021-11-05 07:34:43.109  WARN 4148 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-05 07:34:48.664  INFO 4148 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-05 07:34:50.181  WARN 4148 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-05 07:34:50.747  INFO 4148 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-05 07:34:50.783  INFO 4148 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-05 07:34:50.826  INFO 4148 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-05 07:34:50.860  INFO 4148 --- [main] com.noah.app.quant.OjAlgoTest            : Started OjAlgoTest in 10.287 seconds (JVM running for 12.049)
+2021-11-05 07:34:51.157  INFO 4148 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-05 07:34:51.727  INFO 4148 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-05 07:34:52.057  INFO 4148 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-05 07:34:52.074  INFO 4148 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-05 07:35:49.713  INFO 17756 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 17756 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-05 07:35:49.717  INFO 17756 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
+2021-11-05 07:35:51.405  WARN 17756 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-05 07:35:56.863  INFO 17756 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-05 07:35:58.299  WARN 17756 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-05 07:35:58.784  INFO 17756 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-05 07:35:58.821  INFO 17756 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-05 07:35:58.868  INFO 17756 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-05 07:35:58.913  INFO 17756 --- [main] com.noah.app.quant.OjAlgoTest            : Started OjAlgoTest in 9.927 seconds (JVM running for 11.943)
+2021-11-05 07:35:59.345  INFO 17756 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-05 07:36:00.050  INFO 17756 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-05 07:36:00.693  INFO 17756 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-05 07:36:00.721  INFO 17756 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-05 07:36:54.110  INFO 21856 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 21856 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-05 07:36:54.114  INFO 21856 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
+2021-11-05 07:36:55.680  WARN 21856 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-05 07:37:00.683  INFO 21856 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-05 07:37:01.955  WARN 21856 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-05 07:37:02.373  INFO 21856 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-05 07:37:02.400  INFO 21856 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-05 07:37:02.434  INFO 21856 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-05 07:37:02.462  INFO 21856 --- [main] com.noah.app.quant.OjAlgoTest            : Started OjAlgoTest in 9.001 seconds (JVM running for 10.758)
+2021-11-05 07:37:02.735  INFO 21856 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-05 07:37:03.216  INFO 21856 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-05 07:37:03.614  INFO 21856 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-05 07:37:03.654  INFO 21856 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-05 07:37:43.009  INFO 16584 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 16584 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-05 07:37:43.012  INFO 16584 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
+2021-11-05 07:37:44.578  WARN 16584 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-05 07:37:49.427  INFO 16584 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-05 07:37:50.477  WARN 16584 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-05 07:37:50.819  INFO 16584 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-05 07:37:50.843  INFO 16584 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-05 07:37:50.872  INFO 16584 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-05 07:37:50.902  INFO 16584 --- [main] com.noah.app.quant.OjAlgoTest            : Started OjAlgoTest in 8.394 seconds (JVM running for 10.027)
+2021-11-05 07:37:51.190  INFO 16584 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-05 07:37:51.732  INFO 16584 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-05 07:37:52.130  INFO 16584 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-05 07:37:52.232  INFO 16584 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-05 07:38:52.889  INFO 11656 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 11656 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-05 07:38:52.893  INFO 11656 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
+2021-11-05 07:38:54.409  WARN 11656 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-05 07:38:59.277  INFO 11656 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-05 07:39:00.384  WARN 11656 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-05 07:39:00.757  INFO 11656 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-05 07:39:00.783  INFO 11656 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-05 07:39:00.816  INFO 11656 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-05 07:39:00.849  INFO 11656 --- [main] com.noah.app.quant.OjAlgoTest            : Started OjAlgoTest in 8.533 seconds (JVM running for 10.327)
+2021-11-05 07:39:01.136  INFO 11656 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-05 07:39:01.615  INFO 11656 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-05 07:39:02.052  INFO 11656 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-05 07:39:02.104  INFO 11656 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-05 07:44:19.300  INFO 20192 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 20192 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-05 07:44:19.306  INFO 20192 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
+2021-11-05 07:44:20.883  WARN 20192 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-05 07:44:25.628  INFO 20192 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-05 07:44:26.544  WARN 20192 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-05 07:44:26.884  INFO 20192 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-05 07:44:26.914  INFO 20192 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-05 07:44:26.944  INFO 20192 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-05 07:44:26.975  INFO 20192 --- [main] com.noah.app.quant.OjAlgoTest            : Started OjAlgoTest in 8.292 seconds (JVM running for 9.791)
+2021-11-05 07:44:27.231  INFO 20192 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-05 07:44:27.718  INFO 20192 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-05 07:44:27.917  INFO 20192 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-05 07:44:27.944  INFO 20192 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-05 07:44:59.611  INFO 16984 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 16984 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-05 07:44:59.616  INFO 16984 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
+2021-11-05 07:45:01.256  WARN 16984 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-05 07:45:05.898  INFO 16984 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-05 07:45:06.911  WARN 16984 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-05 07:45:07.319  INFO 16984 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-05 07:45:07.345  INFO 16984 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-05 07:45:07.379  INFO 16984 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-05 07:45:07.405  INFO 16984 --- [main] com.noah.app.quant.OjAlgoTest            : Started OjAlgoTest in 8.334 seconds (JVM running for 10.046)
+2021-11-05 07:45:07.657  INFO 16984 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-05 07:45:08.186  INFO 16984 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-05 07:45:08.422  INFO 16984 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-05 07:45:08.448  INFO 16984 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-05 07:45:33.368  INFO 16740 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 16740 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-05 07:45:33.372  INFO 16740 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
+2021-11-05 07:45:35.045  WARN 16740 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-05 07:45:40.335  INFO 16740 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-05 07:45:41.351  WARN 16740 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-05 07:45:41.937  INFO 16740 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-05 07:45:41.966  INFO 16740 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-05 07:45:41.996  INFO 16740 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-05 07:45:42.031  INFO 16740 --- [main] com.noah.app.quant.OjAlgoTest            : Started OjAlgoTest in 9.224 seconds (JVM running for 10.939)
+2021-11-05 07:45:42.298  INFO 16740 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-05 07:45:42.839  INFO 16740 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-05 07:45:43.050  INFO 16740 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-05 07:45:43.141  INFO 16740 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-05 07:47:46.498  INFO 4276 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 4276 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-05 07:47:46.505  INFO 4276 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
+2021-11-05 07:47:48.335  WARN 4276 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-05 07:47:52.992  INFO 4276 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-05 07:47:53.912  WARN 4276 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-05 07:47:54.246  INFO 4276 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-05 07:47:54.279  INFO 4276 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-05 07:47:54.341  INFO 4276 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-05 07:47:54.376  INFO 4276 --- [main] com.noah.app.quant.OjAlgoTest            : Started OjAlgoTest in 8.421 seconds (JVM running for 10.029)
+2021-11-05 07:47:54.631  INFO 4276 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-05 07:47:55.141  INFO 4276 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-05 07:47:55.429  INFO 4276 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-05 07:47:55.520  INFO 4276 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-05 07:48:27.314  INFO 13048 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 13048 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-05 07:48:27.319  INFO 13048 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
+2021-11-05 07:48:29.132  WARN 13048 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-05 07:48:34.045  INFO 13048 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-05 07:48:34.978  WARN 13048 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-05 07:48:35.343  INFO 13048 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-05 07:48:35.386  INFO 13048 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-05 07:48:35.421  INFO 13048 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-05 07:48:35.446  INFO 13048 --- [main] com.noah.app.quant.OjAlgoTest            : Started OjAlgoTest in 8.688 seconds (JVM running for 10.227)
+2021-11-05 07:48:35.700  INFO 13048 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-05 07:48:36.206  INFO 13048 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-05 07:48:36.649  INFO 13048 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-05 07:48:36.692  INFO 13048 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-05 07:49:44.806  INFO 21628 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 21628 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-05 07:49:44.810  INFO 21628 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
+2021-11-05 07:49:46.565  WARN 21628 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-05 07:49:51.246  INFO 21628 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-05 07:49:52.134  WARN 21628 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-05 07:49:52.524  INFO 21628 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-05 07:49:52.551  INFO 21628 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-05 07:49:52.580  INFO 21628 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-05 07:49:52.646  INFO 21628 --- [main] com.noah.app.quant.OjAlgoTest            : Started OjAlgoTest in 8.347 seconds (JVM running for 9.983)
+2021-11-05 07:49:52.902  INFO 21628 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-05 07:49:53.474  INFO 21628 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-05 07:49:53.803  INFO 21628 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-05 07:49:53.880  INFO 21628 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-05 07:51:25.232  INFO 11676 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 11676 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-05 07:51:25.236  INFO 11676 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
+2021-11-05 07:51:27.252  WARN 11676 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-05 07:51:32.173  INFO 11676 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-05 07:51:33.098  WARN 11676 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-05 07:51:33.449  INFO 11676 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-05 07:51:33.500  INFO 11676 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-05 07:51:33.529  INFO 11676 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-05 07:51:33.552  INFO 11676 --- [main] com.noah.app.quant.OjAlgoTest            : Started OjAlgoTest in 9.048 seconds (JVM running for 10.92)
+2021-11-05 07:51:33.799  INFO 11676 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-05 07:51:34.266  INFO 11676 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-05 07:51:34.496  INFO 11676 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-05 07:51:34.526  INFO 11676 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-05 07:51:51.100  INFO 6676 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 6676 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-05 07:51:51.105  INFO 6676 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
+2021-11-05 07:51:52.610  WARN 6676 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-05 07:51:57.381  INFO 6676 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-05 07:51:58.441  WARN 6676 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-05 07:51:58.784  INFO 6676 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-05 07:51:58.813  INFO 6676 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-05 07:51:58.844  INFO 6676 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-05 07:51:58.871  INFO 6676 --- [main] com.noah.app.quant.OjAlgoTest            : Started OjAlgoTest in 8.298 seconds (JVM running for 9.765)
+2021-11-05 07:51:59.130  INFO 6676 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-05 07:51:59.695  INFO 6676 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-05 07:52:00.142  INFO 6676 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-05 07:52:00.228  INFO 6676 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-05 07:52:57.529  INFO 9240 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 9240 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-05 07:52:57.533  INFO 9240 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
+2021-11-05 07:52:59.419  WARN 9240 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-05 07:53:04.542  INFO 9240 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-05 07:53:05.846  WARN 9240 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-05 07:53:06.229  INFO 9240 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-05 07:53:06.256  INFO 9240 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-05 07:53:06.295  INFO 9240 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-05 07:53:06.322  INFO 9240 --- [main] com.noah.app.quant.OjAlgoTest            : Started OjAlgoTest in 9.443 seconds (JVM running for 11.15)
+2021-11-05 07:53:06.588  INFO 9240 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-05 07:53:07.115  INFO 9240 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-05 07:53:07.401  INFO 9240 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-05 07:53:07.500  INFO 9240 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-05 07:54:06.337  INFO 20612 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 20612 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-05 07:54:06.341  INFO 20612 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
+2021-11-05 07:54:07.875  WARN 20612 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-05 07:54:12.976  INFO 20612 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-05 07:54:13.848  WARN 20612 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-05 07:54:14.249  INFO 20612 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-05 07:54:14.277  INFO 20612 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-05 07:54:14.317  INFO 20612 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-05 07:54:14.346  INFO 20612 --- [main] com.noah.app.quant.OjAlgoTest            : Started OjAlgoTest in 8.521 seconds (JVM running for 10.146)
+2021-11-05 07:54:14.657  INFO 20612 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-05 07:54:15.145  INFO 20612 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-05 07:54:15.414  INFO 20612 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-05 07:54:15.498  INFO 20612 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-05 08:02:55.781  INFO 15560 --- [main] com.noah.app.quant.OjAlgoTest            : Starting OjAlgoTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 15560 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-05 08:02:55.786  INFO 15560 --- [main] com.noah.app.quant.OjAlgoTest            : No active profile set, falling back to default profiles: default
+2021-11-05 08:02:57.618  WARN 15560 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-05 08:03:02.585  INFO 15560 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-05 08:03:03.485  WARN 15560 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-05 08:03:03.852  INFO 15560 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-05 08:03:03.876  INFO 15560 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-05 08:03:03.905  INFO 15560 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-05 08:03:03.930  INFO 15560 --- [main] com.noah.app.quant.OjAlgoTest            : Started OjAlgoTest in 8.66 seconds (JVM running for 10.24)
+2021-11-05 08:03:04.167  INFO 15560 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-05 08:03:04.760  INFO 15560 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-05 08:03:05.182  INFO 15560 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-05 08:03:05.238  INFO 15560 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-05 09:17:26.464  INFO 4960 --- [main] com.noah.app.quant.itemMapperTest        : Starting itemMapperTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 4960 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-05 09:17:26.468  INFO 4960 --- [main] com.noah.app.quant.itemMapperTest        : No active profile set, falling back to default profiles: default
+2021-11-05 09:17:28.580  WARN 4960 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-05 09:17:34.062  INFO 4960 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-05 09:17:35.501  WARN 4960 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-05 09:17:36.175  INFO 4960 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-05 09:17:36.221  INFO 4960 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-05 09:17:36.273  INFO 4960 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-05 09:17:36.315  INFO 4960 --- [main] com.noah.app.quant.itemMapperTest        : Started itemMapperTest in 10.456 seconds (JVM running for 12.565)
+2021-11-05 09:18:12.202  INFO 19792 --- [main] com.noah.app.quant.itemMapperTest        : Starting itemMapperTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 19792 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-05 09:18:12.207  INFO 19792 --- [main] com.noah.app.quant.itemMapperTest        : No active profile set, falling back to default profiles: default
+2021-11-05 09:18:13.712  WARN 19792 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-05 09:18:18.457  INFO 19792 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-05 09:18:19.614  WARN 19792 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-05 09:18:20.052  INFO 19792 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-05 09:18:20.078  INFO 19792 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-05 09:18:20.116  INFO 19792 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-05 09:18:20.142  INFO 19792 --- [main] com.noah.app.quant.itemMapperTest        : Started itemMapperTest in 8.507 seconds (JVM running for 10.145)
+2021-11-05 09:18:20.455  INFO 19792 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-05 09:18:21.111  INFO 19792 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-05 09:18:21.723  INFO 19792 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-05 09:18:21.832  INFO 19792 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-05 09:18:49.856  INFO 13332 --- [main] com.noah.app.quant.itemMapperTest        : Starting itemMapperTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 13332 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-05 09:18:49.858  INFO 13332 --- [main] com.noah.app.quant.itemMapperTest        : No active profile set, falling back to default profiles: default
+2021-11-05 09:18:50.839  WARN 13332 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-05 09:18:53.772  INFO 13332 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-05 09:18:54.557  WARN 13332 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-05 09:18:54.867  INFO 13332 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-05 09:18:54.891  INFO 13332 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-05 09:18:54.920  INFO 13332 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-05 09:18:54.951  INFO 13332 --- [main] com.noah.app.quant.itemMapperTest        : Started itemMapperTest in 5.399 seconds (JVM running for 6.333)
+2021-11-05 09:18:55.182  INFO 13332 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-05 09:18:55.565  INFO 13332 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-05 09:18:55.908  INFO 13332 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-05 09:18:55.984  INFO 13332 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-05 09:19:35.379  INFO 21256 --- [main] com.noah.app.quant.itemMapperTest        : Starting itemMapperTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 21256 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-05 09:19:35.382  INFO 21256 --- [main] com.noah.app.quant.itemMapperTest        : No active profile set, falling back to default profiles: default
+2021-11-05 09:19:36.351  WARN 21256 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-05 09:19:39.233  INFO 21256 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-05 09:19:40.033  WARN 21256 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-05 09:19:40.340  INFO 21256 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-05 09:19:40.369  INFO 21256 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-05 09:19:40.398  INFO 21256 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-05 09:19:40.420  INFO 21256 --- [main] com.noah.app.quant.itemMapperTest        : Started itemMapperTest in 5.353 seconds (JVM running for 6.259)
+2021-11-05 09:19:40.651  INFO 21256 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-05 09:19:41.022  INFO 21256 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-05 09:19:41.358  INFO 21256 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-05 09:19:41.447  INFO 21256 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-05 09:19:50.426  INFO 13256 --- [main] com.noah.app.quant.itemMapperTest        : Starting itemMapperTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 13256 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-05 09:19:50.428  INFO 13256 --- [main] com.noah.app.quant.itemMapperTest        : No active profile set, falling back to default profiles: default
+2021-11-05 09:19:51.387  WARN 13256 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-05 09:19:54.376  INFO 13256 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-05 09:19:55.179  WARN 13256 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-05 09:19:55.488  INFO 13256 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-05 09:19:55.510  INFO 13256 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-05 09:19:55.544  INFO 13256 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-05 09:19:55.566  INFO 13256 --- [main] com.noah.app.quant.itemMapperTest        : Started itemMapperTest in 5.455 seconds (JVM running for 6.309)
+2021-11-05 09:19:55.791  INFO 13256 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-05 09:19:56.149  INFO 13256 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-05 09:19:56.479  INFO 13256 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-05 09:19:56.568  INFO 13256 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-05 09:22:31.467  INFO 8344 --- [main] com.noah.app.quant.itemMapperTest        : Starting itemMapperTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 8344 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-05 09:22:31.470  INFO 8344 --- [main] com.noah.app.quant.itemMapperTest        : No active profile set, falling back to default profiles: default
+2021-11-05 09:22:33.272  WARN 8344 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-05 09:22:38.281  INFO 8344 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-05 09:22:39.224  WARN 8344 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-05 09:22:39.556  INFO 8344 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-05 09:22:39.587  INFO 8344 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-05 09:22:39.619  INFO 8344 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-05 09:22:39.651  INFO 8344 --- [main] com.noah.app.quant.itemMapperTest        : Started itemMapperTest in 8.691 seconds (JVM running for 10.716)
+2021-11-05 09:22:39.908  INFO 8344 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-05 09:22:40.447  INFO 8344 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-05 09:22:40.886  INFO 8344 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-05 09:22:40.952  INFO 8344 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-05 09:23:45.151  INFO 6844 --- [main] com.noah.app.quant.itemMapperTest        : Starting itemMapperTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 6844 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-05 09:23:45.156  INFO 6844 --- [main] com.noah.app.quant.itemMapperTest        : No active profile set, falling back to default profiles: default
+2021-11-05 09:23:46.645  WARN 6844 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-05 09:23:51.633  INFO 6844 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-05 09:23:52.564  WARN 6844 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-05 09:23:52.937  INFO 6844 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-05 09:23:52.962  INFO 6844 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-05 09:23:52.991  INFO 6844 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-05 09:23:53.019  INFO 6844 --- [main] com.noah.app.quant.itemMapperTest        : Started itemMapperTest in 8.401 seconds (JVM running for 10.103)
+2021-11-05 09:23:53.291  INFO 6844 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-05 09:23:53.843  INFO 6844 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-05 09:23:54.279  INFO 6844 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-05 09:23:54.334  INFO 6844 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

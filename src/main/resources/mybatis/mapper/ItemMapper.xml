@@ -8,8 +8,8 @@
 			<if test = "market !=null and market!=''">
 				AND MARKET = #{market}
 			</if>
-			<if test = "sector != null and sector != ''">
-				AND SECTOR = #{sector}
+			<if test = "industry != null and industry != ''">
+				AND industry = #{industry}
 			</if>
 			<if test = "corpSize != null and corpSize!= ''">
 				And corp_size = #{corpSize}
@@ -22,11 +22,14 @@
 	</select>
 
 	<!-- 지워버릴것  -->
-	<select id = "selectClosingPrice" parameterType = "com.noah.app.vo.ItemDto" resultType ="com.noah.app.vo.HistoryDataDto">
-		SELECT 
-			TRADING_DATE,  
-			CLOSE
-		FROM HISTORY_DATA 
-		WHERE ITEM_ID = #{id} 
+	<select id = "selectClosingPrice" parameterType = "HashMap" resultType ="com.noah.app.vo.HistoryDataDto">
+		<![CDATA[ 
+			SELECT 
+			*
+            FROM(SELECT * FROM HISTORY_DATA WHERE ITEM_ID = #{itemDto.id}
+            ORDER BY TRADING_DATE ) T 
+							WHERE ROWNUM <=255
+
+			 ]]>
 	</select>
 </mapper>

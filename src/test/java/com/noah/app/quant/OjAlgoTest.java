@@ -1,5 +1,6 @@
 package com.noah.app.quant;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.junit.Before;
@@ -12,14 +13,20 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.noah.app.quant.dao.ItemMapper;
+import com.noah.app.util.Statistics;
 import com.noah.app.vo.HistoryDataDto;
 import com.noah.app.vo.ItemDto;
+
+import junit.framework.Assert;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class OjAlgoTest {
 	@Autowired
 	ItemMapper itemDao;
+	
+	@Autowired
+	Statistics statistics;
 	
 	ItemDto itemDto ;
 	
@@ -30,15 +37,36 @@ public class OjAlgoTest {
 		
 	}
 	
+//	@Test
+//	public void calanderDateTest() {
+//		CalendarDateSeries<Float> c = new CalendarDateSeries<>(); 
+//		HashMap<String, Object> inParam = new HashMap<>();
+//		inParam.put("itemDto", itemDto);
+//		List<HistoryDataDto> cal = itemDao.selectClosingPrice(inParam);
+//		for(HistoryDataDto key : cal) {
+//			c.put( new CalendarDate(key.getTradingDate()), key.getClose());
+//		}
+//
+//		
+//		Assert.assertEquals(c, statistics.makeCalenderDateSeries(cal));
+//	}
+	
 	@Test
-	public void calanderDateTest() {
-		CalendarDateSeries<Float> c = new CalendarDateSeries<>(); 
-		List<HistoryDataDto> cal = itemDao.selectClosingPrice(itemDto);
-		for(HistoryDataDto key : cal) {
-			c.put(key.getTradingDate(), key.getClose());
-		}
-		for(CalendarDate key : c.keySet()) {
-			System.out.println(key+" : "+c.get(key));
-		}
+	public void calendarSize1() {
+		HashMap<String, Object> inParam = new HashMap<>();
+		inParam.put("itemDto", itemDto);
+		inParam.put("period",200);
+		List<HistoryDataDto> historyDataDtoList = itemDao.selectClosingPrice(inParam);
+		CalendarDateSeries cal =statistics.makeCalenderDateSeries(historyDataDtoList, 200);
+		System.out.println(cal.size());
+		Assert.assertEquals(cal.size(),200);
+	}
+	@Test
+	public void calendarSize2() {
+		HashMap<String, Object> inParam = new HashMap<>();
+		inParam.put("itemDto", itemDto);
+		List<HistoryDataDto> historyDataDtoList = itemDao.selectClosingPrice(inParam);
+		CalendarDateSeries cal =statistics.makeCalenderDateSeries(historyDataDtoList,255);
+		Assert.assertEquals(cal.size(),255);
 	}
 }
