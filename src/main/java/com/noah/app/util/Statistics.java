@@ -83,7 +83,34 @@ public class Statistics {
 		return sum/(n-1);
 		
 	}
-
+	public double calStdv(TreeMap<Date, Double> returnMap) {
+		double mean = calGeoMean(returnMap);
+		double sum = 0;
+		for(Date date : returnMap.keySet()) {
+			sum += Math.pow((returnMap.get(date)-mean), 2);
+		}
+		int n = returnMap.size();
+		
+		return Math.pow(sum/(n-1),0.5);
+	}
+	public double calCov(TreeMap<Date, Double> stock1, TreeMap<Date, Double> stock2) {
+		double mean1 = calGeoMean(stock1);
+		double mean2 = calGeoMean(stock2);
+		double sum =0;
+		Set<Date> keySet = stock1.keySet();
+		keySet.retainAll(stock2.keySet());
+		for(Date date : keySet) {
+			sum += (stock1.get(date)-mean1)*(stock2.get(date)-mean2);
+		}
+		return sum/(keySet.size()-1);
+	}
+	
+	public double calCor(TreeMap<Date, Double> stock1, TreeMap<Date, Double> stock2){
+		double cov = calCov(stock1, stock2);
+		double vol1 = calStdv(stock1);
+		double vol2 = calStdv(stock2);
+		return cov/(vol1*vol2);
+	}
 
 
 	

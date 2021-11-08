@@ -30,6 +30,7 @@ public class StatisticsTest {
 	
 	HashMap<String, Object> inParam;
 	List<HistoryDataDto> historyList;
+	List<HistoryDataDto> historyList2;
 	@Before
 	public void init() {
 		inParam = new HashMap<>();
@@ -38,6 +39,7 @@ public class StatisticsTest {
 		inParam.put("itemDto",itemDto);
 		inParam.put("period", 254);
 		historyList = itemDao.selectClosingPrice(inParam);
+		historyList2 = itemDao.selectClosingPrice(inParam);
 		System.out.println(historyList.get(1));
 	}
 	
@@ -45,7 +47,9 @@ public class StatisticsTest {
 	public void getStat() {
 		
 		TreeMap<Date, Float> treeMap = statistics.toTreeMap(historyList);
+		
 		TreeMap<Date, Double> returnMap = statistics.getRerturnTreeMap(historyList);
+		TreeMap<Date, Double> returnMap2 = statistics.getRerturnTreeMap(historyList);
 		for(Date date : treeMap.keySet()) {
 			System.out.println(date + " : "+treeMap.get(date));
 		}
@@ -53,7 +57,9 @@ public class StatisticsTest {
 			System.out.println(date+" : " +returnMap.get(date)*100+"%");
 		}
 		System.out.println("geoMean "+statistics.calGeoMean(returnMap));
-		System.out.println("var" + statistics.calVol(returnMap));
+		System.out.println("var " + statistics.calVol(returnMap));
+		System.out.println("cov "+ statistics.calCov(returnMap, returnMap2));
+		System.out.println("cor "+ (statistics.calCor(returnMap, returnMap2)));
 	}
 	
 
