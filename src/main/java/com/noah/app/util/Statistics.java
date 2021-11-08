@@ -1,9 +1,12 @@
 package com.noah.app.util;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map.Entry;
 import java.util.Set;
+import java.util.TreeMap;
 
 import org.ojalgo.series.CalendarDateSeries;
 import org.ojalgo.type.CalendarDate;
@@ -14,39 +17,74 @@ import com.noah.app.vo.HistoryDataDto;
 /*스트림 공부하고 리팰터링*/
 @Component
 public class Statistics {
-	
-	public <N extends Comparable<N>> CalendarDateSeries<N> makeCalenderDateSeries(List<HistoryDataDto> historyDataDtoList){
-		CalendarDateSeries<N> calendaDateSeries = new CalendarDateSeries<>();
-		for(int i = 0 ; i< historyDataDtoList.size();i++) {
-			HistoryDataDto historyDataDto = historyDataDtoList.get(i);
-			CalendarDate calendarDate = new CalendarDate(historyDataDto.getTradingDate());
-			calendaDateSeries.put(calendarDate, historyDataDto.getClose());
+	public TreeMap<Date, Float> toTreeMap(List<HistoryDataDto> historyDataDtoList){
+		TreeMap<Date, Float> treeMap = new TreeMap<>();
+		for(HistoryDataDto historyDataDto : historyDataDtoList) {
+			treeMap.put(historyDataDto.getTradingDate(), historyDataDto.getClose());
 		}
-		return calendaDateSeries;
+		return treeMap;
 	}
-	public <N extends Comparable<N>> CalendarDateSeries<N> makeCalenderDateSeries(List<HistoryDataDto> historyDataDtoList, int len){
-		CalendarDateSeries<N> calendaDateSeries = new CalendarDateSeries<>();
-		for(int i = 0 ; i< len;i++) {
-			HistoryDataDto historyDataDto = historyDataDtoList.get(i);
-			CalendarDate calendarDate = new CalendarDate(historyDataDto.getTradingDate());
-			calendaDateSeries.put(calendarDate, historyDataDto.getClose());
+	
+	public TreeMap<Date, Double> getRerturnTreeMap(List<HistoryDataDto> historyDataDtoList){
+		TreeMap<Date, Double> returnTreeMap = new TreeMap<>();
+		TreeMap<Date, Float> treeMap = toTreeMap(historyDataDtoList);
+		Entry<Date, Float> preData = treeMap.pollFirstEntry();
+		float preVal = preData.getValue();
+		Date preDate = preData.getKey();
+		
+		for(Date date : treeMap.keySet()) {
+			float curVal= treeMap.get(date);
+			double returnRate = (curVal-preVal)/preVal;
+			returnTreeMap.put(date, returnRate);
+			preVal = curVal;
+			preDate = date;
 		}
-		return calendaDateSeries;
+		return returnTreeMap;
+	}
+	
+	
+	
+	public TreeMap<Date, Double> getRerturnTreeMap(TreeMap<Date, Float> treeMap ){
+		TreeMap<Date, Double> returnTreeMap = new TreeMap<>();
+		Entry<Date, Float> preData = treeMap.pollFirstEntry();
+		float preVal = preData.getValue();
+		Date preDate = preData.getKey();
+		
+		for(Date date : treeMap.keySet()) {
+			float curVal= treeMap.get(date);
+			double returnRate = (curVal-preVal)/preVal;
+			returnTreeMap.put(date, returnRate);
+			preVal = curVal;
+			preDate = date;
+		}
+		return returnTreeMap;
+	}
+	
+	
+	
+	public double calGeoMean(TreeMap<Date, Double> returnMap) {
+		double cumReturn = 1;
+		int len = returnMap.size();
+		for(Date date : returnMap.keySet()) {
+			cumReturn *= (1+ returnMap.get(date));
+		}
+		cumReturn = Math.pow(cumReturn,(float)1/len)-1;
+		return cumReturn;
+	}
+	
+	public double calVol(TreeMap<Date, Double> returnMap) {
+		double mean = calGeoMean(returnMap);
+		double sum = 0;
+		for(Date date : returnMap.keySet()) {
+			sum += Math.pow((returnMap.get(date)-mean), 2);
+		}
+		int n = returnMap.size();
+		
+		return sum/(n-1);
+		
 	}
 
-	public <N extends Comparable<N>> CalendarDateSeries<N> makeReturnCalenderDateSeries(List<HistoryDataDto> historyDataDtoList){
-		CalendarDateSeries<N> calendaDateSeries = new CalendarDateSeries<>();
-		HistoryDataDto preHistory = historyDataDtoList.get(historyDataDtoList.size()-1);
-		for(int i = historyDataDtoList.size()-2 ; i>=0 ;i--) {
-			HistoryDataDto historyDataDto = historyDataDtoList.get(i);
-			float prePrice = preHistory.getClose();
-			float curPrice= historyDataDto.getClose();
-			double ret = (curPrice-prePrice)/prePrice; 
-			CalendarDate calendarDate = new CalendarDate(historyDataDto.getTradingDate());
-			calendaDateSeries.put(calendarDate, ret);
-		}
-		return calendaDateSeries;
-	}
+
 
 	
 	public <N extends Number> double calculateMean(HashMap<String, N > map) {

@@ -17,19 +17,25 @@
 	</select>
 	
 	<!-- 지워버릴것  -->
-	<select id = "selectHistoryDataByItemId" parameterType = "com.noah.app.vo.ItemDto" resultType ="java.util.LinkedHashMap">
+	<select id = "selectHistoryDataByItemId" parameterType = "com.noah.app.vo.ItemDto" resultType ="com.noah.app.vo.HistoryDataDto">
 		SELECT * FROM HISTORY_DATA WHERE ITEM_ID = #{ID} ORDER BY TRADING_DATE DESC LIMIT 255
 	</select>
 
 	<!-- 지워버릴것  -->
 	<select id = "selectClosingPrice" parameterType = "HashMap" resultType ="com.noah.app.vo.HistoryDataDto">
-		<![CDATA[ 
+		
 			SELECT 
 			*
             FROM(SELECT * FROM HISTORY_DATA WHERE ITEM_ID = #{itemDto.id}
-            ORDER BY TRADING_DATE ) T 
-							WHERE ROWNUM <=255
-
-			 ]]>
+            ORDER BY TRADING_DATE DESC) T 
+ 			WHERE 1=1
+            	<choose>
+            		<when test ="period != null">
+            			AND ROWNUM <![CDATA[  <= ]]> #{period} 
+            		</when>
+            		<otherwise>
+						AND ROWNUM <![CDATA[  <= ]]> 255
+					</otherwise>
+				</choose>
 	</select>
 </mapper>
