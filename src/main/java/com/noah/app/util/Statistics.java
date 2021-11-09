@@ -1,5 +1,6 @@
 package com.noah.app.util;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -8,15 +9,21 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeMap;
 
-import org.ojalgo.series.CalendarDateSeries;
-import org.ojalgo.type.CalendarDate;
+import org.ojalgo.matrix.Primitive64Matrix;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.noah.app.quant.dao.ItemMapper;
 import com.noah.app.vo.HistoryDataDto;
+import com.noah.app.vo.ItemDto;
 
 /*스트림 공부하고 리팰터링*/
 @Component
 public class Statistics {
+	
+	@Autowired
+	ItemMapper itemMapper;
+	
 	public TreeMap<Date, Float> toTreeMap(List<HistoryDataDto> historyDataDtoList){
 		TreeMap<Date, Float> treeMap = new TreeMap<>();
 		for(HistoryDataDto historyDataDto : historyDataDtoList) {
@@ -25,7 +32,7 @@ public class Statistics {
 		return treeMap;
 	}
 	
-	public TreeMap<Date, Double> getRerturnTreeMap(List<HistoryDataDto> historyDataDtoList){
+	public TreeMap<Date, Double> toReturnTreeMap(List<HistoryDataDto> historyDataDtoList){
 		TreeMap<Date, Double> returnTreeMap = new TreeMap<>();
 		TreeMap<Date, Float> treeMap = toTreeMap(historyDataDtoList);
 		Entry<Date, Float> preData = treeMap.pollFirstEntry();
@@ -44,7 +51,7 @@ public class Statistics {
 	
 	
 	
-	public TreeMap<Date, Double> getRerturnTreeMap(TreeMap<Date, Float> treeMap ){
+	public TreeMap<Date, Double> toReturnTreeMap(TreeMap<Date, Float> treeMap ){
 		TreeMap<Date, Double> returnTreeMap = new TreeMap<>();
 		Entry<Date, Float> preData = treeMap.pollFirstEntry();
 		float preVal = preData.getValue();
@@ -60,6 +67,28 @@ public class Statistics {
 		return returnTreeMap;
 	}
 	
+	public Primitive64Matrix toCovMatrix(List<TreeMap<Date, Float>> treeMapList) {
+		List<TreeMap<Date, Double>> returnMapList = new ArrayList<>();
+		Primitive64Matrix.Factory matrixFactory = Primitive64Matrix.FACTORY;
+		Primitive64Matrix mat;
+		for(int i = 0; i<treeMapList.size();i++) {
+			returnMapList.add(toReturnTreeMap(treeMapList.get(i)));
+		}
+		int len = returnMapList.get(0).size();
+		double[][] covArr = new double[len][len];
+		for(int i = 0 ; i < len; i++) {
+			for(int j = 0; j <len ; j++) {
+				double cov = calCov(returnMapList.get(i), returnMapList.get(j));
+				covArr[i][j] = cov;
+			}
+		}
+		mat= matrixFactory.rows(covArr);
+		return mat;
+	}
+	
+	public double calBeta(TreeMap<Date, Double> treeMapList, TreeMap<Date, Double> kospiRetrunMap) {
+		return calCov(treeMapList, kospiRetrunMap);
+	}
 	
 	
 	public double calGeoMean(TreeMap<Date, Double> returnMap) {
@@ -70,6 +99,14 @@ public class Statistics {
 		}
 		cumReturn = Math.pow(cumReturn,(float)1/len)-1;
 		return cumReturn;
+	}
+	public double calExpRet(TreeMap<Date,Float> stockPriceMap, TreeMap<Date,Float> kospiPriceMap, double riskFreeRate) {
+		TreeMap<Date, Double> stockRetMap = toReturnTreeMap(stockPriceMap);
+		TreeMap<Date, Double> kospiRetMap = toReturnTreeMap(kospiPriceMap);
+		double rm = calGeoMean(kospiRetMap);
+		double beta = calBeta(stockRetMap, kospiRetMap);
+		return riskFreeRate + beta*(rm - riskFreeRate);
+		
 	}
 	
 	public double calVol(TreeMap<Date, Double> returnMap) {
@@ -112,7 +149,10 @@ public class Statistics {
 		return cov/(vol1*vol2);
 	}
 
-
+	public Primitive64Matrix toCovMat(List<ItemDto> itemDtoList) {
+		
+		return null;
+	}
 	
 	public <N extends Number> double calculateMean(HashMap<String, N > map) {
 		int len = map.size();
