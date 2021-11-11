@@ -1,12 +1,9 @@
 package com.noah.app.util;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.math.MathContext;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -16,14 +13,14 @@ import org.ojalgo.matrix.Primitive64Matrix;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.noah.app.quant.dao.ItemMapper;
+import com.noah.app.constants.BusinessDays;
+import com.noah.app.quant.mapper.ItemMapper;
 import com.noah.app.vo.HistoryDataDto;
 import com.noah.app.vo.IndexHistoryDataDto;
-import com.noah.app.vo.ItemDto;
 
 /*스트림 공부하고 리팰터링*/
 @Component
-public class Statistics {
+public class QuantUtils {
 	
 	@Autowired
 	ItemMapper itemMapper;
@@ -43,7 +40,7 @@ public class Statistics {
 		return treeMap;
 	}
 	
-	public TreeMap<Date, Double> toReturnTreeMap(TreeMap<Date, Float> treeMap){
+	public TreeMap<Date, Double> toReturnMap(TreeMap<Date, Float> treeMap){
 		TreeMap<Date, Double> returnTreeMap = new TreeMap<>();
 		Entry<Date, Float> preData = treeMap.pollFirstEntry();
 		float preVal = preData.getValue();
@@ -59,15 +56,15 @@ public class Statistics {
 	}
 	
 	
-	public Primitive64Matrix toCovMatrix(List<TreeMap<Date, Float>> stocpPriceMapList) {
+	public Primitive64Matrix toCovMatrix(List<TreeMap<Date, Float>> priceMapList) {
 		Primitive64Matrix.Factory matrixFactory = Primitive64Matrix.FACTORY;
 		Primitive64Matrix mat;
 		
-		int len = stocpPriceMapList.size();
+		int len = priceMapList.size();
 		BigDecimal[][] covArr = new BigDecimal[len][len];
 		for(int i = 0 ; i < len; i++) {
 			for(int j = 0; j <len ; j++) {
-				BigDecimal cov = calCov(toReturnTreeMap(stocpPriceMapList.get(i)), toReturnTreeMap(stocpPriceMapList.get(j)));
+				BigDecimal cov = calCov(toReturnMap(priceMapList.get(i)), toReturnMap(priceMapList.get(j)));
 				covArr[i][j] = cov;
 			}
 		}
@@ -75,14 +72,14 @@ public class Statistics {
 		return mat;
 	}
 	
-	public Primitive64Matrix toExpVector(List<TreeMap<Date, Float>> stockPriceMapList, TreeMap<Date,Float> kospiPriceMap ,List<IndexHistoryDataDto> baseRateList) {
+	public Primitive64Matrix toExpVector(List<TreeMap<Date, Float>> priceMapList, TreeMap<Date,Float> indexMap ,List<IndexHistoryDataDto> baseRateList) {
 		Primitive64Matrix.Factory matrixFactory = Primitive64Matrix.FACTORY;
 		Primitive64Matrix mat;
-		int n = stockPriceMapList.size();
+		int n = priceMapList.size();
 		BigDecimal[] retArr = new BigDecimal[n];
 		double baseRate = calBaseRate(baseRateList);
 		for(int i = 0; i < n ; i++) {
-			retArr[i] = calExpRet(stockPriceMapList.get(i),kospiPriceMap,baseRate);
+			retArr[i] = calExpRet(priceMapList.get(i),indexMap,baseRate);
 		}
 		mat = matrixFactory.rows(retArr);
 		return mat;
@@ -99,11 +96,11 @@ public class Statistics {
 		return effectiveReturn;
 	}
 	
-	public BigDecimal calBeta(TreeMap<Date, Double> treeMapList, TreeMap<Date, Double> kospiReturnMap) {
-		return (calCor(treeMapList, kospiReturnMap).divide(calStdv(kospiReturnMap),MathContext.DECIMAL128).multiply(calStdv(treeMapList)));
+	public BigDecimal calBeta(TreeMap<Date, Double> priceMap, TreeMap<Date, Double> indexMap) {
+		return calCov(priceMap, indexMap).divide(calVol(indexMap),MathContext.DECIMAL128);
 	}
-	public BigDecimal calB(TreeMap<Date, Double> treeMapList, TreeMap<Date, Double> kospiReturnMap) {
-		return calCov(treeMapList, kospiReturnMap).divide(calVol(kospiReturnMap),MathContext.DECIMAL128);
+	public BigDecimal calB(TreeMap<Date, Double> priceMap, TreeMap<Date, Double> indexMap) {
+		return calCov(priceMap, indexMap).divide(calVol(indexMap),MathContext.DECIMAL128);
 	}
 	
 	public BigDecimal calCumRet(TreeMap<Date, Double> returnMap) {
@@ -111,6 +108,16 @@ public class Statistics {
 		int len = returnMap.size();
 		for(Date date : returnMap.keySet()) {
 			cumReturn=cumReturn.multiply(new BigDecimal(1+ returnMap.get(date)));
+		}
+		return cumReturn.add(new BigDecimal(-1));
+	}
+	public BigDecimal calCumRet(TreeMap<Date, Double> returnMap, BusinessDays b) {
+		BigDecimal cumReturn = new BigDecimal(1l);
+		int len = returnMap.size();
+		Date[] dateArr = new Date[returnMap.size()];
+		dateArr= returnMap.keySet().toArray(dateArr);
+		for(int i = b.getDates();i<len;i++) {
+			cumReturn=cumReturn.multiply(new BigDecimal(1+ returnMap.get(dateArr[i])));
 		}
 		return cumReturn.add(new BigDecimal(-1));
 	}
@@ -124,9 +131,9 @@ public class Statistics {
 		cumReturn =new BigDecimal(Math.pow(cumReturn.doubleValue(),(float)1/len)-1);
 		return cumReturn;
 	}
-	public BigDecimal calExpRet(TreeMap<Date,Float> stockPriceMap, TreeMap<Date,Float> kospiPriceMap, double riskFreeRate) {
-		TreeMap<Date, Double> stockRetMap = toReturnTreeMap(stockPriceMap);
-		TreeMap<Date, Double> kospiRetMap = toReturnTreeMap(kospiPriceMap);
+	public BigDecimal calExpRet(TreeMap<Date,Float> priceMap, TreeMap<Date,Float> indexMap, double riskFreeRate) {
+		TreeMap<Date, Double> stockRetMap = toReturnMap(priceMap);
+		TreeMap<Date, Double> kospiRetMap = toReturnMap(indexMap);
 		BigDecimal rm = calGeoMean(kospiRetMap);
 		BigDecimal beta = calBeta(stockRetMap, kospiRetMap);
 		return new BigDecimal(riskFreeRate).add(beta.multiply(rm.add(new BigDecimal(-riskFreeRate))));
@@ -148,26 +155,26 @@ public class Statistics {
 		
 		return new BigDecimal(Math.pow(vol.doubleValue(),0.5));
 	}
-	public BigDecimal calCov(TreeMap<Date, Double> stock1, TreeMap<Date, Double> stock2) {
-		BigDecimal mean1 = calGeoMean(stock1);
-		BigDecimal mean2 = calGeoMean(stock2);
+	public BigDecimal calCov(TreeMap<Date, Double> stock1ReturnMap, TreeMap<Date, Double> stock2ReturnMap) {
+		BigDecimal mean1 = calGeoMean(stock1ReturnMap);
+		BigDecimal mean2 = calGeoMean(stock2ReturnMap);
 		BigDecimal sum =new BigDecimal(0);
-		Set<Date> keySet = stock1.keySet();
-		keySet.retainAll(stock2.keySet());
+		Set<Date> keySet = stock1ReturnMap.keySet();
+		keySet.retainAll(stock2ReturnMap.keySet());
 		for(Date date : keySet) {
 			
-			sum = sum.add(mean1.add(new BigDecimal(-stock1.get(date))).multiply(mean2.add(new BigDecimal(-stock2.get(date)))));
+			sum = sum.add(mean1.add(new BigDecimal(-stock1ReturnMap.get(date))).multiply(mean2.add(new BigDecimal(-stock2ReturnMap.get(date)))));
 		}
 		return sum.divide(new BigDecimal(keySet.size()-1), MathContext.DECIMAL128);
 	}
 	
-	public BigDecimal calCor(TreeMap<Date, Double> stock1, TreeMap<Date, Double> stock2){
-		BigDecimal cov = calCov(stock1, stock2);
-		BigDecimal vol1 = calStdv(stock1);
-		BigDecimal vol2 = calStdv(stock2);
+	public BigDecimal calCor(TreeMap<Date, Double> stock1ReturnMap, TreeMap<Date, Double> stock2ReturnMap){
+		BigDecimal cov = calCov(stock1ReturnMap, stock2ReturnMap);
+		BigDecimal vol1 = calStdv(stock1ReturnMap);
+		BigDecimal vol2 = calStdv(stock2ReturnMap);
 		return cov.divide(vol1,MathContext.DECIMAL128).divide(vol2,MathContext.DECIMAL128);
 	}
-
+/*지워야될꺼*/
 	public Primitive64Matrix toCovMat(List<TreeMap<Date, Double>> indexMapList) {
 		Primitive64Matrix.Factory matrixFactory = Primitive64Matrix.FACTORY;
 		Primitive64Matrix mat;
@@ -182,7 +189,7 @@ public class Statistics {
 		return mat;
 	}
 	
-	public <N extends Number> double calculateMean(HashMap<String, N > map) {
+	public <N extends Number> double calMean(HashMap<String, N > map) {
 		int len = map.size();
 		double mean = 0;
 		for(String key : map.keySet()) {
@@ -191,17 +198,9 @@ public class Statistics {
 		return mean;
 	}
 	
-	public <N extends Number> double calculateRetMean(LinkedHashMap<String, N > map) {
-		int len = map.size();
-		double mean = 1;
-		for(String key : map.keySet()) {
-			mean *= (1+(float) map.get(key));
-		}
-		return Math.pow(mean, 1/(double)map.size())-1;
-	}
 	
-	public <N extends Number> double calculateVar(HashMap<String, N> map) {
-		double mean = calculateMean(map);
+	public <N extends Number> double calVar(HashMap<String, N> map) {
+		double mean = calMean(map);
 		int len = map.size();
 		double sum = 0;
 		for(String key : map.keySet()) {
@@ -210,11 +209,11 @@ public class Statistics {
 		}
 		return sum/(len-1);
 	}
-	public <N extends Number> double calculateStd(HashMap<String, N> map) {
-		return Math.sqrt(calculateVar(map));
+	public <N extends Number> double calStdv(HashMap<String, N> map) {
+		return Math.sqrt(calVar(map));
 	}
 	
-	public <N extends Number> HashMap<String, Double> calculateZScore(HashMap<String, N> map , double mean, double std) {
+	public <N extends Number> HashMap<String, Double> calZScore(HashMap<String, N> map , double mean, double std) {
 		HashMap<String, Double> zScoreMap = new HashMap<>();
 		for(String key : map.keySet()) {
 			double val = (double) map.get(key);
@@ -249,19 +248,5 @@ public class Statistics {
 			mergedMap.put(key, (val1+val2+val3)/3);
 		}
 		return mergedMap;
-	}
-	public BigInteger calSqrt(BigInteger val) {
-	    BigInteger half = BigInteger.ZERO.setBit(val.bitLength() / 2);
-	    BigInteger cur = half;
-
-	    while (true) {
-	        BigInteger tmp = half.add(val.divide(half)).shiftRight(1);
-
-	        if (tmp.equals(half) || tmp.equals(cur))
-	            return tmp;
-
-	        cur = half;
-	        half = tmp;
-	    }
 	}
 }

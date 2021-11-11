@@ -16,13 +16,9 @@
 			</if>
 	</select>
 	
-	<!-- 지워버릴것  -->
-	<select id = "selectHistoryDataByItemId" parameterType = "com.noah.app.vo.ItemDto" resultType ="com.noah.app.vo.HistoryDataDto">
-		SELECT * FROM HISTORY_DATA WHERE ITEM_ID = #{ID} ORDER BY TRADING_DATE DESC LIMIT 255
-	</select>
 
 	<!-- 지워버릴것  -->
-	<select id = "selectClosingPrice" parameterType = "HashMap" resultType ="com.noah.app.vo.HistoryDataDto">
+	<select id = "selectHistoryDataList" parameterType = "HashMap" resultType ="com.noah.app.vo.HistoryDataDto">
 		
 			SELECT 
 			*

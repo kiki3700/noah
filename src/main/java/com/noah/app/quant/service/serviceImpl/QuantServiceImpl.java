@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.noah.app.quant.calculator.portfolioStrategy.StockPicker;
-import com.noah.app.quant.dao.ItemMapper;
+import com.noah.app.quant.mapper.ItemMapper;
 import com.noah.app.quant.service.QuantService;
 import com.noah.app.vo.ItemDto;
 

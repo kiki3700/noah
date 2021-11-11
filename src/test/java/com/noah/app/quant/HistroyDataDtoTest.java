@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.noah.app.quant.dao.ItemMapper;
+import com.noah.app.quant.mapper.ItemMapper;
 import com.noah.app.vo.HistoryDataDto;
 import com.noah.app.vo.ItemDto;
 
@@ -35,7 +35,7 @@ public class HistroyDataDtoTest {
 	}
 	@Test
 	public void test() {
-		List<HistoryDataDto> list = itemMapper.selectClosingPrice(map);
+		List<HistoryDataDto> list = itemMapper.selectHistoryDataList(map);
 		for(HistoryDataDto data : list) {
 			System.out.println(data);
 		}

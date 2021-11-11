@@ -7,15 +7,15 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.noah.app.quant.dao.ItemMapper;
-import com.noah.app.util.Statistics;
+import com.noah.app.quant.mapper.ItemMapper;
+import com.noah.app.util.QuantUtils;
 import com.noah.app.vo.ItemDto;
 import com.noah.app.vo.StockWrapper;
 @Component
 public class StockDivder {
 
 	@Autowired
-	Statistics statistics;
+	QuantUtils statistics;
 	
 	@Autowired
 	ItemMapper itemDao;

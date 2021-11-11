@@ -1,4 +1,4 @@
-package com.noah.app.quant.dao;
+package com.noah.app.quant.mapper;
 
 import java.sql.Date;
 import java.util.HashMap;
@@ -14,6 +14,5 @@ import com.noah.app.vo.ItemDto;
 @Mapper
 public interface ItemMapper {
 	List<ItemDto> selectItemDtoList(Map<String, Object> inParams);
-	List<HistoryDataDto> selectHistoryDataByItemId(ItemDto itemDto);
-	List<HistoryDataDto> selectClosingPrice (Map<String, Object> inParam);
+	List<HistoryDataDto> selectHistoryDataList (Map<String, Object> inParam);
 }

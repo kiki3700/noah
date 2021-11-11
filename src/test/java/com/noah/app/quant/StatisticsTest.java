@@ -15,8 +15,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.noah.app.quant.dao.ItemMapper;
-import com.noah.app.util.Statistics;
+import com.noah.app.quant.mapper.ItemMapper;
+import com.noah.app.util.QuantUtils;
 import com.noah.app.vo.HistoryDataDto;
 import com.noah.app.vo.ItemDto;
 
@@ -27,7 +27,7 @@ public class StatisticsTest {
 	ItemMapper itemDao;
 	
 	@Autowired
-	Statistics statistics;
+	QuantUtils statistics;
 	
 	ItemDto itemDto ;
 	
@@ -44,9 +44,9 @@ public class StatisticsTest {
 		String[] strArr = new String[] {"A005930","A001550", "A001680", "A001740", "A001790","A002390"};
 		inParam.put("itemDto",itemDto);
 		inParam.put("period", 254);
-		historyList1 = itemDao.selectClosingPrice(inParam);
+		historyList1 = itemDao.selectHistoryDataList(inParam);
 		itemDto.setId("A001550");
-		historyList2 = itemDao.selectClosingPrice(inParam);
+		historyList2 = itemDao.selectHistoryDataList(inParam);
 		for(int i =0 ; i<6; i++) {
 			ItemDto dto = new ItemDto();
 			dto.setId(strArr[i]);
@@ -61,8 +61,8 @@ public class StatisticsTest {
 		
 		TreeMap<Date, Float> treeMap = statistics.toPriceMap(historyList1);
 		
-		TreeMap<Date, Double> returnMap = statistics.toReturnTreeMap(treeMap);
-		TreeMap<Date, Double> returnMap2 = statistics.toReturnTreeMap(treeMap);
+		TreeMap<Date, Double> returnMap = statistics.toReturnMap(treeMap);
+		TreeMap<Date, Double> returnMap2 = statistics.toReturnMap(treeMap);
 		for(Date date : treeMap.keySet()) {
 			System.out.println(date + " : "+treeMap.get(date));
 		}
@@ -117,8 +117,8 @@ public class StatisticsTest {
 		for(int i = 0 ; i < itemArr.length;i++) {
 			inParam.put("itemDto", itemArr[i]);
 			System.out.println(itemArr[i].getId());
-			historyList1 = itemDao.selectClosingPrice(inParam);
-			treeMapList.add(statistics.toReturnTreeMap(statistics.toPriceMap(historyList1)));
+			historyList1 = itemDao.selectHistoryDataList(inParam);
+			treeMapList.add(statistics.toReturnMap(statistics.toPriceMap(historyList1)));
 		}
 		BigDecimal[][] covArr = new BigDecimal[itemArr.length][itemArr.length];
 		for(int i = 0; i<treeMapList.size();i++) {

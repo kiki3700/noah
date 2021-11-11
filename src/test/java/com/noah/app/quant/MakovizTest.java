@@ -16,9 +16,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.noah.app.quant.dao.IndexHistoryDataMapper;
-import com.noah.app.quant.dao.ItemMapper;
-import com.noah.app.util.Statistics;
+import com.noah.app.quant.mapper.IndexHistoryDataMapper;
+import com.noah.app.quant.mapper.ItemMapper;
+import com.noah.app.util.QuantUtils;
 import com.noah.app.vo.HistoryDataDto;
 import com.noah.app.vo.IndexHistoryDataDto;
 import com.noah.app.vo.ItemDto;
@@ -27,7 +27,7 @@ import com.noah.app.vo.ItemDto;
 @SpringBootTest
 public class MakovizTest {
 	@Autowired
-	Statistics sta;
+	QuantUtils sta;
 	@Autowired
 	IndexHistoryDataMapper idxMapper;
 	@Autowired
@@ -58,7 +58,7 @@ public class MakovizTest {
 			ItemDto item = new ItemDto();
 			item.setId(arr[i]);
 			inParam.put("itemDto", item);
-			List<HistoryDataDto> histList = itmMapper.selectClosingPrice(inParam);
+			List<HistoryDataDto> histList = itmMapper.selectHistoryDataList(inParam);
 			TreeMap<Date,Float> treeMap = sta.toPriceMap(histList);
 			stockPricemapList.add(treeMap);
 		}

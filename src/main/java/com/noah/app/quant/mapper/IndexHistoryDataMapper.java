@@ -1,4 +1,4 @@
-package com.noah.app.quant.dao;
+package com.noah.app.quant.mapper;
 
 import java.util.HashMap;
 import java.util.List;
