@@ -23,6 +23,7 @@ public class HistroyDataDtoTest {
 	
 	ItemDto itemDto ;
 	HashMap<String, Object> map ;
+	String[] arr = new String[] {};
 	@Before
 	public void init() {
 		map = new HashMap<>();
@@ -30,6 +31,7 @@ public class HistroyDataDtoTest {
 		itemDto.setId("A005930");
 		map.put("itemDto", itemDto);
 		map.put("period", 300);
+		
 	}
 	@Test
 	public void test() {

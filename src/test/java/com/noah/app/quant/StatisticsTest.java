@@ -1,5 +1,6 @@
 package com.noah.app.quant;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -39,7 +40,7 @@ public class StatisticsTest {
 		inParam = new HashMap<>();
 		itemDto = new ItemDto();
 		itemArr = new ItemDto[6];
-		itemDto.setId("A005930");
+		itemDto.setId("A035720");
 		String[] strArr = new String[] {"A005930","A001550", "A001680", "A001740", "A001790","A002390"};
 		inParam.put("itemDto",itemDto);
 		inParam.put("period", 254);
@@ -58,18 +59,51 @@ public class StatisticsTest {
 	@Test
 	public void getStat() {
 		
-		TreeMap<Date, Float> treeMap = statistics.toTreeMap(historyList1);
+		TreeMap<Date, Float> treeMap = statistics.toPriceMap(historyList1);
 		
-		TreeMap<Date, Double> returnMap = statistics.toReturnTreeMap(historyList1);
-		TreeMap<Date, Double> returnMap2 = statistics.toReturnTreeMap(historyList1);
+		TreeMap<Date, Double> returnMap = statistics.toReturnTreeMap(treeMap);
+		TreeMap<Date, Double> returnMap2 = statistics.toReturnTreeMap(treeMap);
 		for(Date date : treeMap.keySet()) {
 			System.out.println(date + " : "+treeMap.get(date));
 		}
 		for(Date date : returnMap.keySet()) {
-			System.out.println(date+" : " +returnMap.get(date)*100+"%");
+//			System.out.println(date+" : " +returnMap.get(date));
 		}
+		
+		double mean = 1;
+		int l = returnMap.size();
+		for(Date date : returnMap.keySet()) {
+			mean *= (returnMap.get(date)+1);
+		}
+		mean = Math.pow(mean, (float)1/l)-1;
+		
+		
+		System.out.println("geoMea "+mean);
 		System.out.println("geoMean "+statistics.calGeoMean(returnMap));
+		
+		double cumRet = 1;
+		l = returnMap.size();
+		for(Date date : returnMap.keySet()) {
+			cumRet*= (returnMap.get(date)+1);
+		}
+		cumRet -=1;
+		System.out.println("cumRet "+cumRet);
+		System.out.println("cumRet "+statistics.calCumRet(returnMap));
+		
+		double vol = 0;
+		for(Date date : returnMap.keySet()) {
+			vol += Math.pow((returnMap.get(date)-mean),2);
+		}
+		vol = vol/(l-1);
+		
+		System.out.println("var "+ vol);
 		System.out.println("var " + statistics.calVol(returnMap));
+		
+		System.out.println("stdv "+Math.pow(vol, 0.5));
+		System.out.println("stdv " + statistics.calStdv(returnMap));
+		
+		
+		
 		System.out.println("cov "+ statistics.calCov(returnMap, returnMap2));
 		System.out.println("cor "+ (statistics.calCor(returnMap, returnMap2)));
 	}
@@ -84,12 +118,12 @@ public class StatisticsTest {
 			inParam.put("itemDto", itemArr[i]);
 			System.out.println(itemArr[i].getId());
 			historyList1 = itemDao.selectClosingPrice(inParam);
-			treeMapList.add(statistics.toReturnTreeMap(statistics.toTreeMap(historyList1)));
+			treeMapList.add(statistics.toReturnTreeMap(statistics.toPriceMap(historyList1)));
 		}
-		double[][] covArr = new double[itemArr.length][itemArr.length];
+		BigDecimal[][] covArr = new BigDecimal[itemArr.length][itemArr.length];
 		for(int i = 0; i<treeMapList.size();i++) {
 			for(int j = 0; j<treeMapList.size();j++) {
-				double cov = statistics.calCor(treeMapList.get(i), treeMapList.get(j));
+				BigDecimal cov = statistics.calCov(treeMapList.get(i), treeMapList.get(j));
 				covArr[i][j] = cov;
 			}
 		}
