@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.noah.app.quantItemDao">
+<mapper namespace="com.noah.app.quant.dao.ItemMapper">
 	<select id = 'selectItemDtoList' parameterType ='HashMap' resultType = 'com.noah.app.vo.ItemDto'>
 		SELECT *
 			FROM ITEM
@@ -8,17 +8,30 @@
 			<if test = "market !=null and market!=''">
 				AND MARKET = #{market}
 			</if>
-			<if test = "sector != null and sector != ''">
-				AND SECTOR = #{sector}
+			<if test = "industry != null and industry != ''">
+				AND industry = #{industry}
 			</if>
 			<if test = "corpSize != null and corpSize!= ''">
 				And corp_size = #{corpSize}
 			</if>
 	</select>
-	<select id = "selectHistoryDataByItemId" parameterType = "com.noah.app.vo.ItemDto" resultType ="java.util.LinkedHashMap">
-		SELECT * FROM HISTORY_DATA WHERE ITEM_ID = #{ID} ORDER BY TRADING_DATE DESC LIMIT 255
-	</select>
-		<select id = "selectHistoryDataByItemId" parameterType = "com.noah.app.vo.StockWrapper" resultType ="java.util.LinkedHashMap">
-		SELECT * FROM HISTORY_DATA WHERE ITEM_ID = #{ID} ORDER BY TRADING_DATE DESC LIMIT 255
+	
+
+	<!-- 지워버릴것  -->
+	<select id = "selectHistoryDataList" parameterType = "HashMap" resultType ="com.noah.app.vo.HistoryDataDto">
+		
+			SELECT 
+			*
+            FROM(SELECT * FROM HISTORY_DATA WHERE ITEM_ID = #{itemDto.id}
+            ORDER BY TRADING_DATE DESC) T 
+ 			WHERE 1=1
+            	<choose>
+            		<when test ="period != null">
+            			AND ROWNUM <![CDATA[  <= ]]> #{period} 
+            		</when>
+            		<otherwise>
+						AND ROWNUM <![CDATA[  <= ]]> 255
+					</otherwise>
+				</choose>
 	</select>
 </mapper>

@@ -1,0 +1,83 @@
+2021-11-09 07:30:42.089  INFO 21768 --- [main] com.noah.app.quant.OjAlgoMatrix          : Starting OjAlgoMatrix using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 21768 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-09 07:30:42.098  INFO 21768 --- [main] com.noah.app.quant.OjAlgoMatrix          : No active profile set, falling back to default profiles: default
+2021-11-09 07:30:43.106  WARN 21768 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-09 07:30:46.055  INFO 21768 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-09 07:30:46.871  WARN 21768 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-09 07:30:47.189  INFO 21768 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-09 07:30:47.214  INFO 21768 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-09 07:30:47.248  INFO 21768 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-09 07:30:47.273  INFO 21768 --- [main] com.noah.app.quant.OjAlgoMatrix          : Started OjAlgoMatrix in 5.526 seconds (JVM running for 6.507)
+2021-11-09 07:37:56.883  INFO 14888 --- [main] com.noah.app.quant.OjAlgoMatrix          : Starting OjAlgoMatrix using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 14888 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-09 07:37:56.885  INFO 14888 --- [main] com.noah.app.quant.OjAlgoMatrix          : No active profile set, falling back to default profiles: default
+2021-11-09 07:37:57.878  WARN 14888 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-09 07:38:00.772  INFO 14888 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-09 07:38:01.587  WARN 14888 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-09 07:38:01.899  INFO 14888 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-09 07:38:01.927  INFO 14888 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-09 07:38:01.956  INFO 14888 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-09 07:38:01.979  INFO 14888 --- [main] com.noah.app.quant.OjAlgoMatrix          : Started OjAlgoMatrix in 5.401 seconds (JVM running for 6.303)
+2021-11-09 08:39:53.913  INFO 5156 --- [main] com.noah.app.quant.StatisticsTest        : Starting StatisticsTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 5156 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-09 08:39:53.916  INFO 5156 --- [main] com.noah.app.quant.StatisticsTest        : No active profile set, falling back to default profiles: default
+2021-11-09 08:39:54.933  WARN 5156 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-09 08:39:57.967  INFO 5156 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-09 08:39:58.779  WARN 5156 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-09 08:39:59.093  INFO 5156 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-09 08:39:59.126  INFO 5156 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-09 08:39:59.159  INFO 5156 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-09 08:39:59.183  INFO 5156 --- [main] com.noah.app.quant.StatisticsTest        : Started StatisticsTest in 5.583 seconds (JVM running for 6.487)
+2021-11-09 08:39:59.459  INFO 5156 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-09 08:39:59.902  INFO 5156 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-09 08:40:01.158  INFO 5156 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-09 08:40:01.175  INFO 5156 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-09 08:45:23.285  INFO 3204 --- [main] com.noah.app.quant.StatisticsTest        : Starting StatisticsTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 3204 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-09 08:45:23.287  INFO 3204 --- [main] com.noah.app.quant.StatisticsTest        : No active profile set, falling back to default profiles: default
+2021-11-09 08:45:24.282  WARN 3204 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-09 08:45:27.167  INFO 3204 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-09 08:45:27.962  WARN 3204 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-09 08:45:28.286  INFO 3204 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-09 08:45:28.310  INFO 3204 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-09 08:45:28.344  INFO 3204 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-09 08:45:28.366  INFO 3204 --- [main] com.noah.app.quant.StatisticsTest        : Started StatisticsTest in 5.402 seconds (JVM running for 6.306)
+2021-11-09 08:45:28.633  INFO 3204 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-09 08:45:29.048  INFO 3204 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-09 08:45:29.767  INFO 3204 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-09 08:45:29.786  INFO 3204 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-09 08:47:25.979  INFO 15612 --- [main] com.noah.app.quant.StatisticsTest        : Starting StatisticsTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 15612 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-09 08:47:25.982  INFO 15612 --- [main] com.noah.app.quant.StatisticsTest        : No active profile set, falling back to default profiles: default
+2021-11-09 08:47:26.970  WARN 15612 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-09 08:47:29.844  INFO 15612 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-09 08:47:30.643  WARN 15612 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-09 08:47:30.959  INFO 15612 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-09 08:47:30.989  INFO 15612 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-09 08:47:31.019  INFO 15612 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-09 08:47:31.044  INFO 15612 --- [main] com.noah.app.quant.StatisticsTest        : Started StatisticsTest in 5.366 seconds (JVM running for 6.246)
+2021-11-09 08:47:31.290  INFO 15612 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-09 08:47:31.645  INFO 15612 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-09 08:47:32.395  INFO 15612 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-09 08:47:32.481  INFO 15612 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-09 08:47:59.718  INFO 15104 --- [main] com.noah.app.quant.StatisticsTest        : Starting StatisticsTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 15104 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-09 08:47:59.720  INFO 15104 --- [main] com.noah.app.quant.StatisticsTest        : No active profile set, falling back to default profiles: default
+2021-11-09 08:48:00.715  WARN 15104 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-09 08:48:03.667  INFO 15104 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-09 08:48:04.485  WARN 15104 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-09 08:48:04.793  INFO 15104 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-09 08:48:04.816  INFO 15104 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-09 08:48:04.850  INFO 15104 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-09 08:48:04.873  INFO 15104 --- [main] com.noah.app.quant.StatisticsTest        : Started StatisticsTest in 5.461 seconds (JVM running for 6.413)
+2021-11-09 08:48:05.107  INFO 15104 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-09 08:48:05.475  INFO 15104 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-09 08:48:06.241  INFO 15104 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-09 08:48:06.293  INFO 15104 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-09 08:48:21.453  INFO 20736 --- [main] com.noah.app.quant.StatisticsTest        : Starting StatisticsTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 20736 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-09 08:48:21.456  INFO 20736 --- [main] com.noah.app.quant.StatisticsTest        : No active profile set, falling back to default profiles: default
+2021-11-09 08:48:22.437  WARN 20736 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-09 08:48:25.334  INFO 20736 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-09 08:48:26.139  WARN 20736 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-09 08:48:26.461  INFO 20736 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-09 08:48:26.485  INFO 20736 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-09 08:48:26.519  INFO 20736 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-09 08:48:26.542  INFO 20736 --- [main] com.noah.app.quant.StatisticsTest        : Started StatisticsTest in 5.411 seconds (JVM running for 6.294)
+2021-11-09 08:48:26.790  INFO 20736 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-09 08:48:27.170  INFO 20736 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-09 08:48:27.949  INFO 20736 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-09 08:48:28.003  INFO 20736 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

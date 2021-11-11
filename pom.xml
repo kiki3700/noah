@@ -105,6 +105,18 @@
 		    <artifactId>commons-math3</artifactId>
 		    <version>3.0</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.ojalgo/ojalgo-finance -->
+		<dependency>
+		    <groupId>org.ojalgo</groupId>
+		    <artifactId>ojalgo-finance</artifactId>
+		    <version>2.4.0</version>
+		</dependency>
+			<!-- https://mvnrepository.com/artifact/org.ojalgo/ojalgo -->
+		<dependency>
+		    <groupId>org.ojalgo</groupId>
+		    <artifactId>ojalgo</artifactId>
+		    <version>49.2.1</version>
+		</dependency>
 				
 	</dependencies>
 

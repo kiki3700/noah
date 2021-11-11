@@ -3,11 +3,12 @@ package com.noah.app.quant.service.serviceImpl;
 import java.util.List;
 import java.util.Map;
 
+import org.ojalgo.series.CalendarDateSeries;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.noah.app.quant.calculator.portfolioStrategy.StockPicker;
-import com.noah.app.quant.dao.ItemDao;
+import com.noah.app.quant.mapper.ItemMapper;
 import com.noah.app.quant.service.QuantService;
 import com.noah.app.vo.ItemDto;
 
@@ -15,7 +16,7 @@ import com.noah.app.vo.ItemDto;
 public class QuantServiceImpl implements QuantService{
 	
 	@Autowired
-	ItemDao itemDao;
+	ItemMapper itemDao;
 	
 	@Autowired
 	StockPicker StockPicker;
@@ -33,4 +34,5 @@ public class QuantServiceImpl implements QuantService{
 		List<ItemDto> itemDtoList = itemDao.selectItemDtoList(inParams);
 		return itemDtoList;
 	}
+	
 }

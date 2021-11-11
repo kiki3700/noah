@@ -1,17 +1,18 @@
-package com.noah.app.quant.dao;
+package com.noah.app.quant.mapper;
 
+import java.sql.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.annotations.MapKey;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.noah.app.vo.HistoryDataDto;
 import com.noah.app.vo.ItemDto;
-import com.noah.app.vo.StockWrapper;
 
 @Mapper
-public interface ItemDao {
+public interface ItemMapper {
 	List<ItemDto> selectItemDtoList(Map<String, Object> inParams);
-	List<HistoryDataDto> selectHistoryDataByItemId(ItemDto itemDto);
-	List<HistoryDataDto> selectHistoryDataByItemId(StockWrapper StockWrapper);
+	List<HistoryDataDto> selectHistoryDataList (Map<String, Object> inParam);
 }

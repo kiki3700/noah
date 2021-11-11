@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.noah.app.quant.dao.IndexHistoryDataMapper">
+	<select id="selectIndexHistoryDataList" parameterType ='HashMap' resultType='com.noah.app.vo.IndexHistoryDataDto'>
+			SELECT 
+				*
+            FROM(SELECT * FROM INDEX_HISTORY_DATA WHERE INDEX_NAME = #{indexName}
+            ORDER BY INDEX_DATE DESC) T 
+ 			<where>
+ 				<choose>
+ 					<when test="period != null">
+ 						AND ROWNUM <![CDATA[  <= ]]> #{period} 
+            		</when>
+            		<otherwise>
+						AND ROWNUM <![CDATA[  <= ]]> 255
+					</otherwise>
+ 				</choose>
+ 			</where>
+	</select>
+</mapper>
