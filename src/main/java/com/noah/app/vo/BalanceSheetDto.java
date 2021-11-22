@@ -1,15 +1,16 @@
 package com.noah.app.vo;
 
+
 import java.util.Date;
 
 public class BalanceSheetDto {
-	private int id;
-	private int itemId;					//아이템아이디
-	private Date reportingYear;		 	//회계연도
+	private String id;
+	private String itemId;					//아이템아이디
+	private int reportingYear;		 	//회계연도
 	private String reportCode;			//리포트 코드 (1q, 2q, 3,q 4q)
 	private String fsNm;				//연결재무제표 or 재무제표
 	private double revenue;				//매출
-	private double operatinIncome;			//영업이익
+	private double operatingIncome;			//영업이익
 	private double netIncome;				//당기순이익
 	private double asset;					//자산
 	private double debt;					//부채
@@ -18,28 +19,29 @@ public class BalanceSheetDto {
 	private double totalNonCurrentAsset;	//장기자산(설비, 부동산 등)
 	private double shortTermDebt;			//단기 부채
 	private double longTermDebt;			//장기 부채
-	private double OCF;					//영업현금흐름
-	private double ICF;					//투자현금흐름
-	private double FCF;					//재무현금흐름
-	
+	private double retainedEarning;
+
+	private double earningBeforeTax;
+
+
 	public BalanceSheetDto() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
-	public int getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
-	public int getItemId() {
+	public String getItemId() {
 		return itemId;
 	}
-	public void setItemId(int itemId) {
+	public void setItemId(String itemId) {
 		this.itemId = itemId;
 	}
-	public Date getReportingYear() {
+	public int getReportingYear() {
 		return reportingYear;
 	}
 	public String getFsNm() {
@@ -50,7 +52,7 @@ public class BalanceSheetDto {
 		this.fsNm = fsNm;
 	}
 
-	public void setReportingYear(Date reportingYear) {
+	public void setReportingYear(int reportingYear) {
 		this.reportingYear = reportingYear;
 	}
 	public String getReportCode() {
@@ -65,11 +67,11 @@ public class BalanceSheetDto {
 	public void setRevenue(double revenue) {
 		this.revenue = revenue;
 	}
-	public double getOperatinIncome() {
-		return operatinIncome;
+	public double getOperatingIncome() {
+		return operatingIncome;
 	}
-	public void setOperatinIncome(double operatinIncome) {
-		this.operatinIncome = operatinIncome;
+	public void setOperatingIncome(double operatingIncome) {
+		this.operatingIncome = operatingIncome;
 	}
 	public double getNetIncome() {
 		return netIncome;
@@ -119,32 +121,30 @@ public class BalanceSheetDto {
 	public void setLongTermDebt(double longTermDebt) {
 		this.longTermDebt = longTermDebt;
 	}
-	public double getOCF() {
-		return OCF;
-	}
-	public void setOCF(double oCF) {
-		OCF = oCF;
-	}
-	public double getICF() {
-		return ICF;
-	}
-	public void setICF(double iCF) {
-		ICF = iCF;
-	}
-	public double getFCF() {
-		return FCF;
-	}
-	public void setFCF(double fCF) {
-		FCF = fCF;
+	public double getEarningBeforeTax() {
+		return earningBeforeTax;
 	}
 
+	public void setEarningBeforeTax(double earningBeforeTax) {
+		this.earningBeforeTax = earningBeforeTax;
+	}
+	public double getRetainedEarningEaring() {
+		return retainedEarning;
+	}
+
+	public void setRetainedEarning(double retainedEarning) {
+		this.retainedEarning = retainedEarning;
+	}
+	
 	@Override
 	public String toString() {
 		return "BalanceSheetDto [id=" + id + ", itemId=" + itemId + ", reportingYear=" + reportingYear + ", reportCode="
-				+ reportCode + ", fsNm=" + fsNm + ", revenue=" + revenue + ", operatinIncome=" + operatinIncome
+				+ reportCode + ", fsNm=" + fsNm + ", revenue=" + revenue + ", operatingIncome=" + operatingIncome
 				+ ", netIncome=" + netIncome + ", asset=" + asset + ", debt=" + debt + ", equity=" + equity
 				+ ", currentAsset=" + currentAsset + ", totalNonCurrentAsset=" + totalNonCurrentAsset
-				+ ", shortTermDebt=" + shortTermDebt + ", longTermDebt=" + longTermDebt + ", OCF=" + OCF + ", ICF="
-				+ ICF + ", FCF=" + FCF + "]";
+				+ ", shortTermDebt=" + shortTermDebt + ", longTermDebt=" + longTermDebt + ", retainedEarning="
+				+ retainedEarning + ", earningBeforeTax=" + earningBeforeTax + "]";
 	}
+
+	
 }

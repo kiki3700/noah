@@ -27,7 +27,7 @@ public class TreeFactorModel {
 	QuantUtils quant;
 	
 	@Autowired
-	ItemMapper itemDao;
+	ItemMapper itemMapper;
 	
 	@Autowired
 	BalanceSheetMapper balanceSheetDao;
@@ -57,7 +57,7 @@ public class TreeFactorModel {
 			HashMap<String, Object> inParams = new HashMap<>();
 			inParams.put("period", BusinessDays.ONEYEAR.getDates());
 			inParams.put("itemDto", item);
-			List<HistoryDataDto> historyDataDtoList = itemDao.selectHistoryDataList(inParams);
+			List<HistoryDataDto> historyDataDtoList = itemMapper.selectHistoryDataList(inParams);
 			TreeMap<Date, Float> priceMap = quant.toPriceMap(historyDataDtoList);
 			TreeMap<Date, Double> returnMap = quant.toReturnMap(priceMap);
 			/*밸런스 시트 관련해서 로직 생각해보기*/
@@ -86,7 +86,7 @@ public class TreeFactorModel {
 			perMap.put(item.getId(), per);
 			pbrMap.put(item.getId(), pbr);
 			
-			double operateIncome = balanceSheet.getOperatinIncome();
+			double operateIncome = balanceSheet.getOperatingIncome();
 			double revenue = balanceSheet.getRevenue();
 			
 			double roe = ni/equity;

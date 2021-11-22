@@ -15,7 +15,7 @@ public class StockPicker {
 	
 	
 	@Autowired
-	ItemMapper itemDao;
+	ItemMapper itemMapper;
 	
 	@Autowired
 	TreeFactorModel treeFactorModel;
@@ -23,7 +23,7 @@ public class StockPicker {
 	 * 언러키 컨트롤러로 inParam
 	 */
 	public List<ItemDto> sortStockByStrategy(Map<String, Object> inParam){
-		List<ItemDto> itemList = itemDao.selectItemDtoList(inParam);
+		List<ItemDto> itemList = itemMapper.selectItemDtoList(inParam);
 		String pickUpStrategy =(String) inParam.getOrDefault("pickUpStrategy", "");
 		List<ItemDto> filteredStockList = new ArrayList<>();
 		switch(pickUpStrategy) {

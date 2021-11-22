@@ -18,7 +18,7 @@ public class StockDivder {
 	QuantUtils statistics;
 	
 	@Autowired
-	ItemMapper itemDao;
+	ItemMapper itemMapper;
 	
 	public List<ItemDto> divideWeight(List<ItemDto> itemList, Map<String, Object> inParam){
 		String divideStrategy = (String) inParam.getOrDefault("divideStrategy", "");

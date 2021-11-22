@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.noah.app.quant.dao.ItemMapper">
+<mapper namespace="com.noah.app.quant.mapper.ItemMapper">
 	<select id = 'selectItemDtoList' parameterType ='HashMap' resultType = 'com.noah.app.vo.ItemDto'>
 		SELECT *
-			FROM ITEM
+			FROM ITEM A
+			 LEFT JOIN (SELECT ITEM_ID FROM HISTORY_DATA GROUP BY(ITEM_ID) HAVING COUNT(*) > 255 ) B ON A.ID = B.ITEM_ID
 			WHERE IS_ACTIVE ='CPC_STOCK_STATUS_NORMAL'
 			<if test = "market !=null and market!=''">
-				AND MARKET = #{market}
+				AND A.MARKET = #{market}
 			</if>
 			<if test = "industry != null and industry != ''">
-				AND industry = #{industry}
+				AND A.industry = #{industry}
 			</if>
 			<if test = "corpSize != null and corpSize!= ''">
-				And corp_size = #{corpSize}
+				And A.corp_size = #{corpSize}
+			</if>
+			<if test = "baseYear != null">
+                AND
+				B.ITEM_ID IS NOT NULL
 			</if>
 	</select>
 	

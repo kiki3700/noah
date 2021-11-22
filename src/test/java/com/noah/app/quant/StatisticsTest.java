@@ -24,7 +24,7 @@ import com.noah.app.vo.ItemDto;
 @SpringBootTest
 public class StatisticsTest {
 	@Autowired
-	ItemMapper itemDao;
+	ItemMapper itemMapper;
 	
 	@Autowired
 	QuantUtils statistics;
@@ -44,9 +44,9 @@ public class StatisticsTest {
 		String[] strArr = new String[] {"A005930","A001550", "A001680", "A001740", "A001790","A002390"};
 		inParam.put("itemDto",itemDto);
 		inParam.put("period", 254);
-		historyList1 = itemDao.selectHistoryDataList(inParam);
+		historyList1 = itemMapper.selectHistoryDataList(inParam);
 		itemDto.setId("A001550");
-		historyList2 = itemDao.selectHistoryDataList(inParam);
+		historyList2 = itemMapper.selectHistoryDataList(inParam);
 		for(int i =0 ; i<6; i++) {
 			ItemDto dto = new ItemDto();
 			dto.setId(strArr[i]);
@@ -117,7 +117,7 @@ public class StatisticsTest {
 		for(int i = 0 ; i < itemArr.length;i++) {
 			inParam.put("itemDto", itemArr[i]);
 			System.out.println(itemArr[i].getId());
-			historyList1 = itemDao.selectHistoryDataList(inParam);
+			historyList1 = itemMapper.selectHistoryDataList(inParam);
 			treeMapList.add(statistics.toReturnMap(statistics.toPriceMap(historyList1)));
 		}
 		BigDecimal[][] covArr = new BigDecimal[itemArr.length][itemArr.length];
