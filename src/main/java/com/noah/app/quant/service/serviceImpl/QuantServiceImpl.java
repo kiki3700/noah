@@ -16,7 +16,7 @@ import com.noah.app.vo.ItemDto;
 public class QuantServiceImpl implements QuantService{
 	
 	@Autowired
-	ItemMapper itemDao;
+	ItemMapper itemMapper;
 	
 	@Autowired
 	StockPicker StockPicker;
@@ -31,7 +31,7 @@ public class QuantServiceImpl implements QuantService{
 	 */
 	@Override
 	public List<ItemDto> pickStocks(Map<String, Object> inParams){
-		List<ItemDto> itemDtoList = itemDao.selectItemDtoList(inParams);
+		List<ItemDto> itemDtoList = itemMapper.selectItemDtoList(inParams);
 		return itemDtoList;
 	}
 	

@@ -17,7 +17,7 @@ import com.noah.app.vo.ItemDto;
 @SpringBootTest
 public class itemMapperTest {
 	@Autowired
-	ItemMapper itemDao;
+	ItemMapper itemMapper;
 	
 	@Autowired
 	StockPicker stockPicker;
@@ -27,7 +27,7 @@ public class itemMapperTest {
 	@Test
 	public void marketTest() {
 		inParam.put("market", "CPC_MARKET_KOSPI");
-		List<ItemDto> itemList =itemDao.selectItemDtoList(inParam);
+		List<ItemDto> itemList =itemMapper.selectItemDtoList(inParam);
 		for(ItemDto item : itemList) {
 			if(!item.getMarket().equals("CPC_MARKET_KOSPI")) System.out.println(item.getMarket());
 		}
@@ -36,7 +36,7 @@ public class itemMapperTest {
 	public void marketSector() {
 		inParam.put("market", "CPC_MARKET_KOSPI");
 		inParam.put("industry","화학");
-		List<ItemDto> itemList =itemDao.selectItemDtoList(inParam);
+		List<ItemDto> itemList =itemMapper.selectItemDtoList(inParam);
 		for(ItemDto item : itemList) {
 			 System.out.println(item.getIndustry());
 		}
@@ -46,7 +46,7 @@ public class itemMapperTest {
 		inParam.put("market", "CPC_MARKET_KOSPI");
 		inParam.put("industry","화학");
 		inParam.put("corpSize","CPC_CAPITAL_MIDDLE");
-		List<ItemDto> itemList =itemDao.selectItemDtoList(inParam);
+		List<ItemDto> itemList =itemMapper.selectItemDtoList(inParam);
 		for(ItemDto item : itemList) {
 			 System.out.println(item.getCorpSize());
 		}

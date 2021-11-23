@@ -7,5 +7,5 @@ import com.noah.app.vo.ItemDto;
 
 @Mapper
 public interface BalanceSheetMapper {
-	BalanceSheetDto selectBalanceSheet(ItemDto itemDto);
+	BalanceSheetDto selectBalanceSheetByYear(ItemDto itemDto);
 }

@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.noah.app.constants.BusinessDays;
+import com.noah.app.quant.dao.BatchDao;
 import com.noah.app.quant.mapper.BalanceSheetMapper;
 import com.noah.app.quant.mapper.ItemMapper;
 import com.noah.app.util.QuantUtils;
@@ -27,10 +28,18 @@ public class TreeFactorModel {
 	QuantUtils quant;
 	
 	@Autowired
-	ItemMapper itemDao;
+	ItemMapper itemMapper;
+	
+	@Autowired
+	BatchDao batchDto;
 	
 	@Autowired
 	BalanceSheetMapper balanceSheetDao;
+	
+	public List<ItemDto> filt(Map<String, Object> inParam, List<ItemDto> itemList){
+
+		return null;
+	}
 	
 	public List<ItemDto> filter(Map<String, Object> inParam, List<ItemDto> itemList){
 		/*
@@ -41,6 +50,8 @@ public class TreeFactorModel {
 		 * 표준화 한다음에 합친다.
 		 */
 		//momentTumValue 3m, 6m, 12m rate of return
+		
+		
 		HashMap<String, Double> threeMonthReturnMap = new HashMap<>(); 
 		HashMap<String, Double> sixMonthReturnMap = new HashMap<>(); 
 		HashMap<String, Double> oneYearReturnMap = new HashMap<>(); 
@@ -52,21 +63,28 @@ public class TreeFactorModel {
 		//quality
 		HashMap<String, Double> roeMap = new HashMap<>();
 		HashMap<String, Double> opmMap = new HashMap<>();
-		
+		List<ItemDto> nullItemDtoList = new ArrayList<>();
+		int cnt = 0;
 		for(ItemDto item : itemList) {
-			HashMap<String, Object> inParams = new HashMap<>();
-			inParams.put("period", BusinessDays.ONEYEAR.getDates());
-			inParams.put("itemDto", item);
-			List<HistoryDataDto> historyDataDtoList = itemDao.selectHistoryDataList(inParams);
-			TreeMap<Date, Float> priceMap = quant.toPriceMap(historyDataDtoList);
-			TreeMap<Date, Double> returnMap = quant.toReturnMap(priceMap);
-			/*밸런스 시트 관련해서 로직 생각해보기*/
-			BalanceSheetDto balanceSheet = balanceSheetDao.selectBalanceSheet(item);
-			//get momentum Value;
-			if(historyDataDtoList.size()<255) {
-				itemList.remove(item);
+			BalanceSheetDto balanceSheet = balanceSheetDao.selectBalanceSheetByYear(item);
+			if(balanceSheet == null) {
 				continue;
 			}
+			HashMap<String, Object> inParams = new HashMap<>();
+			inParams.put("period", BusinessDays.ONEYEAR.getDates());
+			inParams.put("itemDto", item);			
+			List<HistoryDataDto> historyDataDtoList = itemMapper.selectHistoryDataList(inParams);
+			if(historyDataDtoList.size()<255) {
+				
+				continue;
+			}
+			TreeMap<Date, Float> priceMap = quant.toPriceMap(historyDataDtoList);
+			TreeMap<Date, Double> returnMap = quant.toReturnMap(priceMap);
+
+			/*밸런스 시트 관련해서 로직 생각해보기*/
+			
+			//get momentum Value;
+
 			threeMonthReturnMap.put(item.getId(), quant.calCumRet(returnMap, BusinessDays.THREEMONTHS).doubleValue()); 
 			sixMonthReturnMap.put(item.getId(), quant.calCumRet(returnMap,BusinessDays.SIXMONTHS).doubleValue());
 			oneYearReturnMap.put(item.getId(), quant.calCumRet(returnMap, BusinessDays.ONEYEAR).doubleValue());
@@ -86,7 +104,7 @@ public class TreeFactorModel {
 			perMap.put(item.getId(), per);
 			pbrMap.put(item.getId(), pbr);
 			
-			double operateIncome = balanceSheet.getOperatinIncome();
+			double operateIncome = balanceSheet.getOperatingIncome();
 			double revenue = balanceSheet.getRevenue();
 			
 			double roe = ni/equity;
@@ -94,6 +112,8 @@ public class TreeFactorModel {
 			
 			roeMap.put(item.getId(), roe);
 			opmMap.put(item.getId(), opm);
+			cnt++;
+			
 		}
 		/*
 		 * z-score 맵 구하기
