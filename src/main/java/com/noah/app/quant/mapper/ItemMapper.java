@@ -15,4 +15,8 @@ import com.noah.app.vo.ItemDto;
 public interface ItemMapper {
 	List<ItemDto> selectItemDtoList(Map<String, Object> inParams);
 	List<HistoryDataDto> selectHistoryDataList (Map<String, Object> inParam);
+	List<HistoryDataDto> selectHistoryDataListUnion(List<ItemDto> itemDtoList);
+	List<HistoryDataDto> selectHistoryDataByYear();
+	List<HistoryDataDto> selectHistoryDataL(ItemDto itemDto);
+	int selectBusinessDates();
 }
