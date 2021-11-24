@@ -7,7 +7,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.noah.app.quant.calculator.portfolioStrategy.filterStrategy.TreeFactorModel;
+import com.noah.app.quant.calculator.portfolioStrategy.filterStrategy.ThreeFactorModel;
 import com.noah.app.quant.mapper.ItemMapper;
 import com.noah.app.vo.ItemDto;
 @Component
@@ -18,7 +18,7 @@ public class StockPicker {
 	ItemMapper itemMapper;
 	
 	@Autowired
-	TreeFactorModel treeFactorModel;
+	ThreeFactorModel threeFactorModel;
 	/*
 	 * 언러키 컨트롤러로 inParam
 	 */
@@ -28,7 +28,7 @@ public class StockPicker {
 		List<ItemDto> filteredStockList = new ArrayList<>();
 		switch(pickUpStrategy) {
 		case "3factor":
-			filteredStockList=treeFactorModel.filter(inParam, itemList);
+			filteredStockList=threeFactorModel.filter(inParam, itemList);
 		}
 		return filteredStockList;
 	}

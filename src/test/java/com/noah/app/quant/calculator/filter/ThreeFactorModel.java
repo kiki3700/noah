@@ -1,30 +1,30 @@
 package com.noah.app.quant.calculator.filter;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-import java.util.TreeMap;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.noah.app.constants.BusinessDays;
-import com.noah.app.quant.calculator.portfolioStrategy.filterStrategy.TreeFactorModel;
 import com.noah.app.quant.dao.BatchDao;
 import com.noah.app.quant.mapper.ItemMapper;
 import com.noah.app.util.QuantUtils;
-import com.noah.app.vo.HistoryDataDto;
 import com.noah.app.vo.ItemDto;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class ThreeFactorModel {
+	
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
+	
 	@Autowired
-	TreeFactorModel threeFactorModel;
+	ThreeFactorModel threeFactorModel;
 	
 	@Autowired
 	ItemMapper itemMapper;
@@ -100,14 +100,32 @@ public class ThreeFactorModel {
 //////			System.out.println(resultMap.get(key));
 ////		}
 //	}
+//	@Test
+//	public void selectPriceTreeMapPerformance() {
+//		HashMap<String,TreeMap<Date,Float>> map = batchDao.selectPriceDataTreeMap(itemDtoList);
+//		for(String key : map.keySet()) {
+//			System.out.println(map.get(key).toString());
+//		}
+//	}
+//	@Test
+//	public void retainedKey() {
+//		HashMap<String,TreeMap<Date,Float>> priMap = batchDao.selectPriceDataTreeMap(itemDtoList);
+//		HashMap<String, BalanceSheetDto> balMap = batchDao.selectBalanceSheetMap(itemDtoList);
+//		Set<String> priKey = priMap.keySet();
+//		Set<String> balKey = balMap.keySet();
+//		System.out.println(priKey.size());
+//		priKey.retainAll(balKey);
+//		System.out.println(priKey.size());
+//	}
 	@Test
-	public void selectPriceTreeMapPerformance() {
-		HashMap<String,TreeMap<Date,Float>> map = batchDao.selectPriceDataTreeMap(itemDtoList);
-		for(String key : map.keySet()) {
-			System.out.println(map.get(key));
+	public void fiterTest(){
+		HashMap<String, Object> inParam = new HashMap<>();
+		inParam.put("length", 50);
+		List<ItemDto> pickedList =threeFactorModel.filter(inParam, itemDtoList);
+		for(ItemDto item : pickedList) {
+			System.out.println(item);
 		}
 	}
-	
 //	@Test
 //	public void selectBalanceSheetPerformance() {
 //		HashMap<String, BalanceSheetDto> resultMap = batchDao.selectBalanceSheetMap(itemDtoList);
@@ -115,4 +133,10 @@ public class ThreeFactorModel {
 //			System.out.println(resultMap.get(key));
 //		}
 //	}
+
+
+	private List<ItemDto> filter(HashMap<String, Object> inParam2, List<ItemDto> itemDtoList2) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

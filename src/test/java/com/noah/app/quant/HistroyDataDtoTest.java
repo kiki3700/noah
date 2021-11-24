@@ -35,9 +35,9 @@ public class HistroyDataDtoTest {
 	}
 	@Test
 	public void test() {
-		List<HistoryDataDto> list = itemMapper.selectHistoryDataList(map);
-		for(HistoryDataDto data : list) {
-			System.out.println(data);
-		}
+//		List<HistoryDataDto> list = itemMapper.selectHistoryDataList(map);
+//		for(HistoryDataDto data : list) {
+//			System.out.println(data);
+//		}
 	}
 }
