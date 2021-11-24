@@ -8,6 +8,8 @@ import java.util.TreeMap;
 import org.apache.ibatis.session.ExecutorType;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -18,6 +20,9 @@ import com.noah.app.vo.ItemDto;
 
 @Repository
 public class BatchDao {
+	
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
+	
 	@Autowired
 	protected SqlSessionFactory sqlSessionFactory;
 	
@@ -26,12 +31,15 @@ public class BatchDao {
 	
 	//수정 요망
 	public HashMap<String, TreeMap<Date, Double>> selectReturnDataTreeMap(List<ItemDto> itemDtoList, HashMap<String, Object> inParam){
+		logger.debug("==================================");
+		logger.debug("start to select HisthroyData return Map by year");
+		logger.debug("==================================");
 		SqlSession sqlSession = sqlSessionFactory.openSession(ExecutorType.BATCH);
 		HashMap<String, TreeMap<Date, Double>> resultMap = new HashMap<>();
 		try {
 			for(int i =0; i<itemDtoList.size();i++) {
 				inParam.put("itemDto", itemDtoList.get(i));
-				List<HistoryDataDto> historyDataDtoList = sqlSession.selectList("com.noah.app.quant.mapper.ItemMapper.selectHistoryDataList",inParam);
+				List<HistoryDataDto> historyDataDtoList = sqlSession.selectList("com.noah.app.quant.mapper.ItemMapper.selectHistoryDataListByYear",inParam);
 				if(historyDataDtoList.size()==(int) inParam.get("period")) {
 					TreeMap<Date, Float> priceMap = quantUtil.toPriceMap(historyDataDtoList);
 					TreeMap<Date, Double> returnMap = quantUtil.toReturnMap(priceMap);
@@ -52,7 +60,7 @@ public class BatchDao {
 		int BusinessDates = sqlSession.selectOne("com.noah.app.quant.mapper.ItemMapper.selectBusinessDates");
 		try {
 			for(ItemDto itemDto : itemDtoList) {
-				List<HistoryDataDto> historyDataDtoList = sqlSession.selectList("com.noah.app.quant.mapper.ItemMapper.selectHistoryDataL",itemDto);
+				List<HistoryDataDto> historyDataDtoList = sqlSession.selectList("com.noah.app.quant.mapper.ItemMapper.selectHistoryDataListByYear",itemDto);
 				if(historyDataDtoList.size()==(int) BusinessDates) {
 					TreeMap<Date, Float> priceMap = quantUtil.toPriceMap(historyDataDtoList);
 					resultMap.put(itemDto.getId(), priceMap);
@@ -66,14 +74,17 @@ public class BatchDao {
 		return resultMap;
 	}
 	//수정요망
-	public HashMap<String, List<HistoryDataDto>> selectHistoryDataListMap(List<ItemDto> itemDtoList, HashMap<String, Object> inParam){
+	public HashMap<String, List<HistoryDataDto>> selectHistoryDataListMap(List<ItemDto> itemDtoList){
+		logger.debug("==================================");
+		logger.debug("start to select HisthroyData list by year");
+		logger.debug("==================================");
 		SqlSession sqlSession = sqlSessionFactory.openSession(ExecutorType.BATCH);
 		HashMap<String, List<HistoryDataDto>> resultMap = new HashMap<>();
 		int BusinessDates = sqlSession.selectOne("com.noah.app.quant.mapper.ItemMapper.selectBusinessDates");
-		System.out.println("영업일 "+BusinessDates);
+		
 		try {
 			for(ItemDto itemDto : itemDtoList) {
-				List<HistoryDataDto> historyDataDtoList = sqlSession.selectList("com.noah.app.quant.mapper.ItemMapper.selectHistoryDataL",itemDto);
+				List<HistoryDataDto> historyDataDtoList = sqlSession.selectList("com.noah.app.quant.mapper.ItemMapper.selectHistoryDataListByYear",itemDto);
 				if(historyDataDtoList.size()==(int) BusinessDates) {
 					resultMap.put(itemDto.getId(), historyDataDtoList);
 				}
@@ -83,10 +94,16 @@ public class BatchDao {
 			sqlSession.close();
 			sqlSession.clearCache();
 		}
+		logger.debug("==================================");
+		logger.debug("end to select HisthroyData list by year");
+		logger.debug("==================================");
 		return resultMap;
 	}
 	
 	public HashMap<String, BalanceSheetDto> selectBalanceSheetMap(List<ItemDto> itemDtoList){
+		logger.debug("==================================");
+		logger.debug("start to select batch balnceSheet");
+		logger.debug("==================================");
 		SqlSession sqlSession = sqlSessionFactory.openSession(ExecutorType.BATCH);
 		HashMap<String, BalanceSheetDto> resultMap = new HashMap<>();
 		try {
@@ -99,6 +116,9 @@ public class BatchDao {
 			sqlSession.close();
 			sqlSession.clearCache();
 		}
+		logger.debug("==================================");
+		logger.debug("end to select batch balnceSheet");
+		logger.debug("==================================");
 		return resultMap;
 	}
 }

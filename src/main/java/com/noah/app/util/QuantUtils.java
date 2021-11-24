@@ -111,13 +111,14 @@ public class QuantUtils {
 		}
 		return cumReturn.add(new BigDecimal(-1));
 	}
-	public BigDecimal calCumRet(TreeMap<Date, Double> returnMap, BusinessDays b) {
+	public BigDecimal calCumRet(TreeMap<Date, Float> priceMap, BusinessDays b) {
 		BigDecimal cumReturn = new BigDecimal(1l);
-		int len = returnMap.size();
-		Date[] dateArr = new Date[returnMap.size()];
-		dateArr= returnMap.keySet().toArray(dateArr);
-		for(int i = b.getDates();i<len;i++) {
-			cumReturn=cumReturn.multiply(new BigDecimal(1+ returnMap.get(dateArr[i])));
+		int len = priceMap.size();
+		if(len<b.getDates()) return calCumRet(toReturnMap(priceMap));
+		Date[] dateArr = priceMap.keySet().toArray(new Date[len]);
+		TreeMap<Date, Double> returnMap = toReturnMap(new TreeMap<Date, Float>(priceMap.tailMap(dateArr[len-1-b.getDates()])));
+		for(Date key: returnMap.keySet()) {
+			cumReturn = cumReturn.multiply(BigDecimal.valueOf(returnMap.get(key)+1));
 		}
 		return cumReturn.add(new BigDecimal(-1));
 	}
@@ -213,15 +214,25 @@ public class QuantUtils {
 		return Math.sqrt(calVar(map));
 	}
 	
-	public <N extends Number> HashMap<String, Double> calZScore(HashMap<String, N> map , double mean, double std) {
+	public <N extends Number> HashMap<String, Double> calZScore(HashMap<String, N> map) {
+		double mean = calMean(map);
+		double std =calStdv(map);
+
 		HashMap<String, Double> zScoreMap = new HashMap<>();
 		for(String key : map.keySet()) {
 			double val = (double) map.get(key);
 			double zScore = (val-mean)/std;
-			zScoreMap.put(key, zScore);
+
+			if(!Double.isNaN(zScore)) {
+//				System.out.print("key : "+key+" mean : "+mean+" std :"+std+" zscore");
+//				System.out.println(zScore);
+				zScoreMap.put(key, zScore);
+			}
 		}
 		return zScoreMap;
 	}
+	
+	
 	public <N extends Number> HashMap<String, Double> mergeZScore(HashMap<String, N> map1, HashMap<String, N> map2){
 		Set<String> key1 = map1.keySet();
 		Set<String> key2 = map2.keySet();
