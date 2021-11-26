@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.noah.app.constants.ItemConst;
+import com.noah.app.quant.calculator.portfolioStrategy.filterStrategy.ThreeFactorModel;
 import com.noah.app.quant.dao.BatchDao;
 import com.noah.app.quant.mapper.ItemMapper;
 import com.noah.app.util.QuantUtils;
@@ -19,7 +21,7 @@ import com.noah.app.vo.ItemDto;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class ThreeFactorModel {
+public class ThreeFactorModelTest {
 	
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	
@@ -44,7 +46,7 @@ public class ThreeFactorModel {
 	public void init() {
 		HashMap<String, Object> map = new HashMap<>();
 		map.put("isCorpCode", true);
-		
+		map.put("isActive", ItemConst.Status.Active.toString());
 		itemDtoList = itemMapper.selectItemDtoList(map);
 	}
 //	@Test
@@ -120,8 +122,8 @@ public class ThreeFactorModel {
 	@Test
 	public void fiterTest(){
 		HashMap<String, Object> inParam = new HashMap<>();
-		inParam.put("length", 50);
-		List<ItemDto> pickedList =threeFactorModel.filter(inParam, itemDtoList);
+		inParam.put("length", 30);
+		List<ItemDto> pickedList =threeFactorModel.filter(inParam);
 		for(ItemDto item : pickedList) {
 			System.out.println(item);
 		}
@@ -134,9 +136,4 @@ public class ThreeFactorModel {
 //		}
 //	}
 
-
-	private List<ItemDto> filter(HashMap<String, Object> inParam2, List<ItemDto> itemDtoList2) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

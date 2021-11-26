@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.or
+
+
+
+
+
+g//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.noah.app.quant.mapper.ItemMapper">
 	<select id = 'selectItemDtoList' parameterType ='HashMap' resultType = 'com.noah.app.vo.ItemDto'>
 		SELECT *
 			FROM ITEM
 		<where>
 			<if test = 'isActive != "" and isActive !=null'>
-				AND IS_ACTIVE ='CPC_STOCK_STATUS_NORMAL'
+				AND IS_ACTIVE =#{isActive}
 			</if>
 			<if test = 'isCorpCode != null and isCorpCode != ""'>
 				AND CORP_CODE IS NOT NULL
 			</if>
 			<if test = "market !=null and market!=''">
-				AND A.MARKET = #{market}
+				AND MARKET = #{market}
 			</if>
 			<if test = "industry != null and industry != ''">
-				AND A.industry = #{industry}
+				AND industry = #{industry}
 			</if>
 			<if test = "corpSize != null and corpSize!= ''">
 				And A.corp_size = #{corpSize}

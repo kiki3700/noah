@@ -224,8 +224,6 @@ public class QuantUtils {
 			double zScore = (val-mean)/std;
 
 			if(!Double.isNaN(zScore)) {
-//				System.out.print("key : "+key+" mean : "+mean+" std :"+std+" zscore");
-//				System.out.println(zScore);
 				zScoreMap.put(key, zScore);
 			}
 		}
