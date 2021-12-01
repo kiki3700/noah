@@ -39,4 +39,24 @@ public class ItemConst {
 			return value; 
 		}
 	}
+	public enum Category{
+		Rt("CPC_KSE_SECTION_KIND_RT"),
+		Mf("CPC_KSE_SECTION_KIND_MF"),
+		Foreign("CPC_KSE_SECTION_KIND_FOREIGN"),
+		If("CPC_KSE_SECTION_KIND_IF"),
+		Sc("CPC_KSE_SECTION_KIND_SC"),
+		St("CPC_KSE_SECTION_KIND_ST"),
+		Etf("CPC_KSE_SECTION_KIND_ETF"),
+		Dr("CPC_KSE_SECTION_KIND_DR"),
+		Etn("CPC_KSE_SECTION_KIND_ETN");
+		
+		private final String value;
+		
+		Category(String value){
+			this.value= value;
+		}
+		public String getValue(){ 
+			return value; 
+		}
+	}
 }

@@ -13,11 +13,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.noah.app.constants.ItemConst;
+import com.noah.app.quant.calculator.portfolioStrategy.StockDivider;
 import com.noah.app.quant.calculator.portfolioStrategy.filterStrategy.ThreeFactorModel;
 import com.noah.app.quant.dao.BatchDao;
 import com.noah.app.quant.mapper.ItemMapper;
 import com.noah.app.util.QuantUtils;
 import com.noah.app.vo.ItemDto;
+import com.noah.app.wrapper.StockWrapper;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -36,11 +38,13 @@ public class ThreeFactorModelTest {
 	
 	@Autowired
 	BatchDao batchDao;
+	@Autowired
+	StockDivider stockDivider;
 	
 	List<ItemDto> itemDtoList;
 	HashMap<String, Object> inParam;
 	
-	
+	List<StockWrapper> pickedList;
 	
 	@Before
 	public void init() {
@@ -122,11 +126,20 @@ public class ThreeFactorModelTest {
 	@Test
 	public void fiterTest(){
 		HashMap<String, Object> inParam = new HashMap<>();
-		inParam.put("length", 30);
-		List<ItemDto> pickedList =threeFactorModel.filter(inParam);
-		for(ItemDto item : pickedList) {
+		inParam.put("length", 20);
+		pickedList =threeFactorModel.filter(inParam);
+		for(StockWrapper item : pickedList) {
 			System.out.println(item);
 		}
+//		inParam.put("divideStrategy", "Makowtiz");
+//		pickedList= stockDivider.divideWeight(pickedList, inParam);
+//		for(StockWrapper item : pickedList) {
+//			System.out.println(item);
+//		}
+	}
+	@Test
+	public void divide() {
+
 	}
 //	@Test
 //	public void selectBalanceSheetPerformance() {

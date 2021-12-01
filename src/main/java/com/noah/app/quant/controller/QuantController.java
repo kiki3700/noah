@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.noah.app.quant.calculator.portfolioStrategy.StockPicker;
 import com.noah.app.quant.service.QuantService;
 import com.noah.app.vo.ItemDto;
-import com.noah.app.vo.PortfolioWrapper;
+import com.noah.app.wrapper.PortfolioWrapper;
 
 @RequestMapping("/investment")
 @RestController

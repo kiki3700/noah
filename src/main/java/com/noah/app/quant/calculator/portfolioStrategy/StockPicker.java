@@ -23,6 +23,7 @@ import com.noah.app.quant.mapper.ItemMapper;
 import com.noah.app.util.QuantUtils;
 import com.noah.app.vo.BalanceSheetDto;
 import com.noah.app.vo.ItemDto;
+import com.noah.app.wrapper.StockWrapper;
 @Component
 public class StockPicker {
 	
@@ -41,7 +42,7 @@ public class StockPicker {
 	/*
 	 * 언러키 컨트롤러로 inParam
 	 */
-	public List<ItemDto> sortStockByStrategy(Map<String, Object> inParam){
+	public List<StockWrapper> sortStockByStrategy(Map<String, Object> inParam){
 //		String corpSize = (String)inParam.getOrDefault("corpSize", null);
 		inParam.put("isActive", ItemConst.Status.Active.getValue());
 		inParam.put("isCopCode", true);
@@ -49,14 +50,18 @@ public class StockPicker {
 		
 		
 		String pickUpStrategy =(String) inParam.getOrDefault("selectionStrategy", "");
-		List<ItemDto> filteredStockList = new ArrayList<>();
+		List<StockWrapper> filteredStockList = new ArrayList<>();
 		switch(pickUpStrategy) {
 		case "3factor":
 			filteredStockList=threeFactorModel.filter(inParam);
 		}
 		return filteredStockList;
 	}
-	public List<HashMap<String, Object>> getSelectStockTalbe(List<ItemDto> itemDtoList){
+	public List<HashMap<String, Object>> getSelectStockTalbe(List<StockWrapper> stockWrapperList){
+		List<ItemDto> itemDtoList = new ArrayList<>();
+		for(StockWrapper stockWrapper : stockWrapperList) {
+			itemDtoList.add(stockWrapper.getItemDto());
+		}
 		HashMap<String, ItemDto> itemMap = new HashMap<String,ItemDto>(itemDtoList.stream().collect(Collectors.toMap(ItemDto::getId,  Function.identity())));
 		HashMap<String, BalanceSheetDto> balanceSheetMap =  batchDao.selectBalanceSheetMap(itemDtoList);
 		HashMap<String, TreeMap<Date,Float>> priceListMap = batchDao.selectPriceDataTreeMap(itemDtoList);

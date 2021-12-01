@@ -10,4 +10,5 @@ import com.noah.app.vo.IndexHistoryDataDto;
 @Mapper
 public interface IndexHistoryDataMapper {
 	List<IndexHistoryDataDto> selectIndexHistoryDataList (HashMap<String, Object> inParam);
+	List<IndexHistoryDataDto> selectIndexHistoryDataListByYear(HashMap<String, Object> inParam);
 }

@@ -14,11 +14,17 @@ g//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 			<if test = 'isActive != "" and isActive !=null'>
 				AND IS_ACTIVE =#{isActive}
 			</if>
+			<if test = "category != '' and category !=null" >
+				AND CATEGORY = #{category}
+			</if>
 			<if test = 'isCorpCode != null and isCorpCode != ""'>
 				AND CORP_CODE IS NOT NULL
 			</if>
 			<if test = "market !=null and market!=''">
 				AND MARKET = #{market}
+			</if>
+			<if test = "overTheYear =null">
+				AND  to_char(listing_date, 'YYYY-MM-DD') <![CDATA[<=]]> to_char(add_months(SYSDATE,-12),'YYYY-MM-DD')
 			</if>
 			<if test = "industry != null and industry != ''">
 				AND industry = #{industry}
@@ -40,8 +46,23 @@ g//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 	</select>
 	
 	<select id = 'selectHistroyData' parameterType = "hashmap" resultType='com.noah.app.vo.HistoryDataDto'>
-		select * from history_data where item_id = #{itemId}
+		select * from history_data
+		<where>
+			<if test = "itemId != null and itemId = ''"> 
+				AND	item_id = #{itemId} 
+			</if>
+		</where>
 	</select>
-
-
+	
+	<select id = 'selectCurHistroyData' parameterType = "hashmap" resultType='com.noah.app.vo.HistoryDataDto'>
+		select * from history_data
+		<where>
+			<if test = "itemId != null and itemId = ''"> 
+				AND	item_id = #{itemId} 
+			</if>
+		</where>
+		<if test = "order != null and order =''">
+			order by id #{order};
+		</if>
+	</select>
 </mapper>

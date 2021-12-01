@@ -12,6 +12,7 @@ import com.noah.app.quant.calculator.portfolioStrategy.StockPicker;
 import com.noah.app.quant.mapper.ItemMapper;
 import com.noah.app.quant.service.QuantService;
 import com.noah.app.vo.ItemDto;
+import com.noah.app.wrapper.StockWrapper;
 
 @Service
 @Primary
@@ -38,7 +39,7 @@ public class QuantServiceImpl implements QuantService{
 	}
 	@Override
 	public List<HashMap<String, Object>> selectStock(Map<String, Object> inParam){
-		List<ItemDto> stockList = stockPicker.sortStockByStrategy(inParam);
+		List<StockWrapper> stockList = stockPicker.sortStockByStrategy(inParam);
 		List<HashMap<String, Object>> selectedHashMapList = stockPicker.getSelectStockTalbe(stockList);
 		return selectedHashMapList;
 	}

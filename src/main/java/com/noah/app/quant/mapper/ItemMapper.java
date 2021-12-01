@@ -17,4 +17,5 @@ public interface ItemMapper {
 	List<HistoryDataDto> selectHistoryDataListByYear(ItemDto itemDto);
 	int selectBusinessDates();
 	List<HistoryDataDto> selectHistroyData(HashMap<String, Object> inParam);
+	HistoryDataDto selectCurHistroyData(HashMap<String, Object> inParam);
 }

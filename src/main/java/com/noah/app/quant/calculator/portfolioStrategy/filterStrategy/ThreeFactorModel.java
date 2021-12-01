@@ -19,12 +19,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.noah.app.constants.BusinessDays;
+import com.noah.app.constants.ItemConst;
 import com.noah.app.quant.dao.BatchDao;
 import com.noah.app.quant.mapper.BalanceSheetMapper;
 import com.noah.app.quant.mapper.ItemMapper;
 import com.noah.app.util.QuantUtils;
 import com.noah.app.vo.BalanceSheetDto;
 import com.noah.app.vo.ItemDto;
+import com.noah.app.wrapper.StockWrapper;
 
 @Component
 public class ThreeFactorModel {
@@ -43,7 +45,7 @@ public class ThreeFactorModel {
 	@Autowired
 	BalanceSheetMapper balanceSheetDao;
 	
-	public List<ItemDto> filter(Map<String, Object> inParam){
+	public List<StockWrapper> filter(Map<String, Object> inParam){
 //		/*
 //		 * 모멤텀 : 3개월 리턴, 6개월 리턴, 12개월 리턴
 //		 * 밸류 : per, pbr
@@ -56,8 +58,11 @@ public class ThreeFactorModel {
 		logger.debug("================================");
 		
 		logger.debug("convert itemList to itemMap");
+		inParam.put("category", ItemConst.Category.St.getValue());
+		inParam.put("overTheYear", true);
+		System.out.println(ItemConst.Category.St.getValue());
 		List<ItemDto> itemDtoList = itemMapper.selectItemDtoList(inParam);
-		
+		System.out.println(itemDtoList.toString());
 		HashMap<String, ItemDto> itemMap = new HashMap<String,ItemDto>(itemDtoList.stream().collect(Collectors.toMap(ItemDto::getId,  Function.identity())));
 		
 		HashMap<String, BalanceSheetDto> balanceSheetMap =  batchDao.selectBalanceSheetMap(itemDtoList);
@@ -185,10 +190,12 @@ public class ThreeFactorModel {
 		int len = (int) inParam.getOrDefault("length", 30);
 		List<String> keySetList = new ArrayList<>(totalScoreMap.keySet());
 		Collections.sort(keySetList,(o1,o2)->(totalScoreMap.get(o2).compareTo(totalScoreMap.get(o1))));
-		List<ItemDto> pickedItemList = new ArrayList<>();
+		List<StockWrapper> pickedItemList = new ArrayList<>();
 		for(int i = 0 ; i < len; i++) {
 			String item =keySetList.get(i);
-			pickedItemList.add(itemMap.get(item));
+			StockWrapper stockWrapper = new StockWrapper();
+			stockWrapper.setItemDto(itemMap.get(item));
+			pickedItemList.add(stockWrapper);
 		}
 		logger.debug("==================================");
 		logger.debug("end to filter stock");
