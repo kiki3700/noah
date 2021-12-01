@@ -1,83 +1,994 @@
-2021-11-09 07:30:42.089  INFO 21768 --- [main] com.noah.app.quant.OjAlgoMatrix          : Starting OjAlgoMatrix using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 21768 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
-2021-11-09 07:30:42.098  INFO 21768 --- [main] com.noah.app.quant.OjAlgoMatrix          : No active profile set, falling back to default profiles: default
-2021-11-09 07:30:43.106  WARN 21768 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
-2021-11-09 07:30:46.055  INFO 21768 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2021-11-09 07:30:46.871  WARN 21768 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2021-11-09 07:30:47.189  INFO 21768 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2021-11-09 07:30:47.214  INFO 21768 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2021-11-09 07:30:47.248  INFO 21768 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2021-11-09 07:30:47.273  INFO 21768 --- [main] com.noah.app.quant.OjAlgoMatrix          : Started OjAlgoMatrix in 5.526 seconds (JVM running for 6.507)
-2021-11-09 07:37:56.883  INFO 14888 --- [main] com.noah.app.quant.OjAlgoMatrix          : Starting OjAlgoMatrix using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 14888 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
-2021-11-09 07:37:56.885  INFO 14888 --- [main] com.noah.app.quant.OjAlgoMatrix          : No active profile set, falling back to default profiles: default
-2021-11-09 07:37:57.878  WARN 14888 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
-2021-11-09 07:38:00.772  INFO 14888 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2021-11-09 07:38:01.587  WARN 14888 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2021-11-09 07:38:01.899  INFO 14888 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2021-11-09 07:38:01.927  INFO 14888 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2021-11-09 07:38:01.956  INFO 14888 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2021-11-09 07:38:01.979  INFO 14888 --- [main] com.noah.app.quant.OjAlgoMatrix          : Started OjAlgoMatrix in 5.401 seconds (JVM running for 6.303)
-2021-11-09 08:39:53.913  INFO 5156 --- [main] com.noah.app.quant.StatisticsTest        : Starting StatisticsTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 5156 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
-2021-11-09 08:39:53.916  INFO 5156 --- [main] com.noah.app.quant.StatisticsTest        : No active profile set, falling back to default profiles: default
-2021-11-09 08:39:54.933  WARN 5156 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
-2021-11-09 08:39:57.967  INFO 5156 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2021-11-09 08:39:58.779  WARN 5156 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2021-11-09 08:39:59.093  INFO 5156 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2021-11-09 08:39:59.126  INFO 5156 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2021-11-09 08:39:59.159  INFO 5156 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2021-11-09 08:39:59.183  INFO 5156 --- [main] com.noah.app.quant.StatisticsTest        : Started StatisticsTest in 5.583 seconds (JVM running for 6.487)
-2021-11-09 08:39:59.459  INFO 5156 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-11-09 08:39:59.902  INFO 5156 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-11-09 08:40:01.158  INFO 5156 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-11-09 08:40:01.175  INFO 5156 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-11-09 08:45:23.285  INFO 3204 --- [main] com.noah.app.quant.StatisticsTest        : Starting StatisticsTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 3204 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
-2021-11-09 08:45:23.287  INFO 3204 --- [main] com.noah.app.quant.StatisticsTest        : No active profile set, falling back to default profiles: default
-2021-11-09 08:45:24.282  WARN 3204 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
-2021-11-09 08:45:27.167  INFO 3204 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2021-11-09 08:45:27.962  WARN 3204 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2021-11-09 08:45:28.286  INFO 3204 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2021-11-09 08:45:28.310  INFO 3204 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2021-11-09 08:45:28.344  INFO 3204 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2021-11-09 08:45:28.366  INFO 3204 --- [main] com.noah.app.quant.StatisticsTest        : Started StatisticsTest in 5.402 seconds (JVM running for 6.306)
-2021-11-09 08:45:28.633  INFO 3204 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-11-09 08:45:29.048  INFO 3204 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-11-09 08:45:29.767  INFO 3204 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-11-09 08:45:29.786  INFO 3204 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-11-09 08:47:25.979  INFO 15612 --- [main] com.noah.app.quant.StatisticsTest        : Starting StatisticsTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 15612 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
-2021-11-09 08:47:25.982  INFO 15612 --- [main] com.noah.app.quant.StatisticsTest        : No active profile set, falling back to default profiles: default
-2021-11-09 08:47:26.970  WARN 15612 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
-2021-11-09 08:47:29.844  INFO 15612 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2021-11-09 08:47:30.643  WARN 15612 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2021-11-09 08:47:30.959  INFO 15612 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2021-11-09 08:47:30.989  INFO 15612 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2021-11-09 08:47:31.019  INFO 15612 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2021-11-09 08:47:31.044  INFO 15612 --- [main] com.noah.app.quant.StatisticsTest        : Started StatisticsTest in 5.366 seconds (JVM running for 6.246)
-2021-11-09 08:47:31.290  INFO 15612 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-11-09 08:47:31.645  INFO 15612 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-11-09 08:47:32.395  INFO 15612 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-11-09 08:47:32.481  INFO 15612 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-11-09 08:47:59.718  INFO 15104 --- [main] com.noah.app.quant.StatisticsTest        : Starting StatisticsTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 15104 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
-2021-11-09 08:47:59.720  INFO 15104 --- [main] com.noah.app.quant.StatisticsTest        : No active profile set, falling back to default profiles: default
-2021-11-09 08:48:00.715  WARN 15104 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
-2021-11-09 08:48:03.667  INFO 15104 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2021-11-09 08:48:04.485  WARN 15104 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2021-11-09 08:48:04.793  INFO 15104 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2021-11-09 08:48:04.816  INFO 15104 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2021-11-09 08:48:04.850  INFO 15104 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2021-11-09 08:48:04.873  INFO 15104 --- [main] com.noah.app.quant.StatisticsTest        : Started StatisticsTest in 5.461 seconds (JVM running for 6.413)
-2021-11-09 08:48:05.107  INFO 15104 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-11-09 08:48:05.475  INFO 15104 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-11-09 08:48:06.241  INFO 15104 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-11-09 08:48:06.293  INFO 15104 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-11-09 08:48:21.453  INFO 20736 --- [main] com.noah.app.quant.StatisticsTest        : Starting StatisticsTest using Java 1.8.0_301 on DESKTOP-0KAS61L with PID 20736 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
-2021-11-09 08:48:21.456  INFO 20736 --- [main] com.noah.app.quant.StatisticsTest        : No active profile set, falling back to default profiles: default
-2021-11-09 08:48:22.437  WARN 20736 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
-2021-11-09 08:48:25.334  INFO 20736 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2021-11-09 08:48:26.139  WARN 20736 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2021-11-09 08:48:26.461  INFO 20736 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2021-11-09 08:48:26.485  INFO 20736 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2021-11-09 08:48:26.519  INFO 20736 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2021-11-09 08:48:26.542  INFO 20736 --- [main] com.noah.app.quant.StatisticsTest        : Started StatisticsTest in 5.411 seconds (JVM running for 6.294)
-2021-11-09 08:48:26.790  INFO 20736 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-11-09 08:48:27.170  INFO 20736 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-11-09 08:48:27.949  INFO 20736 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-11-09 08:48:28.003  INFO 20736 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-25 02:14:23.690  INFO 18032 --- [main] c.n.a.q.c.filter.ThreeFactorModel        : Starting ThreeFactorModel using Java 1.8.0_301 on ben with PID 18032 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-25 02:14:23.706  INFO 18032 --- [main] c.n.a.q.c.filter.ThreeFactorModel        : No active profile set, falling back to default profiles: default
+2021-11-25 02:14:25.565  WARN 18032 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-25 02:14:30.859  INFO 18032 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-25 02:14:32.339  WARN 18032 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-25 02:14:32.968  INFO 18032 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-25 02:14:33.012  INFO 18032 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-25 02:14:33.056  INFO 18032 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-25 02:14:33.098  INFO 18032 --- [main] c.n.a.q.c.filter.ThreeFactorModel        : Started ThreeFactorModel in 10.014 seconds (JVM running for 11.79)
+2021-11-25 02:14:33.160 ERROR 18032 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@e8290b] to prepare test instance [com.noah.app.quant.calculator.filter.ThreeFactorModel@c34db2]
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.noah.app.quant.calculator.filter.ThreeFactorModel': Unsatisfied dependency expressed through field 'threeFactorModel'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.calculator.filter.ThreeFactorModel' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:417) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:119) ~[spring-test-5.3.10.jar:5.3.10]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83) ~[spring-test-5.3.10.jar:5.3.10]
+	at org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener.prepareTestInstance(SpringBootDependencyInjectionTestExecutionListener.java:43) ~[spring-boot-test-autoconfigure-2.5.5.jar:2.5.5]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248) ~[spring-test-5.3.10.jar:5.3.10]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.3.10.jar:5.3.10]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.3.10.jar:5.3.10]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.3.10.jar:5.3.10]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.3.10.jar:5.3.10]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.3.10.jar:5.3.10]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.3.10.jar:5.3.10]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.3.10.jar:5.3.10]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.3.10.jar:5.3.10]
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209) [.cp/:na]
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.calculator.filter.ThreeFactorModel' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1790) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1346) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657) ~[spring-beans-5.3.10.jar:5.3.10]
+	... 30 common frames omitted
+
+2021-11-25 02:16:31.292  INFO 14760 --- [main] c.n.a.q.c.filter.ThreeFactorModel        : Starting ThreeFactorModel using Java 1.8.0_301 on ben with PID 14760 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-25 02:16:31.298  INFO 14760 --- [main] c.n.a.q.c.filter.ThreeFactorModel        : No active profile set, falling back to default profiles: default
+2021-11-25 02:16:33.107  WARN 14760 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-25 02:16:38.039  INFO 14760 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-25 02:16:39.271  WARN 14760 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-25 02:16:39.642  INFO 14760 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-25 02:16:39.673  INFO 14760 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-25 02:16:39.704  INFO 14760 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-25 02:16:39.726  INFO 14760 --- [main] c.n.a.q.c.filter.ThreeFactorModel        : Started ThreeFactorModel in 8.945 seconds (JVM running for 10.606)
+2021-11-25 02:16:39.775 ERROR 14760 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@e8290b] to prepare test instance [com.noah.app.quant.calculator.filter.ThreeFactorModel@15b5480]
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.noah.app.quant.calculator.filter.ThreeFactorModel': Unsatisfied dependency expressed through field 'threeFactorModel'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.calculator.filter.ThreeFactorModel' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:417) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:119) ~[spring-test-5.3.10.jar:5.3.10]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83) ~[spring-test-5.3.10.jar:5.3.10]
+	at org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener.prepareTestInstance(SpringBootDependencyInjectionTestExecutionListener.java:43) ~[spring-boot-test-autoconfigure-2.5.5.jar:2.5.5]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248) ~[spring-test-5.3.10.jar:5.3.10]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.3.10.jar:5.3.10]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.3.10.jar:5.3.10]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.3.10.jar:5.3.10]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.3.10.jar:5.3.10]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.3.10.jar:5.3.10]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.3.10.jar:5.3.10]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.3.10.jar:5.3.10]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.3.10.jar:5.3.10]
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209) [.cp/:na]
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.calculator.filter.ThreeFactorModel' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1790) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1346) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657) ~[spring-beans-5.3.10.jar:5.3.10]
+	... 30 common frames omitted
+
+2021-11-25 02:17:46.618  INFO 9720 --- [main] c.n.a.q.c.filter.ThreeFactorModelTest    : Starting ThreeFactorModelTest using Java 1.8.0_301 on ben with PID 9720 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-25 02:17:46.621  INFO 9720 --- [main] c.n.a.q.c.filter.ThreeFactorModelTest    : No active profile set, falling back to default profiles: default
+2021-11-25 02:17:48.222  WARN 9720 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-25 02:17:53.194  INFO 9720 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-25 02:17:54.175  WARN 9720 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-25 02:17:54.599  INFO 9720 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-25 02:17:54.637  INFO 9720 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-25 02:17:54.683  INFO 9720 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-25 02:17:54.706  INFO 9720 --- [main] c.n.a.q.c.filter.ThreeFactorModelTest    : Started ThreeFactorModelTest in 8.683 seconds (JVM running for 10.422)
+2021-11-25 02:17:54.787 ERROR 9720 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@e8290b] to prepare test instance [com.noah.app.quant.calculator.filter.ThreeFactorModelTest@a04257]
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.noah.app.quant.calculator.filter.ThreeFactorModelTest': Unsatisfied dependency expressed through field 'threeFactorModel'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.calculator.filter.ThreeFactorModelTest' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:417) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:119) ~[spring-test-5.3.10.jar:5.3.10]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83) ~[spring-test-5.3.10.jar:5.3.10]
+	at org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener.prepareTestInstance(SpringBootDependencyInjectionTestExecutionListener.java:43) ~[spring-boot-test-autoconfigure-2.5.5.jar:2.5.5]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248) ~[spring-test-5.3.10.jar:5.3.10]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.3.10.jar:5.3.10]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.3.10.jar:5.3.10]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.3.10.jar:5.3.10]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.3.10.jar:5.3.10]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.3.10.jar:5.3.10]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.3.10.jar:5.3.10]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.3.10.jar:5.3.10]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.3.10.jar:5.3.10]
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209) [.cp/:na]
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.calculator.filter.ThreeFactorModelTest' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1790) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1346) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657) ~[spring-beans-5.3.10.jar:5.3.10]
+	... 30 common frames omitted
+
+2021-11-25 02:18:20.295  INFO 19860 --- [main] c.n.a.q.c.filter.ThreeFactorModelTest    : Starting ThreeFactorModelTest using Java 1.8.0_301 on ben with PID 19860 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-25 02:18:20.298  INFO 19860 --- [main] c.n.a.q.c.filter.ThreeFactorModelTest    : No active profile set, falling back to default profiles: default
+2021-11-25 02:18:22.140  WARN 19860 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-25 02:18:27.391  INFO 19860 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-25 02:18:28.450  WARN 19860 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-25 02:18:28.810  INFO 19860 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-25 02:18:28.849  INFO 19860 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-25 02:18:28.923  INFO 19860 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-25 02:18:28.975  INFO 19860 --- [main] c.n.a.q.c.filter.ThreeFactorModelTest    : Started ThreeFactorModelTest in 9.233 seconds (JVM running for 10.974)
+2021-11-25 02:18:29.272  INFO 19860 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-25 02:18:29.873  INFO 19860 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-25 02:22:35.992  INFO 19860 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-25 02:22:36.030  INFO 19860 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-25 03:13:06.771  INFO 14040 --- [main] c.n.a.q.c.filter.ThreeFactorModelTest    : Starting ThreeFactorModelTest using Java 1.8.0_301 on ben with PID 14040 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-25 03:13:06.773  INFO 14040 --- [main] c.n.a.q.c.filter.ThreeFactorModelTest    : No active profile set, falling back to default profiles: default
+2021-11-25 03:13:07.883  WARN 14040 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-25 03:13:11.000  INFO 14040 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-25 03:13:11.902  WARN 14040 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-25 03:13:12.222  INFO 14040 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-25 03:13:12.248  INFO 14040 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-25 03:13:12.279  INFO 14040 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-25 03:13:12.303  INFO 14040 --- [main] c.n.a.q.c.filter.ThreeFactorModelTest    : Started ThreeFactorModelTest in 5.877 seconds (JVM running for 6.904)
+2021-11-25 03:13:12.600  INFO 14040 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-25 03:13:13.065  INFO 14040 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-25 03:16:23.264  INFO 14040 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-25 03:16:23.278  INFO 14040 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-25 03:23:26.471  INFO 16896 --- [main] c.n.a.q.c.filter.ThreeFactorModelTest    : Starting ThreeFactorModelTest using Java 1.8.0_301 on ben with PID 16896 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-25 03:23:26.473  INFO 16896 --- [main] c.n.a.q.c.filter.ThreeFactorModelTest    : No active profile set, falling back to default profiles: default
+2021-11-25 03:23:27.500  WARN 16896 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-25 03:23:30.406  INFO 16896 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-25 03:23:31.228  WARN 16896 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-25 03:23:31.540  INFO 16896 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-25 03:23:31.563  INFO 16896 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-25 03:23:31.597  INFO 16896 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-25 03:23:31.621  INFO 16896 --- [main] c.n.a.q.c.filter.ThreeFactorModelTest    : Started ThreeFactorModelTest in 5.461 seconds (JVM running for 6.437)
+2021-11-25 03:23:31.866  INFO 16896 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-25 03:23:32.259  INFO 16896 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-25 03:26:39.424  INFO 16896 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-25 03:26:39.437  INFO 16896 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-25 06:05:20.061  INFO 14400 --- [main] com.noah.app.NoahApplication             : Starting NoahApplication using Java 1.8.0_301 on ben with PID 14400 (C:\Users\55754\eclipse-32-workplace\noah\target\classes started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-25 06:05:20.064  INFO 14400 --- [main] com.noah.app.NoahApplication             : No active profile set, falling back to default profiles: default
+2021-11-25 06:05:21.059  WARN 14400 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-25 06:05:21.499  INFO 14400 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-25 06:05:21.508  INFO 14400 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-25 06:05:21.508  INFO 14400 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-11-25 06:05:21.609  INFO 14400 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-25 06:05:21.610  INFO 14400 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1491 ms
+2021-11-25 06:05:23.093  INFO 14400 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-25 06:05:23.454  WARN 14400 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-25 06:05:23.593  INFO 14400 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-25 06:05:23.595  INFO 14400 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-25 06:05:23.610  INFO 14400 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-25 06:05:23.640  INFO 14400 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-25 06:05:23.663  INFO 14400 --- [main] com.noah.app.NoahApplication             : Started NoahApplication in 4.004 seconds (JVM running for 5.35)
+2021-11-25 06:05:59.821  INFO 14400 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-25 06:05:59.822  INFO 14400 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-25 06:05:59.823  INFO 14400 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-11-25 06:09:26.704  INFO 14400 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-11-25 06:09:36.039  INFO 13880 --- [main] com.noah.app.NoahApplication             : Starting NoahApplication using Java 1.8.0_301 on ben with PID 13880 (C:\Users\55754\eclipse-32-workplace\noah\target\classes started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-25 06:09:36.042  INFO 13880 --- [main] com.noah.app.NoahApplication             : No active profile set, falling back to default profiles: default
+2021-11-25 06:09:36.934  WARN 13880 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-25 06:09:37.296  INFO 13880 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-25 06:09:37.303  INFO 13880 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-25 06:09:37.303  INFO 13880 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-11-25 06:09:37.396  INFO 13880 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-25 06:09:37.397  INFO 13880 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1307 ms
+2021-11-25 06:09:38.747  INFO 13880 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-25 06:09:39.200  INFO 13880 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-25 06:09:39.201  INFO 13880 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-25 06:09:39.214  INFO 13880 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-25 06:09:39.243  INFO 13880 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-25 06:09:39.267  INFO 13880 --- [main] com.noah.app.NoahApplication             : Started NoahApplication in 3.563 seconds (JVM running for 4.591)
+2021-11-25 06:09:41.694  INFO 13880 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-25 06:09:41.694  INFO 13880 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-25 06:09:41.695  INFO 13880 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-11-25 06:11:18.375  INFO 13880 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-11-25 06:11:18.685  INFO 13880 --- [RMI TCP Connection(3)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-11-25 06:11:18.867  INFO 13880 --- [RMI TCP Connection(4)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-11-25 06:14:54.395  INFO 20248 --- [main] com.noah.app.NoahApplication             : Starting NoahApplication using Java 1.8.0_301 on ben with PID 20248 (C:\Users\55754\eclipse-32-workplace\noah\target\classes started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-25 06:14:54.397  INFO 20248 --- [main] com.noah.app.NoahApplication             : No active profile set, falling back to default profiles: default
+2021-11-25 06:14:55.315  WARN 20248 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-25 06:14:55.704  INFO 20248 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-25 06:14:55.711  INFO 20248 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-25 06:14:55.712  INFO 20248 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-11-25 06:14:55.809  INFO 20248 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-25 06:14:55.810  INFO 20248 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1365 ms
+2021-11-25 06:14:57.212  INFO 20248 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-25 06:14:57.685  INFO 20248 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-25 06:14:57.686  INFO 20248 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-25 06:14:57.706  INFO 20248 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-25 06:14:57.729  INFO 20248 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-25 06:14:57.747  INFO 20248 --- [main] com.noah.app.NoahApplication             : Started NoahApplication in 3.696 seconds (JVM running for 4.731)
+2021-11-25 06:15:12.360  INFO 20248 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-25 06:15:12.361  INFO 20248 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-25 06:15:12.362  INFO 20248 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-11-25 06:16:48.470  INFO 20248 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-11-25 06:16:48.732  INFO 20248 --- [RMI TCP Connection(3)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-11-25 06:16:48.954  INFO 20248 --- [RMI TCP Connection(4)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-11-25 06:16:56.768  INFO 1520 --- [main] com.noah.app.NoahApplication             : Starting NoahApplication using Java 1.8.0_301 on ben with PID 1520 (C:\Users\55754\eclipse-32-workplace\noah\target\classes started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-25 06:16:56.771  INFO 1520 --- [main] com.noah.app.NoahApplication             : No active profile set, falling back to default profiles: default
+2021-11-25 06:16:57.716  WARN 1520 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-25 06:16:58.075  INFO 1520 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-25 06:16:58.083  INFO 1520 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-25 06:16:58.084  INFO 1520 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-11-25 06:16:58.177  INFO 1520 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-25 06:16:58.178  INFO 1520 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1359 ms
+2021-11-25 06:16:59.545  INFO 1520 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-25 06:16:59.988  INFO 1520 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-25 06:16:59.990  INFO 1520 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-25 06:17:00.003  INFO 1520 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-25 06:17:00.033  INFO 1520 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-25 06:17:00.052  INFO 1520 --- [main] com.noah.app.NoahApplication             : Started NoahApplication in 3.623 seconds (JVM running for 4.665)
+2021-11-25 06:17:19.583  INFO 1520 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-25 06:17:19.583  INFO 1520 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-25 06:17:19.584  INFO 1520 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-11-25 06:18:03.092  INFO 1520 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-11-25 06:18:03.376  INFO 1520 --- [RMI TCP Connection(3)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-11-25 07:38:14.242  INFO 15260 --- [main] com.noah.app.NoahApplication             : Starting NoahApplication using Java 1.8.0_301 on ben with PID 15260 (C:\Users\55754\eclipse-32-workplace\noah\target\classes started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-25 07:38:14.244  INFO 15260 --- [main] com.noah.app.NoahApplication             : No active profile set, falling back to default profiles: default
+2021-11-25 07:38:15.215  WARN 15260 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-25 07:38:15.652  INFO 15260 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-25 07:38:15.661  INFO 15260 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-25 07:38:15.661  INFO 15260 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-11-25 07:38:15.763  INFO 15260 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-25 07:38:15.763  INFO 15260 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1467 ms
+2021-11-25 07:38:17.371  INFO 15260 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-25 07:38:17.899  INFO 15260 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-25 07:38:17.900  INFO 15260 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-25 07:38:17.915  INFO 15260 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-25 07:38:17.949  INFO 15260 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-25 07:38:17.992  INFO 15260 --- [main] com.noah.app.NoahApplication             : Started NoahApplication in 4.12 seconds (JVM running for 5.251)
+2021-11-25 07:40:15.481  INFO 15260 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-25 07:40:15.481  INFO 15260 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-25 07:40:15.483  INFO 15260 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-11-25 07:44:13.408  INFO 15260 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-11-25 07:44:25.799  INFO 8560 --- [main] com.noah.app.NoahApplication             : Starting NoahApplication using Java 1.8.0_301 on ben with PID 8560 (C:\Users\55754\eclipse-32-workplace\noah\target\classes started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-25 07:44:25.801  INFO 8560 --- [main] com.noah.app.NoahApplication             : No active profile set, falling back to default profiles: default
+2021-11-25 07:44:26.708  WARN 8560 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-25 07:44:27.103  INFO 8560 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-25 07:44:27.110  INFO 8560 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-25 07:44:27.111  INFO 8560 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-11-25 07:44:27.207  INFO 8560 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-25 07:44:27.207  INFO 8560 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1355 ms
+2021-11-25 07:44:28.660  INFO 8560 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-25 07:44:29.144  INFO 8560 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-25 07:44:29.145  INFO 8560 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-25 07:44:29.162  INFO 8560 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-25 07:44:29.192  INFO 8560 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-25 07:44:29.215  INFO 8560 --- [main] com.noah.app.NoahApplication             : Started NoahApplication in 3.777 seconds (JVM running for 4.917)
+2021-11-25 07:44:38.127  INFO 8560 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-25 07:44:38.127  INFO 8560 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-25 07:44:38.128  INFO 8560 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2021-11-25 07:44:38.192 ERROR 8560 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.noah.app.quant.service.QuantService.secectStock] with root cause
+
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.noah.app.quant.service.QuantService.secectStock
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:235) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.binding.MapperMethod.<init>(MapperMethod.java:53) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.binding.MapperProxy.lambda$cachedInvoker$0(MapperProxy.java:108) ~[mybatis-3.5.7.jar:3.5.7]
+	at java.util.concurrent.ConcurrentHashMap.computeIfAbsent(Unknown Source) ~[na:1.8.0_301]
+	at org.apache.ibatis.util.MapUtil.computeIfAbsent(MapUtil.java:36) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.binding.MapperProxy.cachedInvoker(MapperProxy.java:95) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86) ~[mybatis-3.5.7.jar:3.5.7]
+	at com.sun.proxy.$Proxy73.secectStock(Unknown Source) ~[na:na]
+	at com.noah.app.quant.controller.QuantController.test(QuantController.java:57) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_301]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_301]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_301]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_301]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) ~[tomcat-embed-core-9.0.53.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.53.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1726) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_301]
+
+2021-11-25 07:46:40.231  INFO 8560 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-11-25 07:47:01.752  INFO 17976 --- [main] com.noah.app.NoahApplication             : Starting NoahApplication using Java 1.8.0_301 on ben with PID 17976 (C:\Users\55754\eclipse-32-workplace\noah\target\classes started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-25 07:47:01.755  INFO 17976 --- [main] com.noah.app.NoahApplication             : No active profile set, falling back to default profiles: default
+2021-11-25 07:47:02.689  WARN 17976 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-25 07:47:03.080  INFO 17976 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-25 07:47:03.088  INFO 17976 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-25 07:47:03.089  INFO 17976 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-11-25 07:47:03.180  INFO 17976 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-25 07:47:03.181  INFO 17976 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1378 ms
+2021-11-25 07:47:04.615  INFO 17976 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-25 07:47:05.058  INFO 17976 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-25 07:47:05.059  INFO 17976 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-25 07:47:05.072  INFO 17976 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-25 07:47:05.102  INFO 17976 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-25 07:47:05.121  INFO 17976 --- [main] com.noah.app.NoahApplication             : Started NoahApplication in 3.704 seconds (JVM running for 4.759)
+2021-11-25 07:47:13.571  INFO 17976 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-25 07:47:13.572  INFO 17976 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-25 07:47:13.573  INFO 17976 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-11-25 07:47:13.615 ERROR 17976 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.noah.app.quant.service.QuantService.selectStock] with root cause
+
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.noah.app.quant.service.QuantService.selectStock
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:235) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.binding.MapperMethod.<init>(MapperMethod.java:53) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.binding.MapperProxy.lambda$cachedInvoker$0(MapperProxy.java:108) ~[mybatis-3.5.7.jar:3.5.7]
+	at java.util.concurrent.ConcurrentHashMap.computeIfAbsent(Unknown Source) ~[na:1.8.0_301]
+	at org.apache.ibatis.util.MapUtil.computeIfAbsent(MapUtil.java:36) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.binding.MapperProxy.cachedInvoker(MapperProxy.java:95) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86) ~[mybatis-3.5.7.jar:3.5.7]
+	at com.sun.proxy.$Proxy73.selectStock(Unknown Source) ~[na:na]
+	at com.noah.app.quant.controller.QuantController.test(QuantController.java:57) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_301]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_301]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_301]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_301]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) ~[tomcat-embed-core-9.0.53.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.53.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1726) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_301]
+
+2021-11-25 07:47:58.116  INFO 17976 --- [RMI TCP Connection(4)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-11-25 07:47:58.116  INFO 17976 --- [RMI TCP Connection(3)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-11-25 07:55:39.550  INFO 7668 --- [main] c.n.a.quant.controller.QuantContService  : Starting QuantContService using Java 1.8.0_301 on ben with PID 7668 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-25 07:55:39.552  INFO 7668 --- [main] c.n.a.quant.controller.QuantContService  : No active profile set, falling back to default profiles: default
+2021-11-25 07:55:40.558  WARN 7668 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-25 07:55:43.483  INFO 7668 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-25 07:55:44.634  INFO 7668 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-25 07:55:44.657  INFO 7668 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-25 07:55:44.691  INFO 7668 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-25 07:55:44.714  INFO 7668 --- [main] c.n.a.quant.controller.QuantContService  : Started QuantContService in 5.472 seconds (JVM running for 6.395)
+2021-11-25 07:55:44.754 ERROR 7668 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@11b4bf5] to prepare test instance [com.noah.app.quant.controller.QuantContService@13cbe6e]
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.noah.app.quant.controller.QuantContService': Unsatisfied dependency expressed through field 'quant'; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.service.QuantService' available: expected single matching bean but found 2: quantServiceImpl,quantService
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:417) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:119) ~[spring-test-5.3.10.jar:5.3.10]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83) ~[spring-test-5.3.10.jar:5.3.10]
+	at org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener.prepareTestInstance(SpringBootDependencyInjectionTestExecutionListener.java:43) ~[spring-boot-test-autoconfigure-2.5.5.jar:2.5.5]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248) ~[spring-test-5.3.10.jar:5.3.10]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.3.10.jar:5.3.10]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.3.10.jar:5.3.10]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.3.10.jar:5.3.10]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.3.10.jar:5.3.10]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.3.10.jar:5.3.10]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.3.10.jar:5.3.10]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.3.10.jar:5.3.10]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.3.10.jar:5.3.10]
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209) [.cp/:na]
+Caused by: org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.service.QuantService' available: expected single matching bean but found 2: quantServiceImpl,quantService
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveNotUnique(DependencyDescriptor.java:220) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1358) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657) ~[spring-beans-5.3.10.jar:5.3.10]
+	... 30 common frames omitted
+
+2021-11-25 07:56:24.875  INFO 16416 --- [main] c.n.a.quant.controller.QuantContService  : Starting QuantContService using Java 1.8.0_301 on ben with PID 16416 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-25 07:56:24.877  INFO 16416 --- [main] c.n.a.quant.controller.QuantContService  : No active profile set, falling back to default profiles: default
+2021-11-25 07:56:25.875  WARN 16416 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-25 07:56:28.767  INFO 16416 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-25 07:56:29.918  INFO 16416 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-25 07:56:29.941  INFO 16416 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-25 07:56:29.973  INFO 16416 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-25 07:56:29.995  INFO 16416 --- [main] c.n.a.quant.controller.QuantContService  : Started QuantContService in 5.438 seconds (JVM running for 6.352)
+2021-11-25 07:58:26.790  INFO 2612 --- [main] c.n.a.quant.controller.QuantContService  : Starting QuantContService using Java 1.8.0_301 on ben with PID 2612 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-25 07:58:26.793  INFO 2612 --- [main] c.n.a.quant.controller.QuantContService  : No active profile set, falling back to default profiles: default
+2021-11-25 07:58:27.872  WARN 2612 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-25 07:58:30.854  INFO 2612 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-25 07:58:31.988  INFO 2612 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-25 07:58:32.016  INFO 2612 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-25 07:58:32.045  INFO 2612 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-25 07:58:32.068  INFO 2612 --- [main] c.n.a.quant.controller.QuantContService  : Started QuantContService in 5.593 seconds (JVM running for 6.554)
+2021-11-25 07:58:32.112 ERROR 2612 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@11b4bf5] to prepare test instance [com.noah.app.quant.controller.QuantContService@1e00016]
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.noah.app.quant.controller.QuantContService': Unsatisfied dependency expressed through field 'quant'; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.service.QuantService' available: expected single matching bean but found 2: quantServiceImpl,quantService
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:417) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:119) ~[spring-test-5.3.10.jar:5.3.10]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83) ~[spring-test-5.3.10.jar:5.3.10]
+	at org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener.prepareTestInstance(SpringBootDependencyInjectionTestExecutionListener.java:43) ~[spring-boot-test-autoconfigure-2.5.5.jar:2.5.5]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248) ~[spring-test-5.3.10.jar:5.3.10]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.3.10.jar:5.3.10]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.3.10.jar:5.3.10]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.3.10.jar:5.3.10]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.3.10.jar:5.3.10]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.3.10.jar:5.3.10]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.3.10.jar:5.3.10]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.3.10.jar:5.3.10]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.3.10.jar:5.3.10]
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209) [.cp/:na]
+Caused by: org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'com.noah.app.quant.service.QuantService' available: expected single matching bean but found 2: quantServiceImpl,quantService
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveNotUnique(DependencyDescriptor.java:220) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1358) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.10.jar:5.3.10]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657) ~[spring-beans-5.3.10.jar:5.3.10]
+	... 30 common frames omitted
+
+2021-11-25 08:02:19.256  INFO 14756 --- [main] c.n.a.quant.controller.QuantContService  : Starting QuantContService using Java 1.8.0_301 on ben with PID 14756 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-25 08:02:19.259  INFO 14756 --- [main] c.n.a.quant.controller.QuantContService  : No active profile set, falling back to default profiles: default
+2021-11-25 08:02:20.266  WARN 14756 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-25 08:02:23.265  INFO 14756 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-25 08:02:24.410  INFO 14756 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-25 08:02:24.438  INFO 14756 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-25 08:02:24.468  INFO 14756 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-25 08:02:24.491  INFO 14756 --- [main] c.n.a.quant.controller.QuantContService  : Started QuantContService in 5.545 seconds (JVM running for 6.48)
+2021-11-25 08:02:24.785  INFO 14756 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-25 08:02:25.259  INFO 14756 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-25 08:06:42.951  INFO 14756 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-25 08:06:43.037  INFO 14756 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-25 08:08:53.781  INFO 10788 --- [main] com.noah.app.NoahApplication             : Starting NoahApplication using Java 1.8.0_301 on ben with PID 10788 (C:\Users\55754\eclipse-32-workplace\noah\target\classes started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-25 08:08:53.783  INFO 10788 --- [main] com.noah.app.NoahApplication             : No active profile set, falling back to default profiles: default
+2021-11-25 08:08:54.702  WARN 10788 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-25 08:08:55.137  INFO 10788 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-25 08:08:55.146  INFO 10788 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-25 08:08:55.146  INFO 10788 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-11-25 08:08:55.244  INFO 10788 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-25 08:08:55.244  INFO 10788 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1405 ms
+2021-11-25 08:08:56.729  INFO 10788 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-25 08:08:57.185  INFO 10788 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-25 08:08:57.186  INFO 10788 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-25 08:08:57.201  INFO 10788 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-25 08:08:57.232  INFO 10788 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-25 08:08:57.254  INFO 10788 --- [main] com.noah.app.NoahApplication             : Started NoahApplication in 3.828 seconds (JVM running for 4.972)
+2021-11-25 08:08:58.080  INFO 10788 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-25 08:08:58.080  INFO 10788 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-25 08:08:58.081  INFO 10788 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2021-11-25 08:08:58.154  INFO 10788 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-25 08:08:58.696  INFO 10788 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-25 08:08:58.782 ERROR 10788 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.type.TypeException: Could not set parameters for mapping: ParameterMapping{property='industry', mode=IN, javaType=class java.lang.Object, jdbcType=null, numericScale=null, resultMapId='null', jdbcTypeName='null', expression='null'}. Cause: org.apache.ibatis.type.TypeException: Error setting non null for parameter #1 with JdbcType null . Try setting a different JdbcType for this parameter or a different configuration property. Cause: org.apache.ibatis.type.TypeException: Error setting non null for parameter #1 with JdbcType null . Try setting a different JdbcType for this parameter or a different configuration property. Cause: java.sql.SQLException: 부적합한 열 유형] with root cause
+
+java.sql.SQLException: 부적합한 열 유형
+	at oracle.jdbc.driver.OraclePreparedStatement.setObjectCritical(OraclePreparedStatement.java:8540) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.setObjectInternal(OraclePreparedStatement.java:8022) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.setObjectInternal(OraclePreparedStatement.java:8797) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.setObject(OraclePreparedStatement.java:8772) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.setObject(OraclePreparedStatementWrapper.java:218) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.setObject(HikariProxyPreparedStatement.java) ~[HikariCP-4.0.3.jar:na]
+	at org.apache.ibatis.type.ObjectTypeHandler.setNonNullParameter(ObjectTypeHandler.java:31) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.type.BaseTypeHandler.setParameter(BaseTypeHandler.java:73) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.type.UnknownTypeHandler.setNonNullParameter(UnknownTypeHandler.java:67) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.type.BaseTypeHandler.setParameter(BaseTypeHandler.java:73) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.scripting.defaults.DefaultParameterHandler.setParameters(DefaultParameterHandler.java:87) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.parameterize(PreparedStatementHandler.java:94) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.parameterize(RoutingStatementHandler.java:64) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:88) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:89) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:151) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:145) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140) ~[mybatis-3.5.7.jar:3.5.7]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_301]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_301]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_301]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_301]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	at com.sun.proxy.$Proxy68.selectList(Unknown Source) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:145) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86) ~[mybatis-3.5.7.jar:3.5.7]
+	at com.sun.proxy.$Proxy69.selectItemDtoList(Unknown Source) ~[na:na]
+	at com.noah.app.quant.calculator.portfolioStrategy.StockPicker.sortStockByStrategy(StockPicker.java:44) ~[classes/:na]
+	at com.noah.app.quant.service.serviceImpl.QuantServiceImpl.selectStock(QuantServiceImpl.java:41) ~[classes/:na]
+	at com.noah.app.quant.controller.QuantController.test(QuantController.java:57) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_301]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_301]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_301]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_301]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) ~[tomcat-embed-core-9.0.53.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.53.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1726) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_301]
+
+2021-11-25 08:09:37.750  INFO 10788 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-11-25 08:09:38.290  INFO 10788 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-25 08:09:38.306  INFO 10788 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-25 08:09:46.661  INFO 20344 --- [main] com.noah.app.NoahApplication             : Starting NoahApplication using Java 1.8.0_301 on ben with PID 20344 (C:\Users\55754\eclipse-32-workplace\noah\target\classes started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-25 08:09:46.663  INFO 20344 --- [main] com.noah.app.NoahApplication             : No active profile set, falling back to default profiles: default
+2021-11-25 08:09:47.536  WARN 20344 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-25 08:09:47.914  INFO 20344 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-25 08:09:47.924  INFO 20344 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-25 08:09:47.924  INFO 20344 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-11-25 08:09:48.016  INFO 20344 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-25 08:09:48.016  INFO 20344 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1303 ms
+2021-11-25 08:09:49.386  INFO 20344 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-25 08:09:49.880  INFO 20344 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-25 08:09:49.882  INFO 20344 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-25 08:09:49.895  INFO 20344 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-25 08:09:49.920  INFO 20344 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-25 08:09:49.940  INFO 20344 --- [main] com.noah.app.NoahApplication             : Started NoahApplication in 3.616 seconds (JVM running for 4.675)
+2021-11-25 08:09:54.378  INFO 20344 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-25 08:09:54.378  INFO 20344 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-25 08:09:54.379  INFO 20344 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-11-25 08:09:54.442  INFO 20344 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-25 08:09:54.709  INFO 20344 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-25 08:09:54.793 ERROR 20344 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.type.TypeException: Could not set parameters for mapping: ParameterMapping{property='industry', mode=IN, javaType=class java.lang.Object, jdbcType=null, numericScale=null, resultMapId='null', jdbcTypeName='null', expression='null'}. Cause: org.apache.ibatis.type.TypeException: Error setting non null for parameter #1 with JdbcType null . Try setting a different JdbcType for this parameter or a different configuration property. Cause: org.apache.ibatis.type.TypeException: Error setting non null for parameter #1 with JdbcType null . Try setting a different JdbcType for this parameter or a different configuration property. Cause: java.sql.SQLException: 부적합한 열 유형] with root cause
+
+java.sql.SQLException: 부적합한 열 유형
+	at oracle.jdbc.driver.OraclePreparedStatement.setObjectCritical(OraclePreparedStatement.java:8540) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.setObjectInternal(OraclePreparedStatement.java:8022) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.setObjectInternal(OraclePreparedStatement.java:8797) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.setObject(OraclePreparedStatement.java:8772) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.setObject(OraclePreparedStatementWrapper.java:218) ~[ojdbc8-21.1.0.0.jar:21.1.0.0.0]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.setObject(HikariProxyPreparedStatement.java) ~[HikariCP-4.0.3.jar:na]
+	at org.apache.ibatis.type.ObjectTypeHandler.setNonNullParameter(ObjectTypeHandler.java:31) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.type.BaseTypeHandler.setParameter(BaseTypeHandler.java:73) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.type.UnknownTypeHandler.setNonNullParameter(UnknownTypeHandler.java:67) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.type.BaseTypeHandler.setParameter(BaseTypeHandler.java:73) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.scripting.defaults.DefaultParameterHandler.setParameters(DefaultParameterHandler.java:87) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.parameterize(PreparedStatementHandler.java:94) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.parameterize(RoutingStatementHandler.java:64) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:88) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:89) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:151) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:145) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140) ~[mybatis-3.5.7.jar:3.5.7]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_301]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_301]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_301]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_301]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	at com.sun.proxy.$Proxy68.selectList(Unknown Source) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:145) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86) ~[mybatis-3.5.7.jar:3.5.7]
+	at com.sun.proxy.$Proxy69.selectItemDtoList(Unknown Source) ~[na:na]
+	at com.noah.app.quant.calculator.portfolioStrategy.StockPicker.sortStockByStrategy(StockPicker.java:44) ~[classes/:na]
+	at com.noah.app.quant.service.serviceImpl.QuantServiceImpl.selectStock(QuantServiceImpl.java:41) ~[classes/:na]
+	at com.noah.app.quant.controller.QuantController.test(QuantController.java:58) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_301]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_301]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_301]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_301]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) ~[tomcat-embed-core-9.0.53.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.53.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1726) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_301]
+
+2021-11-25 08:10:14.770  INFO 20344 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-11-25 08:10:15.358  INFO 20344 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-25 08:10:15.371  INFO 20344 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-25 08:10:31.774  INFO 10640 --- [main] com.noah.app.NoahApplication             : Starting NoahApplication using Java 1.8.0_301 on ben with PID 10640 (C:\Users\55754\eclipse-32-workplace\noah\target\classes started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-25 08:10:31.778  INFO 10640 --- [main] com.noah.app.NoahApplication             : No active profile set, falling back to default profiles: default
+2021-11-25 08:10:32.691  WARN 10640 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-25 08:10:33.105  INFO 10640 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-25 08:10:33.114  INFO 10640 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-25 08:10:33.114  INFO 10640 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-11-25 08:10:33.214  INFO 10640 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-25 08:10:33.214  INFO 10640 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1383 ms
+2021-11-25 08:10:34.708  INFO 10640 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-25 08:10:35.164  INFO 10640 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-25 08:10:35.166  INFO 10640 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-25 08:10:35.182  INFO 10640 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-25 08:10:35.213  INFO 10640 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-25 08:10:35.236  INFO 10640 --- [main] com.noah.app.NoahApplication             : Started NoahApplication in 3.822 seconds (JVM running for 4.969)
+2021-11-25 08:10:38.248  INFO 10640 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-25 08:10:38.248  INFO 10640 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-25 08:10:38.254  INFO 10640 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2021-11-25 08:11:03.406  INFO 10640 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-11-25 08:11:19.309  INFO 11376 --- [main] com.noah.app.NoahApplication             : Starting NoahApplication using Java 1.8.0_301 on ben with PID 11376 (C:\Users\55754\eclipse-32-workplace\noah\target\classes started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-25 08:11:19.311  INFO 11376 --- [main] com.noah.app.NoahApplication             : No active profile set, falling back to default profiles: default
+2021-11-25 08:11:20.195  WARN 11376 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-25 08:11:20.561  INFO 11376 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-25 08:11:20.572  INFO 11376 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-25 08:11:20.572  INFO 11376 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-11-25 08:11:20.662  INFO 11376 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-25 08:11:20.662  INFO 11376 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1301 ms
+2021-11-25 08:11:22.070  INFO 11376 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-25 08:11:22.573  INFO 11376 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-25 08:11:22.574  INFO 11376 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-25 08:11:22.588  INFO 11376 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-25 08:11:22.614  INFO 11376 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-25 08:11:22.640  INFO 11376 --- [main] com.noah.app.NoahApplication             : Started NoahApplication in 3.672 seconds (JVM running for 4.763)
+2021-11-25 08:11:29.658  INFO 11376 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-25 08:11:29.659  INFO 11376 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-25 08:11:29.660  INFO 11376 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-11-25 08:11:29.729  INFO 11376 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-25 08:11:30.016  INFO 11376 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-25 08:11:30.347 ERROR 11376 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.ClassCastException: java.util.Optional cannot be cast to java.lang.String] with root cause
+
+java.lang.ClassCastException: java.util.Optional cannot be cast to java.lang.String
+	at com.noah.app.quant.calculator.portfolioStrategy.StockPicker.sortStockByStrategy(StockPicker.java:45) ~[classes/:na]
+	at com.noah.app.quant.service.serviceImpl.QuantServiceImpl.selectStock(QuantServiceImpl.java:41) ~[classes/:na]
+	at com.noah.app.quant.controller.QuantController.test(QuantController.java:58) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_301]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_301]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_301]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_301]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) ~[tomcat-embed-core-9.0.53.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.10.jar:5.3.10]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.53.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1726) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_301]
+
+2021-11-25 08:12:12.481  INFO 11376 --- [RMI TCP Connection(4)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-11-25 08:12:12.481  INFO 11376 --- [RMI TCP Connection(3)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-11-25 08:12:12.539  INFO 11376 --- [RMI TCP Connection(5)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-11-25 08:12:12.767  INFO 11376 --- [RMI TCP Connection(6)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-11-25 08:12:13.049  INFO 11376 --- [RMI TCP Connection(4)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-25 08:12:13.064  INFO 11376 --- [RMI TCP Connection(4)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-25 08:12:21.144  INFO 17476 --- [main] com.noah.app.NoahApplication             : Starting NoahApplication using Java 1.8.0_301 on ben with PID 17476 (C:\Users\55754\eclipse-32-workplace\noah\target\classes started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-25 08:12:21.147  INFO 17476 --- [main] com.noah.app.NoahApplication             : No active profile set, falling back to default profiles: default
+2021-11-25 08:12:22.041  WARN 17476 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-25 08:12:22.407  INFO 17476 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-25 08:12:22.418  INFO 17476 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-25 08:12:22.419  INFO 17476 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-11-25 08:12:22.511  INFO 17476 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-25 08:12:22.511  INFO 17476 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1313 ms
+2021-11-25 08:12:23.887  INFO 17476 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-25 08:12:24.388  INFO 17476 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-25 08:12:24.389  INFO 17476 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-25 08:12:24.402  INFO 17476 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-25 08:12:24.426  INFO 17476 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-25 08:12:24.446  INFO 17476 --- [main] com.noah.app.NoahApplication             : Started NoahApplication in 3.647 seconds (JVM running for 4.657)
+2021-11-25 08:12:27.193  INFO 17476 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-25 08:12:27.193  INFO 17476 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-25 08:12:27.195  INFO 17476 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-11-25 08:12:27.251  INFO 17476 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-25 08:12:27.523  INFO 17476 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-25 08:19:43.802  INFO 17476 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-11-25 08:19:44.379  INFO 17476 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-25 08:19:44.399  INFO 17476 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-25 08:51:13.844  INFO 10972 --- [main] com.noah.app.EnumTest2                   : Starting EnumTest2 using Java 1.8.0_301 on ben with PID 10972 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-25 08:51:13.846  INFO 10972 --- [main] com.noah.app.EnumTest2                   : No active profile set, falling back to default profiles: default
+2021-11-25 08:51:14.983  WARN 10972 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-25 08:51:18.228  INFO 10972 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-25 08:51:19.503  INFO 10972 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-25 08:51:19.530  INFO 10972 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-25 08:51:19.563  INFO 10972 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-25 08:51:19.589  INFO 10972 --- [main] com.noah.app.EnumTest2                   : Started EnumTest2 in 6.074 seconds (JVM running for 7.06)
+2021-11-25 08:51:32.088  INFO 19172 --- [main] com.noah.app.EnumTest2                   : Starting EnumTest2 using Java 1.8.0_301 on ben with PID 19172 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-25 08:51:32.090  INFO 19172 --- [main] com.noah.app.EnumTest2                   : No active profile set, falling back to default profiles: default
+2021-11-25 08:51:33.153  WARN 19172 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-25 08:51:36.164  INFO 19172 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-25 08:51:37.350  INFO 19172 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-25 08:51:37.377  INFO 19172 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-25 08:51:37.407  INFO 19172 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-25 08:51:37.438  INFO 19172 --- [main] com.noah.app.EnumTest2                   : Started EnumTest2 in 5.663 seconds (JVM running for 6.552)
+2021-11-25 08:51:45.110  INFO 18496 --- [main] com.noah.app.EnumTest2                   : Starting EnumTest2 using Java 1.8.0_301 on ben with PID 18496 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-25 08:51:45.113  INFO 18496 --- [main] com.noah.app.EnumTest2                   : No active profile set, falling back to default profiles: default
+2021-11-25 08:51:46.112  WARN 18496 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-25 08:51:49.070  INFO 18496 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-25 08:51:50.198  INFO 18496 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-25 08:51:50.222  INFO 18496 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-25 08:51:50.252  INFO 18496 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-25 08:51:50.275  INFO 18496 --- [main] com.noah.app.EnumTest2                   : Started EnumTest2 in 5.483 seconds (JVM running for 6.349)
+2021-11-25 08:53:04.320  INFO 12432 --- [main] com.noah.app.EnumTest2                   : Starting EnumTest2 using Java 1.8.0_301 on ben with PID 12432 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-25 08:53:04.322  INFO 12432 --- [main] com.noah.app.EnumTest2                   : No active profile set, falling back to default profiles: default
+2021-11-25 08:53:05.335  WARN 12432 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-25 08:53:08.274  INFO 12432 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-25 08:53:09.422  INFO 12432 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-25 08:53:09.446  INFO 12432 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-25 08:53:09.475  INFO 12432 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-25 08:53:09.499  INFO 12432 --- [main] com.noah.app.EnumTest2                   : Started EnumTest2 in 5.501 seconds (JVM running for 6.405)
+2021-11-25 08:53:23.772  INFO 9448 --- [main] com.noah.app.EnumTest2                   : Starting EnumTest2 using Java 1.8.0_301 on ben with PID 9448 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-25 08:53:23.774  INFO 9448 --- [main] com.noah.app.EnumTest2                   : No active profile set, falling back to default profiles: default
+2021-11-25 08:53:24.768  WARN 9448 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-25 08:53:27.689  INFO 9448 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-25 08:53:28.831  INFO 9448 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-25 08:53:28.855  INFO 9448 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-25 08:53:28.885  INFO 9448 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-25 08:53:28.913  INFO 9448 --- [main] com.noah.app.EnumTest2                   : Started EnumTest2 in 5.448 seconds (JVM running for 6.329)
+2021-11-25 08:53:43.208  INFO 17028 --- [main] com.noah.app.EnumTest2                   : Starting EnumTest2 using Java 1.8.0_301 on ben with PID 17028 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-25 08:53:43.211  INFO 17028 --- [main] com.noah.app.EnumTest2                   : No active profile set, falling back to default profiles: default
+2021-11-25 08:53:44.231  WARN 17028 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-25 08:53:47.214  INFO 17028 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-25 08:53:48.386  INFO 17028 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-25 08:53:48.410  INFO 17028 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-25 08:53:48.440  INFO 17028 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-25 08:53:48.462  INFO 17028 --- [main] com.noah.app.EnumTest2                   : Started EnumTest2 in 5.564 seconds (JVM running for 6.489)
+2021-11-25 08:58:36.979  INFO 8580 --- [main] com.noah.app.EnumTest2                   : Starting EnumTest2 using Java 1.8.0_301 on ben with PID 8580 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-25 08:58:36.982  INFO 8580 --- [main] com.noah.app.EnumTest2                   : No active profile set, falling back to default profiles: default
+2021-11-25 08:58:38.012  WARN 8580 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-25 08:58:41.008  INFO 8580 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-25 08:58:42.190  INFO 8580 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-25 08:58:42.214  INFO 8580 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-25 08:58:42.249  INFO 8580 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-25 08:58:42.273  INFO 8580 --- [main] com.noah.app.EnumTest2                   : Started EnumTest2 in 5.609 seconds (JVM running for 6.528)
+2021-11-25 08:59:32.447  INFO 3400 --- [main] com.noah.app.EnumTest2                   : Starting EnumTest2 using Java 1.8.0_301 on ben with PID 3400 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-25 08:59:32.449  INFO 3400 --- [main] com.noah.app.EnumTest2                   : No active profile set, falling back to default profiles: default
+2021-11-25 08:59:33.483  WARN 3400 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-25 08:59:36.488  INFO 3400 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-25 08:59:37.667  INFO 3400 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-25 08:59:37.693  INFO 3400 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-25 08:59:37.728  INFO 3400 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-25 08:59:37.751  INFO 3400 --- [main] com.noah.app.EnumTest2                   : Started EnumTest2 in 5.62 seconds (JVM running for 6.526)
+2021-11-25 08:59:51.273  INFO 8920 --- [main] com.noah.app.EnumTest2                   : Starting EnumTest2 using Java 1.8.0_301 on ben with PID 8920 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-25 08:59:51.276  INFO 8920 --- [main] com.noah.app.EnumTest2                   : No active profile set, falling back to default profiles: default
+2021-11-25 08:59:52.337  WARN 8920 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-25 08:59:55.300  INFO 8920 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-25 08:59:56.469  INFO 8920 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-25 08:59:56.498  INFO 8920 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-25 08:59:56.526  INFO 8920 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-25 08:59:56.550  INFO 8920 --- [main] com.noah.app.EnumTest2                   : Started EnumTest2 in 5.583 seconds (JVM running for 6.483)
+2021-11-25 15:17:04.988  INFO 17720 --- [main] com.noah.app.java.optional.OptionalTest  : Starting OptionalTest using Java 1.8.0_301 on ben with PID 17720 (started by 55754 in C:\Users\55754\eclipse-32-workplace\noah)
+2021-11-25 15:17:04.992  INFO 17720 --- [main] com.noah.app.java.optional.OptionalTest  : No active profile set, falling back to default profiles: default
+2021-11-25 15:17:06.834  WARN 17720 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2021-11-25 15:17:11.579  INFO 17720 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-25 15:17:13.149  INFO 17720 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-25 15:17:13.191  INFO 17720 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-25 15:17:13.229  INFO 17720 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-25 15:17:13.260  INFO 17720 --- [main] com.noah.app.java.optional.OptionalTest  : Started OptionalTest in 8.885 seconds (JVM running for 10.991)

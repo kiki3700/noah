@@ -55,6 +55,9 @@ public class BatchDao {
 	}
 
 	public HashMap<String, TreeMap<Date, Float>> selectPriceDataTreeMap(List<ItemDto> itemDtoList){
+		logger.debug("==================================");
+		logger.debug("start to select priceData list by year");
+		logger.debug("==================================");
 		SqlSession sqlSession = sqlSessionFactory.openSession(ExecutorType.BATCH);
 		HashMap<String, TreeMap<Date, Float>> resultMap = new HashMap<>();
 		int BusinessDates = sqlSession.selectOne("com.noah.app.quant.mapper.ItemMapper.selectBusinessDates");
@@ -71,6 +74,9 @@ public class BatchDao {
 			sqlSession.close();
 			sqlSession.clearCache();
 		}
+		logger.debug("==================================");
+		logger.debug("end to select HisthroyData list by year");
+		logger.debug("==================================");
 		return resultMap;
 	}
 	//수정요망

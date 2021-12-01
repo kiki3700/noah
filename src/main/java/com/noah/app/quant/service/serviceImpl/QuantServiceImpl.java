@@ -1,25 +1,28 @@
 package com.noah.app.quant.service.serviceImpl;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.ojalgo.series.CalendarDateSeries;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Service;
 
 import com.noah.app.quant.calculator.portfolioStrategy.StockPicker;
 import com.noah.app.quant.mapper.ItemMapper;
 import com.noah.app.quant.service.QuantService;
 import com.noah.app.vo.ItemDto;
+import com.noah.app.wrapper.StockWrapper;
 
-@Component
+@Service
+@Primary
 public class QuantServiceImpl implements QuantService{
 	
 	@Autowired
 	ItemMapper itemMapper;
 	
 	@Autowired
-	StockPicker StockPicker;
+	StockPicker stockPicker;
 	
 	/*포트폴리오 생성기
 	 * Author : 이성현
@@ -33,6 +36,12 @@ public class QuantServiceImpl implements QuantService{
 	public List<ItemDto> pickStocks(Map<String, Object> inParams){
 		List<ItemDto> itemDtoList = itemMapper.selectItemDtoList(inParams);
 		return itemDtoList;
+	}
+	@Override
+	public List<HashMap<String, Object>> selectStock(Map<String, Object> inParam){
+		List<StockWrapper> stockList = stockPicker.sortStockByStrategy(inParam);
+		List<HashMap<String, Object>> selectedHashMapList = stockPicker.getSelectStockTalbe(stockList);
+		return selectedHashMapList;
 	}
 	
 }

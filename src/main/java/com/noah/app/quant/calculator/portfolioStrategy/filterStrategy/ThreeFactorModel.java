@@ -19,12 +19,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.noah.app.constants.BusinessDays;
+import com.noah.app.constants.ItemConst;
 import com.noah.app.quant.dao.BatchDao;
 import com.noah.app.quant.mapper.BalanceSheetMapper;
 import com.noah.app.quant.mapper.ItemMapper;
 import com.noah.app.util.QuantUtils;
 import com.noah.app.vo.BalanceSheetDto;
 import com.noah.app.vo.ItemDto;
+import com.noah.app.wrapper.StockWrapper;
 
 @Component
 public class ThreeFactorModel {
@@ -43,7 +45,7 @@ public class ThreeFactorModel {
 	@Autowired
 	BalanceSheetMapper balanceSheetDao;
 	
-	public List<ItemDto> filter(Map<String, Object> inParam, List<ItemDto> itemDtoList){
+	public List<StockWrapper> filter(Map<String, Object> inParam){
 //		/*
 //		 * 모멤텀 : 3개월 리턴, 6개월 리턴, 12개월 리턴
 //		 * 밸류 : per, pbr
@@ -56,6 +58,11 @@ public class ThreeFactorModel {
 		logger.debug("================================");
 		
 		logger.debug("convert itemList to itemMap");
+		inParam.put("category", ItemConst.Category.St.getValue());
+		inParam.put("overTheYear", true);
+		System.out.println(ItemConst.Category.St.getValue());
+		List<ItemDto> itemDtoList = itemMapper.selectItemDtoList(inParam);
+		System.out.println(itemDtoList.toString());
 		HashMap<String, ItemDto> itemMap = new HashMap<String,ItemDto>(itemDtoList.stream().collect(Collectors.toMap(ItemDto::getId,  Function.identity())));
 		
 		HashMap<String, BalanceSheetDto> balanceSheetMap =  batchDao.selectBalanceSheetMap(itemDtoList);
@@ -78,8 +85,10 @@ public class ThreeFactorModel {
 		//quality
 		HashMap<String, Double> roeMap = new HashMap<>();
 		HashMap<String, Double> opmMap = new HashMap<>();
-		List<ItemDto> nullItemDtoList = new ArrayList<>();
 		
+		logger.debug("==================================");
+		logger.debug("start to make momentum Map");
+		logger.debug("==================================");
 		for(String item : historyDataDtoKey) {
 			BigDecimal threeMonthCumRet =quantUtil.calCumRet(priceListMap.get(item), BusinessDays.THREEMONTHS);
 			BigDecimal sixMonthCumRet = quantUtil.calCumRet(priceListMap.get(item), BusinessDays.SIXMONTHS);
@@ -89,6 +98,13 @@ public class ThreeFactorModel {
 			sixMonthCumReturnMap.put(item, sixMonthCumRet.doubleValue());
 			oneYearCumReturnMap.put(item, oneYearCumRet.doubleValue());
 		}
+		logger.debug("==================================");
+		logger.debug("end to make momentum Map");
+		logger.debug("==================================");
+		
+		logger.debug("==================================");
+		logger.debug("start to make value Map");
+		logger.debug("==================================");
 		for(String item : historyDataDtoKey) {
 			double avgPrice = 0;
 			int len = priceListMap.get(item).size();
@@ -108,6 +124,13 @@ public class ThreeFactorModel {
 			if(!Double.isInfinite(per)&&!Double.isNaN(per)&& per>0) perMap.put(item, per);
 			if(!Double.isInfinite(pbr)&&!Double.isNaN(pbr)&&pbr>0) pbrMap.put(item, pbr);
 		}
+		logger.debug("==================================");
+		logger.debug("end to make value Map");
+		logger.debug("==================================");
+		
+		logger.debug("==================================");
+		logger.debug("start to make quality Map");
+		logger.debug("==================================");
 		for(String item : historyDataDtoKey) {
 			BalanceSheetDto balanceSheetDto = balanceSheetMap.get(item);
 			ItemDto itemDto = itemMap.get(itemMap);
@@ -115,9 +138,10 @@ public class ThreeFactorModel {
 			if(!Double.isInfinite(roe)&&!Double.isNaN(roe)) roeMap.put(item, roe);
 			double opm = balanceSheetDto.getOperatingIncome()/balanceSheetDto.getRevenue();
 			if(!Double.isInfinite(opm)&&!Double.isNaN(opm)) opmMap.put(item, opm);
-			System.out.println(roe+" "+opm);
-
 		}
+		logger.debug("==================================");
+		logger.debug("end to make quality Map");
+		logger.debug("==================================");
 		
 		HashMap<String, Double> threeMonthCumReturnZScore = quantUtil.calZScore(threeMonthCumReturnMap);
 
@@ -142,42 +166,40 @@ public class ThreeFactorModel {
 		HashMap<String, Double> qualityMap = quantUtil.mergeZScore(roeMapZScore, opmMapZScore);
 		
 		Set<String> keySet = momentumMap.keySet();
-		System.out.println("three : "+threeMonthCumReturnZScore.size());
-		System.out.println("six : "+sixMonthCumReturnZScore.size());
-		System.out.println("oneY : "+ oneYearCumReturnZScore.size());
-		System.out.println("per : "+perMapZScore.size());
-		System.out.println("pbr : "+pbrMapZScore.size());
-		System.out.println("roe : "+roeMapZScore.size());
-		System.out.println("opm : "+opmMapZScore.size());
-		System.out.println("mom : "+momentumMap.size()+" valMap : "+valueMap.size()+" qualMap : "+qualityMap.size());
-		System.out.println(keySet.size());
+		logger.debug("three month ret map size: "+threeMonthCumReturnZScore.size());
+		logger.debug("six month ret map size : "+sixMonthCumReturnZScore.size());
+		logger.debug("oneYear ret map size:  : "+ oneYearCumReturnZScore.size());
+		logger.debug("per map size:  "+perMapZScore.size());
+		logger.debug("pbr map size:  "+pbrMapZScore.size());
+		logger.debug("roe map size:   "+roeMapZScore.size());
+		logger.debug("opm map size:   "+opmMapZScore.size());
+		logger.debug("mom map size:  "+momentumMap.size()+" valMapmap size:   "+valueMap.size()+" qualMap map size:   "+qualityMap.size());
+		logger.debug("keySet size :" + keySet.size());
 		keySet.retainAll(valueMap.keySet());
-		System.out.println(keySet.size());
+
 		keySet.retainAll(qualityMap.keySet());
-		System.out.println(keySet.size());
+		logger.debug("total key size "+ keySet.size());
 		HashMap<String, Double> totalScoreMap = new HashMap<>();
+		
+		if(keySet.size()==0) return null;
 		for(String item : keySet) {
 			double totalScore = momentumMap.get(item)/3-valueMap.get(item)/3+qualityMap.get(item);
-			System.out.println(totalScore);
+//			System.out.println(totalScore);
 			totalScoreMap.put(item, totalScore);
 		}
 		int len = (int) inParam.getOrDefault("length", 30);
 		List<String> keySetList = new ArrayList<>(totalScoreMap.keySet());
 		Collections.sort(keySetList,(o1,o2)->(totalScoreMap.get(o2).compareTo(totalScoreMap.get(o1))));
-		List<ItemDto> pickedItemList = new ArrayList<>();
+		List<StockWrapper> pickedItemList = new ArrayList<>();
 		for(int i = 0 ; i < len; i++) {
 			String item =keySetList.get(i);
-			pickedItemList.add(itemMap.get(item));
-			System.out.print(itemMap.get(item).getName());
-			System.out.print(", 3개월 수익률: "+ threeMonthCumReturnMap.get(item));
-			System.out.print(", 12개월 수익률: "+oneYearCumReturnMap.get(item));
-			System.out.print(", per: "+perMap.get(item));
-			System.out.print(", pbr: "+pbrMap.get(item));
-			System.out.print(", roe: "+roeMap.get(item));
-			System.out.print(", opm: "+opmMap.get(item));
-			System.out.println(", total"+totalScoreMap.get(item));
+			StockWrapper stockWrapper = new StockWrapper();
+			stockWrapper.setItemDto(itemMap.get(item));
+			pickedItemList.add(stockWrapper);
 		}
+		logger.debug("==================================");
+		logger.debug("end to filter stock");
+		logger.debug("==================================");
 		return pickedItemList;
-		
 	}
 }

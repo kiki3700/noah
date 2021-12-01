@@ -2,18 +2,21 @@ package com.noah.app.quant.controller;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.noah.app.quant.calculator.portfolioStrategy.StockPicker;
 import com.noah.app.quant.service.QuantService;
 import com.noah.app.vo.ItemDto;
-import com.noah.app.vo.PortfolioWrapper;
+import com.noah.app.wrapper.PortfolioWrapper;
 
 @RequestMapping("/investment")
 @RestController
@@ -41,4 +44,18 @@ public class QuantController {
 		return null;
 	}
 	
+	@GetMapping(value="stock")
+	@ResponseBody
+	public List<HashMap<String, Object>> test(@RequestParam Optional<String> selectionStrategy, @RequestParam Optional<Integer> length, @RequestParam Optional<String> market, @RequestParam Optional<String> corpSize, @RequestParam Optional<List<String>> industry) {
+		
+		HashMap<String, Object> inParam = new HashMap<>();
+		inParam.put("selectionStrategy", selectionStrategy.orElse("3factor"));
+		inParam.put("length",length.orElse(30));
+//		System.out.println(targetMarket);
+//		inParam.put("targetMarket", targetMarket);
+//		inParam.put("size",size);
+//		inParam.put("industry", industry);
+//		
+		return quantService.selectStock(inParam);
+	}
 }

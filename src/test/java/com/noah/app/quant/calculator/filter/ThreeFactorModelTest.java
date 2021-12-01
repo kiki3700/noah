@@ -12,14 +12,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.noah.app.constants.ItemConst;
+import com.noah.app.quant.calculator.portfolioStrategy.StockDivider;
+import com.noah.app.quant.calculator.portfolioStrategy.filterStrategy.ThreeFactorModel;
 import com.noah.app.quant.dao.BatchDao;
 import com.noah.app.quant.mapper.ItemMapper;
 import com.noah.app.util.QuantUtils;
 import com.noah.app.vo.ItemDto;
+import com.noah.app.wrapper.StockWrapper;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class ThreeFactorModel {
+public class ThreeFactorModelTest {
 	
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	
@@ -34,17 +38,19 @@ public class ThreeFactorModel {
 	
 	@Autowired
 	BatchDao batchDao;
+	@Autowired
+	StockDivider stockDivider;
 	
 	List<ItemDto> itemDtoList;
 	HashMap<String, Object> inParam;
 	
-	
+	List<StockWrapper> pickedList;
 	
 	@Before
 	public void init() {
 		HashMap<String, Object> map = new HashMap<>();
 		map.put("isCorpCode", true);
-		
+		map.put("isActive", ItemConst.Status.Active.toString());
 		itemDtoList = itemMapper.selectItemDtoList(map);
 	}
 //	@Test
@@ -120,11 +126,20 @@ public class ThreeFactorModel {
 	@Test
 	public void fiterTest(){
 		HashMap<String, Object> inParam = new HashMap<>();
-		inParam.put("length", 50);
-		List<ItemDto> pickedList =threeFactorModel.filter(inParam, itemDtoList);
-		for(ItemDto item : pickedList) {
+		inParam.put("length", 20);
+		pickedList =threeFactorModel.filter(inParam);
+		for(StockWrapper item : pickedList) {
 			System.out.println(item);
 		}
+//		inParam.put("divideStrategy", "Makowtiz");
+//		pickedList= stockDivider.divideWeight(pickedList, inParam);
+//		for(StockWrapper item : pickedList) {
+//			System.out.println(item);
+//		}
+	}
+	@Test
+	public void divide() {
+
 	}
 //	@Test
 //	public void selectBalanceSheetPerformance() {
@@ -134,9 +149,4 @@ public class ThreeFactorModel {
 //		}
 //	}
 
-
-	private List<ItemDto> filter(HashMap<String, Object> inParam2, List<ItemDto> itemDtoList2) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }
