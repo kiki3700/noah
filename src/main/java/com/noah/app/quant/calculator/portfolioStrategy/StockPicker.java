@@ -42,32 +42,28 @@ public class StockPicker {
 	/*
 	 * 언러키 컨트롤러로 inParam
 	 */
-	public List<StockWrapper> sortStockByStrategy(Map<String, Object> inParam){
+	public List<ItemDto> sortStockByStrategy(Map<String, Object> inParam){
 //		String corpSize = (String)inParam.getOrDefault("corpSize", null);
-		inParam.put("isActive", ItemConst.Status.Active.getValue());
-		inParam.put("isCopCode", true);
-		inParam.put("corpSize", ItemConst.CorpSize.valueOf((String) inParam.getOrDefault("corpSize", "Total")).getValue()); 
-		
-		
-		String pickUpStrategy =(String) inParam.getOrDefault("selectionStrategy", "");
-		List<StockWrapper> filteredStockList = new ArrayList<>();
+
+
+		String pickUpStrategy =(String) inParam.getOrDefault("selectionModel", "");
+		List<ItemDto> filteredStockList = new ArrayList<>();
 		switch(pickUpStrategy) {
 		case "3factor":
 			filteredStockList=threeFactorModel.filter(inParam);
 		}
 		return filteredStockList;
 	}
-	public List<HashMap<String, Object>> getSelectStockTalbe(List<StockWrapper> stockWrapperList){
-		List<ItemDto> itemDtoList = new ArrayList<>();
-		for(StockWrapper stockWrapper : stockWrapperList) {
-			itemDtoList.add(stockWrapper.getItemDto());
-		}
+	/*
+	 * 수정해야함 => 
+	 */
+	public List<StockWrapper> getSelectStockTalbe(List<ItemDto> itemDtoList){
 		HashMap<String, ItemDto> itemMap = new HashMap<String,ItemDto>(itemDtoList.stream().collect(Collectors.toMap(ItemDto::getId,  Function.identity())));
 		HashMap<String, BalanceSheetDto> balanceSheetMap =  batchDao.selectBalanceSheetMap(itemDtoList);
 		HashMap<String, TreeMap<Date,Float>> priceListMap = batchDao.selectPriceDataTreeMap(itemDtoList);
 		
 		//momentTumValue 3m, 6m, 12m rate of return		
-		HashMap<String, Double> threeMonthCumReturnMap = new HashMap<>(); 
+		HashMap<String, Double> oneMonthCumReturnMap = new HashMap<>(); 
 		HashMap<String, Double> sixMonthCumReturnMap = new HashMap<>(); 
 		HashMap<String, Double> oneYearCumReturnMap = new HashMap<>(); 
 		
@@ -77,6 +73,7 @@ public class StockPicker {
 		
 		//quality
 		HashMap<String, Double> roeMap = new HashMap<>();
+		HashMap<String, Double> roaMap = new HashMap<>();
 		HashMap<String, Double> opmMap = new HashMap<>();
 		
 		Set<String> balanceSheetKey =  balanceSheetMap.keySet();
@@ -84,11 +81,11 @@ public class StockPicker {
 		historyDataDtoKey.retainAll(balanceSheetKey);
 		
 		for(String item : historyDataDtoKey) {
-			BigDecimal threeMonthCumRet =quantUtil.calCumRet(priceListMap.get(item), BusinessDays.THREEMONTHS);
+			BigDecimal oneMonthCumRet =quantUtil.calCumRet(priceListMap.get(item), BusinessDays.ONEMONTH);
 			BigDecimal sixMonthCumRet = quantUtil.calCumRet(priceListMap.get(item), BusinessDays.SIXMONTHS);
 			BigDecimal oneYearCumRet = quantUtil.calCumRet(priceListMap.get(item), BusinessDays.ONEYEAR);
 			
-			threeMonthCumReturnMap.put(item, threeMonthCumRet.doubleValue());
+			oneMonthCumReturnMap.put(item, oneMonthCumRet.doubleValue());
 			sixMonthCumReturnMap.put(item, sixMonthCumRet.doubleValue());
 			oneYearCumReturnMap.put(item, oneYearCumRet.doubleValue());
 		}
@@ -120,24 +117,27 @@ public class StockPicker {
 			if(!Double.isInfinite(roe)&&!Double.isNaN(roe)) roeMap.put(item, roe);
 			double opm = balanceSheetDto.getOperatingIncome()/balanceSheetDto.getRevenue();
 			if(!Double.isInfinite(opm)&&!Double.isNaN(opm)) opmMap.put(item, opm);
+			double roa = balanceSheetDto.getNetIncome()/balanceSheetDto.getAsset();
+			if(!Double.isInfinite(roa)&&!Double.isNaN(roa)) roaMap.put(item, roa);
 		}
 		
-		List<HashMap<String,Object>> selectedHashMapList = new ArrayList<>();
+		
+		List<StockWrapper> stockWrapperList = new ArrayList<>();
 		for(String item : historyDataDtoKey) {
-			TreeMap<Date, Float> priceTreeMap = priceListMap.get(item);
-			HashMap<String, Object> map = new HashMap<>();
-			map.put("name", itemMap.get(item).getName());
-			map.put("industry", itemMap.get(item).getIndustry());
-			map.put("price", priceTreeMap.get(priceTreeMap.lastKey()));
-			map.put("roe,", roeMap.get(item));
-			map.put("opm", opmMap.get(item));
-			map.put("1yRet", oneYearCumReturnMap.get(item));
-			map.put("6mRet", sixMonthCumReturnMap.get(item));
-			map.put("3mRet", threeMonthCumReturnMap.get(item));
-			map.put("per", perMap.get(item));
-			map.put("pbr", pbrMap.get(item));
-			selectedHashMapList.add(map);
+			StockWrapper stockWrapper = new StockWrapper();
+			TreeMap<Date, Float> priceTreeMap = priceListMap.get(item);			
+			stockWrapper.setItemDto(itemMap.get(item));
+			stockWrapper.setCurPrice(priceTreeMap.get(priceTreeMap.lastKey()));
+			stockWrapper.setRoe(roeMap.get(item));
+			stockWrapper.setRoa(roaMap.get(item));
+			stockWrapper.setOpm(opmMap.get(item));
+			stockWrapper.setOneMonthReturn(oneYearCumReturnMap.get(item));
+			stockWrapper.setSixMonthsReturn(sixMonthCumReturnMap.get(item));
+			stockWrapper.setOneMonthReturn(oneMonthCumReturnMap.get(item));
+			stockWrapper.setPer(perMap.get(item));
+			stockWrapper.setPbr(pbrMap.get(item));
+			stockWrapperList.add(stockWrapper);
 		}
-		return selectedHashMapList;
+		return stockWrapperList;
 	}
 }

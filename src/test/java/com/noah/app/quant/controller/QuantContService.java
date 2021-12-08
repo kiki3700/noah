@@ -21,6 +21,6 @@ public class QuantContService {
 		HashMap<String, Object> inParam = new HashMap<>();
 		inParam.put("selectionStrategy", "3factor");
 		inParam.put("length", 30);
-		quant.selectStock(inParam);
+		quant.calculateStocks(inParam);
 	}
 }

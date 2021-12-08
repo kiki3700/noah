@@ -1,7 +1,6 @@
 package com.noah.app.quant.calculator.portfolioStrategy.portfolioStrategy;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -22,6 +21,7 @@ import com.noah.app.quant.mapper.ItemMapper;
 import com.noah.app.util.QuantUtils;
 import com.noah.app.vo.HistoryDataDto;
 import com.noah.app.vo.IndexHistoryDataDto;
+import com.noah.app.wrapper.PortfolioWrapper;
 import com.noah.app.wrapper.StockWrapper;
 
 @Component
@@ -35,7 +35,7 @@ public class Markowitz {
 	@Autowired
 	QuantUtils quantUtil;
 	
-	public List<StockWrapper> optimizePortfolio(List<StockWrapper> stockWrapperList,  Map<String, Object> inParam){
+	public PortfolioWrapper calculateWeightList(List<StockWrapper> stockWrapperList,  Map<String, Object> inParam){
 		logger.debug("=================================");
 		logger.debug("===markowitz logger start========");
 		logger.debug("=================================");
@@ -44,6 +44,7 @@ public class Markowitz {
 		
 		List<IndexHistoryDataDto> kospiList = indexHistoryMapper.selectIndexHistoryDataListByYear(queryMap);
 		logger.debug(kospiList.toString());
+		queryMap.clear();
 		queryMap.put("indexName", IndexConst.BokIndex.BaseRate.getValue());
 		List<IndexHistoryDataDto> baseRate =indexHistoryMapper.selectIndexHistoryDataListByYear(queryMap);
 		logger.debug(baseRate.toString());
@@ -76,17 +77,20 @@ public class Markowitz {
 				model.setLowerLimit(i, ub);
 			}
 		}
+		
 		model.setTargetVariance(new BigDecimal(0));
 		logger.debug("optimize portfolio");
+		PortfolioWrapper portfolioWrapper = new PortfolioWrapper();
 		Primitive64Matrix weightMat = model.getAssetWeights();
-		List<StockWrapper> filteredStockList = new ArrayList<>();
+		
 		for(int i = 0; i< stockWrapperList.size();i++) {
 			stockWrapperList.get(i).setWeight(weightMat.get(i));
-			filteredStockList.add(stockWrapperList.get(i));
 		}
+		portfolioWrapper.setExpReturn(model.getMeanReturn());
+		portfolioWrapper.setVar(model.getReturnVariance());
 		
-
-		return filteredStockList;
+		portfolioWrapper.setStockList(stockWrapperList);
+		return portfolioWrapper;
 	}
 	
 }

@@ -24,19 +24,20 @@ public class StockWrapper {
 	private int amount;
 	private double weight;
 	
-	private float pbr;
-	private float per;
-	private float opm;
-	private float roa;
-	private float roe;
+	private double pbr;
+	private double per;
 	
-	private Float oneYearMean;
-	private Float sixMonthsMean;
-	private Float oneMonthMean;
+	private double opm;
+	private double roa;
+	private double roe;
 	
-	private Float oneYearVariance;
-	private Float sixMonthsVariance;
-	private Float oneMonthVariance;
+	private double oneYearReturn;
+	private double sixMonthsReturn;
+	private double oneMonthReturn;
+	
+	private double oneYearVariance;
+	private double sixMonthsVariance;
+	private double oneMonthVariance;
 	
 	private List<HistoryDataDto> historydataDtoList;
 	private LinkedHashMap<Date, Float> returnSeries;
@@ -118,112 +119,112 @@ public class StockWrapper {
 	}
 
 
-	public float getPbr() {
+	public double getPbr() {
 		return pbr;
 	}
 
 
-	public void setPbr(float pbr) {
+	public void setPbr(double pbr) {
 		this.pbr = pbr;
 	}
 
 
-	public float getPer() {
+	public double getPer() {
 		return per;
 	}
 
 
-	public void setPer(float per) {
+	public void setPer(double per) {
 		this.per = per;
 	}
 
 
-	public float getOpm() {
+	public double getOpm() {
 		return opm;
 	}
 
 
-	public void setOpm(float opm) {
+	public void setOpm(double opm) {
 		this.opm = opm;
 	}
 
 
-	public float getRoa() {
+	public double getRoa() {
 		return roa;
 	}
 
 
-	public void setRoa(float roa) {
+	public void setRoa(double roa) {
 		this.roa = roa;
 	}
 
 
-	public float getRoe() {
+	public double getRoe() {
 		return roe;
 	}
 
 
-	public void setRoe(float roe) {
+	public void setRoe(double roe) {
 		this.roe = roe;
 	}
 
 
-	public Float getOneYearMean() {
-		return oneYearMean;
+	public double getOneYearReturn() {
+		return oneYearReturn;
 	}
 
 
-	public void setOneYearMean(Float oneYearMean) {
-		this.oneYearMean = oneYearMean;
+	public void setOneYearReturn(double oneYearReturn) {
+		this.oneYearReturn = oneYearReturn;
 	}
 
 
-	public Float getSixMonthsMean() {
-		return sixMonthsMean;
+	public double getSixMonthsReturn() {
+		return sixMonthsReturn;
 	}
 
 
-	public void setSixMonthsMean(Float sixMonthsMean) {
-		this.sixMonthsMean = sixMonthsMean;
+	public void setSixMonthsReturn(double sixMonthsReturn) {
+		this.sixMonthsReturn = sixMonthsReturn;
 	}
 
 
-	public Float getOneMonthMean() {
-		return oneMonthMean;
+	public double getOneMonthReturn() {
+		return oneMonthReturn;
 	}
 
 
-	public void setOneMonthMean(Float oneMonthMean) {
-		this.oneMonthMean = oneMonthMean;
+	public void setOneMonthReturn(double oneMonthReturn) {
+		this.oneMonthReturn = oneMonthReturn;
 	}
 
 
-	public Float getOneYearVariance() {
+	public double getOneYearVariance() {
 		return oneYearVariance;
 	}
 
 
-	public void setOneYearVariance(Float oneYearVariance) {
+	public void setOneYearVariance(double oneYearVariance) {
 		this.oneYearVariance = oneYearVariance;
 	}
 
 
-	public Float getSixMonthsVariance() {
+	public double getSixMonthsVariance() {
 		return sixMonthsVariance;
 	}
 
 
-	public void setSixMonthsVariance(Float sixMonthsVariance) {
+	public void setSixMonthsVariance(double sixMonthsVariance) {
 		this.sixMonthsVariance = sixMonthsVariance;
 	}
 
 
-	public Float getOneMonthVariance() {
+	public double getOneMonthVariance() {
 		return oneMonthVariance;
 	}
 
 
-	public void setOneMonthVariance(Float oneMonthVariance) {
+	public void setOneMonthVariance(double oneMonthVariance) {
 		this.oneMonthVariance = oneMonthVariance;
 	}
 
@@ -251,16 +252,13 @@ public class StockWrapper {
 	@Override
 	public String toString() {
 		return "StockWrapper [itemDto=" + itemDto + ", position=" + position + ", portfolioId=" + portfolioId
-				+ ", targetPrice=" + targetPrice + ", amount=" + amount + ", weight=" + weight + ", pbr=" + pbr
-				+ ", per=" + per + ", opm=" + opm + ", roa=" + roa + ", roe=" + roe + ", oneYearMean=" + oneYearMean
-				+ ", sixMonthsMean=" + sixMonthsMean + ", oneMonthMean=" + oneMonthMean + ", oneYearVariance="
-				+ oneYearVariance + ", sixMonthsVariance=" + sixMonthsVariance + ", oneMonthVariance="
-				+ oneMonthVariance + ", historydataDtoList=" + historydataDtoList + ", returnSeries=" + returnSeries
-				+ "]";
+				+ ", targetPrice=" + targetPrice + ", curPrice=" + curPrice + ", amount=" + amount + ", weight="
+				+ weight + ", pbr=" + pbr + ", per=" + per + ", opm=" + opm + ", roa=" + roa + ", roe=" + roe
+				+ ", oneYearReturn=" + oneYearReturn + ", sixMonthsReturn=" + sixMonthsReturn + ", oneMonthReturn="
+				+ oneMonthReturn + ", oneYearVariance=" + oneYearVariance + ", sixMonthsVariance=" + sixMonthsVariance
+				+ ", oneMonthVariance=" + oneMonthVariance + ", historydataDtoList=" + historydataDtoList
+				+ ", returnSeries=" + returnSeries + "]";
 	}
-	
 
-	
-	
-	
+
 }

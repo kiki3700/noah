@@ -2,6 +2,7 @@ package com.noah.app.quant.calculator.filter;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -14,11 +15,14 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.noah.app.constants.ItemConst;
 import com.noah.app.quant.calculator.portfolioStrategy.StockDivider;
+import com.noah.app.quant.calculator.portfolioStrategy.StockPicker;
 import com.noah.app.quant.calculator.portfolioStrategy.filterStrategy.ThreeFactorModel;
 import com.noah.app.quant.dao.BatchDao;
 import com.noah.app.quant.mapper.ItemMapper;
+import com.noah.app.quant.service.QuantService;
 import com.noah.app.util.QuantUtils;
 import com.noah.app.vo.ItemDto;
+import com.noah.app.wrapper.PortfolioWrapper;
 import com.noah.app.wrapper.StockWrapper;
 
 @RunWith(SpringRunner.class)
@@ -34,7 +38,13 @@ public class ThreeFactorModelTest {
 	ItemMapper itemMapper;
 	
 	@Autowired
+	StockPicker stockPicker;
+	
+	@Autowired
 	QuantUtils quant;
+	
+	@Autowired
+	QuantService quantService;
 	
 	@Autowired
 	BatchDao batchDao;
@@ -44,14 +54,17 @@ public class ThreeFactorModelTest {
 	List<ItemDto> itemDtoList;
 	HashMap<String, Object> inParam;
 	
-	List<StockWrapper> pickedList;
-	
+	List<ItemDto> pickedList;
+	HashMap<String, Object> map ;
+	List<StockWrapper> wapper;
 	@Before
 	public void init() {
-		HashMap<String, Object> map = new HashMap<>();
+		map = new HashMap<>();
 		map.put("isCorpCode", true);
-		map.put("isActive", ItemConst.Status.Active.toString());
-		itemDtoList = itemMapper.selectItemDtoList(map);
+		map.put("selectionModel","3factor");
+		map.put("isActive", ItemConst.Status.Active.getValue());
+		map.put("lengh", 15);
+		
 	}
 //	@Test
 //	public void fetByYear() {
@@ -125,19 +138,34 @@ public class ThreeFactorModelTest {
 //	}
 	@Test
 	public void fiterTest(){
-		HashMap<String, Object> inParam = new HashMap<>();
-		inParam.put("length", 20);
-		pickedList =threeFactorModel.filter(inParam);
-		for(StockWrapper item : pickedList) {
-			System.out.println(item);
-		}
+//		HashMap<String, Object> inParam = new HashMap<>();
+//		inParam.put("length", 20);
+//		pickedList =threeFactorModel.filter(inParam);
+//		for(ItemDto item : pickedList) {
+//			System.out.println(item);
+//		}
+		
 //		inParam.put("divideStrategy", "Makowtiz");
 //		pickedList= stockDivider.divideWeight(pickedList, inParam);
 //		for(StockWrapper item : pickedList) {
 //			System.out.println(item);
 //		}
+		
+		wapper =quantService.calculateStocks(map);
+//		List<ItemDto> itemDtoList = stockPicker.sortStockByStrategy(map);
+		for(int i = 0 ; i < wapper.size();i++) {
+			System.out.println(wapper.get(i));
+		}
+		System.out.println(wapper.size());
+		Map<String, Object> inParam = new HashMap<>();
+		inParam.put("stockWrapperList", wapper);
+		inParam.put("portfolioStrategy", "portfolioStrategy");
+		inParam.put("detailStrategy", "Makowitz");
+		inParam.put("limit",1000000);
+		PortfolioWrapper portfolioWrapper = quantService.calculatePortfolio(inParam);
+		System.out.println(portfolioWrapper);
 	}
-	@Test
+//	@Test
 	public void divide() {
 
 	}
