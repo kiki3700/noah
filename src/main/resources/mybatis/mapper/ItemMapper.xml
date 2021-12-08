@@ -23,7 +23,7 @@ g//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 			<if test = "market !=null and market!=''">
 				AND MARKET = #{market}
 			</if>
-			<if test = "overTheYear =null">
+			<if test = "overTheYear !=null">
 				AND  to_char(listing_date, 'YYYY-MM-DD') <![CDATA[<=]]> to_char(add_months(SYSDATE,-12),'YYYY-MM-DD')
 			</if>
 			<if test = "industry != null and industry != ''">
@@ -55,14 +55,19 @@ g//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 	</select>
 	
 	<select id = 'selectCurHistroyData' parameterType = "hashmap" resultType='com.noah.app.vo.HistoryDataDto'>
-		select * from history_data
-		<where>
-			<if test = "itemId != null and itemId = ''"> 
-				AND	item_id = #{itemId} 
-			</if>
-		</where>
-		<if test = "order != null and order =''">
-			order by id #{order};
-		</if>
+			SELECT *  from history_data
+				WHERE	ITEM_id = #{itemId} and rownum = 1 
+			ORDER BY ID DESC
+			
+	</select>
+	
+	<select id = 'selectHistoryDataListByMonthHorizontally' parameterType = 'int' resultType = 'com.noah.app.vo.HistoryDataDto'>
+		select * from history_data where trading_date = (select MIN(trading_date) from history_data where trading_date > to_char(add_months(SYSDATE,-#{month}),'YYYY/MM/DD'))
+	</select>
+	<select id = 'selectHsitoryDataListByTodayHorizontally' resultType = 'com.noah.app.vo.HistoryDataDto'>
+		select * from history_data where trading_date = (select max(trading_date) from history_data where trading_date <![CDATA[<=]]> to_char(SYSDATE,'YYYY/MM/DD'))
+	</select>
+	<select id = 'selectAveragePriceByMonth' parameterType ='int' resultType = 'HashMap'>
+	select item_id, round( avg(NVL(close,-1)),4)as averagePrice from history_data where trading_date >= (select min(trading_date) from history_data where trading_date >= to_char(add_months(sysdate,-#{month}),'yyyy/mmdd')) group by item_id
 	</select>
 </mapper>

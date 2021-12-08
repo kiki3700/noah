@@ -25,31 +25,38 @@ public class StockDivider {
 	@Autowired
 	ItemMapper itemMapper;
 	
-	public List<StockWrapper> divideWeight(List<StockWrapper> stockWrapperList, Map<String, Object> inParam){
-		String divideStrategy = (String) inParam.getOrDefault("divideStrategy", "");
-		List<StockWrapper> filteredStockList = new ArrayList<>();
+	public PortfolioWrapper calculateWeightList(List<StockWrapper> stockWrapperList, Map<String, Object> inParam){
+		String divideStrategy = (String) inParam.getOrDefault("detailStrategy", "");
+		PortfolioWrapper portfolioWrapper = new PortfolioWrapper();
 		switch(divideStrategy) {
-		case "Makowtiz":
-			filteredStockList = markowitz.optimizePortfolio(stockWrapperList, inParam);
+		case "Makowitz":
+			portfolioWrapper = markowitz.calculateWeightList(stockWrapperList, inParam);
 		}
-		return filteredStockList;
+		return portfolioWrapper;
 	}
 	
 	public PortfolioWrapper getAmountOfStock(PortfolioWrapper portfolioWrapper) {
-		int len = portfolioWrapper.getStockList().size();
-		double limit = portfolioWrapper.getLimit();
 		List<StockWrapper> stockWrapperList = portfolioWrapper.getStockList();
+		int len = stockWrapperList.size();
+		double limit =portfolioWrapper.getLimit();
 		for(int i = 0 ; i < len; i++) {
 			StockWrapper stockWrapper = stockWrapperList.get(i);
 			String itemId = stockWrapper.getItemDto().getId();
-			HashMap<String, Object> inParam  = new HashMap<>();
-			inParam.put("itemId", itemId);
-			inParam.put("order", "DESC");
-			float curPrice = itemMapper.selectCurHistroyData(inParam).getClose();
+			HashMap<String, Object> queryParam  = new HashMap<>();
+			queryParam.put("itemId", itemId);
+			queryParam.put("order", "DESC");
+			float curPrice=0;
+			if(itemMapper.selectCurHistroyData(queryParam)==null) {
+				System.out.println(queryParam);
+			}else {
+				curPrice = itemMapper.selectCurHistroyData(queryParam).getClose();
+			}
+			
 			stockWrapper.setCurPrice(curPrice);
 			double expectTotalPrice = limit * stockWrapper.getWeight();
 			int amount = (int) (expectTotalPrice/curPrice);
 			stockWrapper.setAmount(amount);
+			System.out.println("expTotal" +expectTotalPrice+ "cur price "+ curPrice+" amount "+ amount);
 		}
 		return portfolioWrapper;
 	}

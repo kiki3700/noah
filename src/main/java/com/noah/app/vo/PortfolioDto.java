@@ -2,18 +2,20 @@ package com.noah.app.vo;
 
 import java.util.Date;
 
-public class portfolioDto {
+public class PortfolioDto {
 	private String id;
+	private String name;
 	private String strategy;
 	private String detailStrategy;
+	private String managementStrategy;
 	private String status;
 	private double limit;
-	private Date rebalncingDate;
+	private Date rebalancingDate;
 	private Date portfolioDate;
 	private Date updateDate;
 	
 	
-	public portfolioDto() {
+	public PortfolioDto() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -24,6 +26,15 @@ public class portfolioDto {
 	public void setId(String id) {
 		this.id = id;
 	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public String getStrategy() {
 		return strategy;
 	}
@@ -36,6 +47,15 @@ public class portfolioDto {
 	public void setDetailStrategy(String detailStrategy) {
 		this.detailStrategy = detailStrategy;
 	}
+	
+	public String getManagementStrategy() {
+		return managementStrategy;
+	}
+
+	public void setManagementStrategy(String managementStrategy) {
+		this.managementStrategy = managementStrategy;
+	}
+
 	public String getStatus() {
 		return status;
 	}
@@ -49,10 +69,10 @@ public class portfolioDto {
 		this.limit = limit;
 	}
 	public Date getRebalncingDate() {
-		return rebalncingDate;
+		return rebalancingDate;
 	}
-	public void setRebalncingDate(Date rebalncingDate) {
-		this.rebalncingDate = rebalncingDate;
+	public void setRebalncingDate(Date rebalancingDate) {
+		this.rebalancingDate = rebalancingDate;
 	}
 	public Date getPortfolioDate() {
 		return portfolioDate;
@@ -69,9 +89,12 @@ public class portfolioDto {
 
 	@Override
 	public String toString() {
-		return "portfolioDto [id=" + id + ", strategy=" + strategy + ", detailStrategy=" + detailStrategy + ", status="
-				+ status + ", limit=" + limit + ", rebalncingDate=" + rebalncingDate + ", portfolioDate="
-				+ portfolioDate + ", updateDate=" + updateDate + "]";
+		return "PortfolioDto [id=" + id + ", name=" + name + ", strategy=" + strategy + ", detailStrategy="
+				+ detailStrategy + ", managementStrategy=" + managementStrategy + ", status=" + status + ", limit="
+				+ limit + ", rebalancingDate=" + rebalancingDate + ", portfolioDate=" + portfolioDate + ", updateDate="
+				+ updateDate + "]";
 	}
+
+	
 	
 }

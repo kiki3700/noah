@@ -24,6 +24,7 @@ import com.noah.app.util.QuantUtils;
 import com.noah.app.vo.HistoryDataDto;
 import com.noah.app.vo.IndexHistoryDataDto;
 import com.noah.app.vo.ItemDto;
+import com.noah.app.wrapper.PortfolioWrapper;
 import com.noah.app.wrapper.StockWrapper;
 
 @RunWith(SpringRunner.class)
@@ -89,9 +90,10 @@ public class MakovizTest {
 		inParam.put("divideStrategy", "Makowtiz");
 
 		inParam.put("LB", 0.0);
-		List<StockWrapper> list =  stockDivider.divideWeight(stockWrapperList, inParam);
-		System.out.println(list.size());
-		for(StockWrapper stock : list) {
+		PortfolioWrapper list =  stockDivider.calculateWeightList(stockWrapperList, inParam);
+		System.out.println(list.getStockList().size());
+		List<StockWrapper> stockWrapperList = list.getStockList();
+		for(StockWrapper stock : stockWrapperList) {
 			System.out.println(stock);
 		}
 	}

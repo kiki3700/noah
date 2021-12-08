@@ -8,10 +8,15 @@ import org.apache.commons.math3.linear.RealMatrix;
 public class PortfolioWrapper {
 	private String name;
 	private List<StockWrapper> stockList;
+	private String strategey;
+	private String detailStrategy;
+	private String managementStrategy;
 	private RealMatrix cov;
 	private double limit;
 	private double expReturn;
+	private double var;
 	private Date portfolioDate;
+	private Date rebalncingDate;
 	private Date updateDate;
 	public PortfolioWrapper() {
 		super();
@@ -28,6 +33,26 @@ public class PortfolioWrapper {
 	}
 	public void setStockList(List<StockWrapper> stockList) {
 		this.stockList = stockList;
+	}
+	
+	public String getStrategey() {
+		return strategey;
+	}
+	public void setStrategey(String strategey) {
+		this.strategey = strategey;
+	}
+	public String getDetailStrategy() {
+		return detailStrategy;
+	}
+	public void setDetailStrategy(String detailStrategy) {
+		this.detailStrategy = detailStrategy;
+	}
+	
+	public String getManagementStrategy() {
+		return managementStrategy;
+	}
+	public void setManagementStrategy(String managementStrategy) {
+		this.managementStrategy = managementStrategy;
 	}
 	public RealMatrix getCov() {
 		return cov;
@@ -47,11 +72,25 @@ public class PortfolioWrapper {
 	public void setExpReturn(double expReturn) {
 		this.expReturn = expReturn;
 	}
+	
+	public double getVar() {
+		return var;
+	}
+	public void setVar(double var) {
+		this.var = var;
+	}
 	public Date getPortfolioDate() {
 		return portfolioDate;
 	}
 	public void setPortfolioDate(Date portfolioDate) {
 		this.portfolioDate = portfolioDate;
+	}
+	
+	public Date getRebalncingDate() {
+		return rebalncingDate;
+	}
+	public void setRebalncingDate(Date rebalncingDate) {
+		this.rebalncingDate = rebalncingDate;
 	}
 	public Date getUpdateDate() {
 		return updateDate;
@@ -61,7 +100,9 @@ public class PortfolioWrapper {
 	}
 	@Override
 	public String toString() {
-		return "PortfolioWrapper [name=" + name + ", stockList=" + stockList + ", cov=" + cov + ", limit=" + limit
-				+ ", expReturn=" + expReturn + ", portfolioDate=" + portfolioDate + ", updateDate=" + updateDate + "]";
+		return "PortfolioWrapper [name=" + name + ", stockList=" + stockList + ", strategey=" + strategey
+				+ ", detailStrategy=" + detailStrategy + ", managementStrategy=" + managementStrategy + ", cov=" + cov
+				+ ", limit=" + limit + ", expReturn=" + expReturn + ", portfolioDate=" + portfolioDate
+				+ ", rebalncingDate=" + rebalncingDate + ", updateDate=" + updateDate + "]";
 	}
 }

@@ -1,11 +1,10 @@
 package com.noah.app.quant.mapper;
 
-import java.sql.Date;
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.ibatis.annotations.MapKey;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.noah.app.vo.HistoryDataDto;
@@ -18,4 +17,7 @@ public interface ItemMapper {
 	int selectBusinessDates();
 	List<HistoryDataDto> selectHistroyData(HashMap<String, Object> inParam);
 	HistoryDataDto selectCurHistroyData(HashMap<String, Object> inParam);
+	List<HistoryDataDto> selectHistoryDataListByMonthHorizontally(int month);
+	List<HistoryDataDto> selectHsitoryDataListByTodayHorizontally();
+	List<HashMap<String, Object>> selectAveragePriceByMonth(int month);
 }
