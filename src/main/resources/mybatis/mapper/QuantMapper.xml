@@ -18,6 +18,7 @@
 			UPDATE_DATE
 			)
 		VALUES(
+			#{id},
 			#{name},
 			#{strategy},
 			#{detailStrategy},
@@ -39,6 +40,7 @@
 			AMOUNT
 		)
 		VALUES(
+			#{id},
 			#{itemId},
 			#{weight},
 			#{portfolioId},

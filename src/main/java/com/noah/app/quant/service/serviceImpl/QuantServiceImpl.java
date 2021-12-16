@@ -82,6 +82,7 @@ public class QuantServiceImpl implements QuantService{
 		for(StockWrapper stockWrapper : stockWrapperList) {
 			if(stockWrapper.getAmount()<=0) continue;
 			PortfolioTargetListDto portfolioTargetListDto = new PortfolioTargetListDto();
+			portfolioTargetListDto.setId(id+stockWrapper.getItemDto().getId());
 			portfolioTargetListDto.setItemid(stockWrapper.getItemDto().getId());
 			portfolioTargetListDto.setAmount(stockWrapper.getAmount());
 			portfolioTargetListDto.setPortfolioId(id);
