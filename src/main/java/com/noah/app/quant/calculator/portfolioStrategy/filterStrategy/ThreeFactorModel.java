@@ -34,8 +34,6 @@ public class ThreeFactorModel {
 	
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	
-	@Autowired
-	QuantUtils quantUtil;
 	
 	@Autowired
 	ItemMapper itemMapper;
@@ -176,27 +174,27 @@ public class ThreeFactorModel {
 		logger.debug("end to make quality Map");
 		logger.debug("==================================");
 		
-		HashMap<String, Double> threeMonthCumReturnZScore = quantUtil.calZScore(threeMonthCumReturnMap);
+		HashMap<String, Double> threeMonthCumReturnZScore = QuantUtils.calZScore(threeMonthCumReturnMap);
 
-		HashMap<String, Double> sixMonthCumReturnZScore = quantUtil.calZScore(sixMonthCumReturnMap); 
+		HashMap<String, Double> sixMonthCumReturnZScore = QuantUtils.calZScore(sixMonthCumReturnMap); 
 
-		HashMap<String, Double> oneYearCumReturnZScore= quantUtil.calZScore(oneYearCumReturnMap); 
+		HashMap<String, Double> oneYearCumReturnZScore= QuantUtils.calZScore(oneYearCumReturnMap); 
 
 		//value : per, pbr
-		HashMap<String, Double> perMapZScore =quantUtil.calZScore(perMap);
+		HashMap<String, Double> perMapZScore =QuantUtils.calZScore(perMap);
 
-		HashMap<String, Double> pbrMapZScore = quantUtil.calZScore(pbrMap);
+		HashMap<String, Double> pbrMapZScore = QuantUtils.calZScore(pbrMap);
 
 		//quality
-		HashMap<String, Double> roeMapZScore = quantUtil.calZScore(roeMap);
-		HashMap<String, Double> roaMapZScore = quantUtil.calZScore(roaMap);
-		HashMap<String, Double> opmMapZScore = quantUtil.calZScore(opmMap);
+		HashMap<String, Double> roeMapZScore = QuantUtils.calZScore(roeMap);
+		HashMap<String, Double> roaMapZScore = QuantUtils.calZScore(roaMap);
+		HashMap<String, Double> opmMapZScore = QuantUtils.calZScore(opmMap);
 
 		
 
-		HashMap<String, Double> momentumMap = quantUtil.mergeZScore(threeMonthCumReturnZScore, sixMonthCumReturnZScore,oneYearCumReturnZScore);
-		HashMap<String, Double> valueMap = quantUtil.mergeZScore(perMapZScore, pbrMapZScore);
-		HashMap<String, Double> qualityMap = quantUtil.mergeZScore(roeMapZScore, opmMapZScore, roaMapZScore);
+		HashMap<String, Double> momentumMap = QuantUtils.mergeZScore(threeMonthCumReturnZScore, sixMonthCumReturnZScore,oneYearCumReturnZScore);
+		HashMap<String, Double> valueMap = QuantUtils.mergeZScore(perMapZScore, pbrMapZScore);
+		HashMap<String, Double> qualityMap = QuantUtils.mergeZScore(roeMapZScore, opmMapZScore, roaMapZScore);
 		
 		Set<String> keySet = momentumMap.keySet();
 		logger.debug("three month ret map size: "+threeMonthCumReturnZScore.size());
