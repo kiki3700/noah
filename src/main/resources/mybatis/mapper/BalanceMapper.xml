@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.noah.app.quant.dao.BalanceSheetDao">
+	<select id="selectBalanceSheet" parameterType="com.noah.app.vo.ItemDto" resultType="com.noah.app.vo.BalanceSheetDto">
+		SELECT * FROM BALANCE_SHEET
+			WHERE
+				ITEM_ID = #{itemId} AND
+				REPORT_CODE = 11011
+			ORDER BY REPORTING_YEAR DESC
+	</select>
+</mapper>

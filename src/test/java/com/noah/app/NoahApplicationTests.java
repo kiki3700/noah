@@ -8,6 +8,7 @@ class NoahApplicationTests {
 
 	@Test
 	void contextLoads() {
+		System.out.println("noah");
 	}
 
 }

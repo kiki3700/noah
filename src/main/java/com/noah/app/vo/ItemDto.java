@@ -1,11 +1,10 @@
 package com.noah.app.vo;
-
+import java.math.BigInteger;
 import java.util.Date;
 
 public class ItemDto {
-	private int id;
+	private String id;
 	
-	private String ticker;
 	private String corpId;
 	private String name;
 	
@@ -16,18 +15,20 @@ public class ItemDto {
 	private String industry;
 	private Date listingDate;
 	private String corpSize;
-	
+	private BigInteger listedShare; //상장 주식수 
+	private BigInteger marketCap; //시가총액
+
 	
 	public ItemDto() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -39,13 +40,7 @@ public class ItemDto {
 		this.listingDate = listingDate;
 	}
 
-	public String getTicker() {
-		return ticker;
-	}
 
-	public void setTicker(String ticker) {
-		this.ticker = ticker;
-	}
 
 	public String getCorpId() {
 		return corpId;
@@ -111,10 +106,29 @@ public class ItemDto {
 		this.industry = industry;
 	}
 
+	public BigInteger getListedShare() {
+		return listedShare;
+	}
+
+	public void setListedShare(BigInteger listedShare) {
+		this.listedShare = listedShare;
+	}
+
+	public BigInteger getMarketCap() {
+		return marketCap;
+	}
+
+	public void setMarketCap(BigInteger marketCap) {
+		this.marketCap = marketCap;
+	}
+
 	@Override
 	public String toString() {
-		return "ItemDto [id=" + id + ", listingDate=" + listingDate + ", ticker=" + ticker + ", corpId=" + corpId
-				+ ", name=" + name + ", isActive=" + isActive + ", currencyId=" + currencyId + ", market=" + market
-				+ ", corpSize=" + corpSize + ", category=" + category + ", industry=" + industry + "]";
+		return "ItemDto [id=" + id + ", corpId=" + corpId + ", name=" + name + ", currencyId=" + currencyId
+				+ ", market=" + market + ", isActive=" + isActive + ", category=" + category + ", industry=" + industry
+				+ ", listingDate=" + listingDate + ", corpSize=" + corpSize + ", listedShare=" + listedShare
+				+ ", marketCap=" + marketCap + "]";
 	}
+
+
 }
