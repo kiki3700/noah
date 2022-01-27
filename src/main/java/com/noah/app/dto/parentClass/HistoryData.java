@@ -1,10 +1,9 @@
-package com.noah.app.vo;
-
+package com.noah.app.dto.parentClass;
 
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class HistoryDataDto {
+public class HistoryData {
 	private String id;
 	private Date tradingDate;
 	private String itemId;
@@ -13,8 +12,7 @@ public class HistoryDataDto {
 	private float low;
 	private float high;
 	private BigDecimal volume;
-	
-	public HistoryDataDto() {
+	public HistoryData() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -39,51 +37,37 @@ public class HistoryDataDto {
 	public float getOpen() {
 		return open;
 	}
-	public void setOpen(Number open) {
-		this.open = open.floatValue();
+	public void setOpen(float open) {
+		this.open = open;
 	}
 	public float getClose() {
 		return close;
 	}
-	public void setClose(Number close) {
-		this.close = close.floatValue();
+	public void setClose(float close) {
+		this.close = close;
 	}
 	public float getLow() {
 		return low;
 	}
-	public void setLow(Number low) {
-		this.low = low.floatValue();
-	}
-	public float getHigh() {
-		return  high;
-	}
-	public void setHigh(Number high) {
-		this.high = high.floatValue();
-	}
-	public void setOpen(float open) {
-		this.open = open;
-	}
-	public void setClose(float close) {
-		this.close = close;
-	}
 	public void setLow(float low) {
 		this.low = low;
+	}
+	public float getHigh() {
+		return high;
 	}
 	public void setHigh(float high) {
 		this.high = high;
 	}
-	public void setVolume(BigDecimal volume) {
-		this.volume = volume;
-	}
 	public BigDecimal getVolume() {
 		return volume;
 	}
-	public void setVolume(Number volume) {
-		this.volume = new BigDecimal(volume.toString());
+	public void setVolume(BigDecimal volume) {
+		this.volume = volume;
 	}
 	@Override
 	public String toString() {
-		return "HistoryDataDto [id=" + id + ", tradingDate=" + tradingDate + ", itemId=" + itemId + ", open=" + open
+		return "HistoryData [id=" + id + ", tradingDate=" + tradingDate + ", itemId=" + itemId + ", open=" + open
 				+ ", close=" + close + ", low=" + low + ", high=" + high + ", volume=" + volume + "]";
 	}
+	
 }

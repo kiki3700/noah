@@ -1,4 +1,4 @@
-package com.noah.app.vo;
+package com.noah.app.dto;
 
 import org.apache.ibatis.type.Alias;
 

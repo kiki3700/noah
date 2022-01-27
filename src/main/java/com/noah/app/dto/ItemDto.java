@@ -1,11 +1,11 @@
-package com.noah.app.vo;
+package com.noah.app.dto;
 import java.math.BigInteger;
 import java.util.Date;
 
 public class ItemDto {
 	private String id;
 	
-	private String corpId;
+	private String corpCode;
 	private String name;
 	
 	private int currencyId;
@@ -42,12 +42,12 @@ public class ItemDto {
 
 
 
-	public String getCorpId() {
-		return corpId;
+	public String getCorpCode() {
+		return corpCode;
 	}
 
-	public void setCorpId(String corpId) {
-		this.corpId = corpId;
+	public void setCorpCode(String corpCode) {
+		this.corpCode = corpCode;
 	}
 
 	public String getName() {
@@ -124,7 +124,7 @@ public class ItemDto {
 
 	@Override
 	public String toString() {
-		return "ItemDto [id=" + id + ", corpId=" + corpId + ", name=" + name + ", currencyId=" + currencyId
+		return "ItemDto [id=" + id + ", corpCode=" + corpCode + ", name=" + name + ", currencyId=" + currencyId
 				+ ", market=" + market + ", isActive=" + isActive + ", category=" + category + ", industry=" + industry
 				+ ", listingDate=" + listingDate + ", corpSize=" + corpSize + ", listedShare=" + listedShare
 				+ ", marketCap=" + marketCap + "]";

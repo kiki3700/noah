@@ -3,12 +3,11 @@ package com.noah.app.quant.service;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.stereotype.Service;
+import com.noah.app.wrapper.PortfolioWrapper;
+import com.noah.app.wrapper.StockWrapper;
 
-import com.noah.app.vo.ItemDto;
-@Service
 public interface QuantService {
-
-	List<ItemDto> pickStocks(Map<String, Object> inParams);
-
+	List<StockWrapper> calculateStocks(Map<String, Object> inParam);
+	PortfolioWrapper calculatePortfolio(Map<String, Object> inParam);
+	void enrollPortfolio(PortfolioWrapper portfolioWrapper);
 }

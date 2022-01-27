@@ -1,42 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.or
+
+
+
+
+
+g//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.noah.app.quant.mapper.ItemMapper">
 	<select id = 'selectItemDtoList' parameterType ='HashMap' resultType = 'com.noah.app.vo.ItemDto'>
 		SELECT *
-			FROM ITEM A
-			 LEFT JOIN (SELECT ITEM_ID FROM HISTORY_DATA GROUP BY(ITEM_ID) HAVING COUNT(*) > 255 ) B ON A.ID = B.ITEM_ID
-			WHERE IS_ACTIVE ='CPC_STOCK_STATUS_NORMAL'
+			FROM ITEM
+		<where>
+			<if test = 'isActive != "" and isActive !=null'>
+				AND IS_ACTIVE =#{isActive}
+			</if>
+			<if test = "category != '' and category !=null" >
+				AND CATEGORY = #{category}
+			</if>
+			<if test = 'isCorpCode != null and isCorpCode != ""'>
+				AND CORP_CODE IS NOT NULL
+			</if>
 			<if test = "market !=null and market!=''">
-				AND A.MARKET = #{market}
+				AND MARKET = #{market}
+			</if>
+			<if test = "overTheYear !=null">
+				AND  to_char(listing_date, 'YYYY-MM-DD') <![CDATA[<=]]> to_char(add_months(SYSDATE,-12),'YYYY-MM-DD')
 			</if>
 			<if test = "industry != null and industry != ''">
-				AND A.industry = #{industry}
+				AND industry = #{industry}
 			</if>
 			<if test = "corpSize != null and corpSize!= ''">
 				And A.corp_size = #{corpSize}
 			</if>
-			<if test = "baseYear != null">
-                AND
-				B.ITEM_ID IS NOT NULL
-			</if>
+		</where>
 	</select>
 	
 
-	<!-- 지워버릴것  -->
-	<select id = "selectHistoryDataList" parameterType = "HashMap" resultType ="com.noah.app.vo.HistoryDataDto">
-		
-			SELECT 
-			*
-            FROM(SELECT * FROM HISTORY_DATA WHERE ITEM_ID = #{itemDto.id}
-            ORDER BY TRADING_DATE DESC) T 
- 			WHERE 1=1
-            	<choose>
-            		<when test ="period != null">
-            			AND ROWNUM <![CDATA[  <= ]]> #{period} 
-            		</when>
-            		<otherwise>
-						AND ROWNUM <![CDATA[  <= ]]> 255
-					</otherwise>
-				</choose>
+
+	
+	<select id ="selectHistoryDataListByYear" parameterType = 'com.noah.app.vo.ItemDto' resultType = "com.noah.app.vo.HistoryDataDto">
+		select * from history_data where item_id = #{id} AND to_char(trading_date, 'YYYY/MM/DD') <![CDATA[>=]]> to_char(add_months(SYSDATE,-12), 'YYYY/MM/DD')  order by id ASC
+	</select>
+	<select id = 'selectBusinessDates' resultType = 'int'>
+		select max(count(*)) from history_data where to_char(trading_date, 'YYYY/MM/DD') <![CDATA[>=]]>  to_char(add_months(SYSDATE,-12), 'YYYY/MM/DD') group by item_id
+	</select>
+	
+	<select id = 'selectHistroyData' parameterType = "hashmap" resultType='com.noah.app.vo.HistoryDataDto'>
+		select * from history_data
+		<where>
+			<if test = "itemId != null and itemId = ''"> 
+				AND	item_id = #{itemId} 
+			</if>
+		</where>
+	</select>
+	
+	<select id = 'selectCurHistroyData' parameterType = "hashmap" resultType='com.noah.app.vo.HistoryDataDto'>
+			SELECT *  from history_data
+				WHERE	ITEM_id = #{itemId} and rownum = 1 
+			ORDER BY ID DESC
+			
+	</select>
+	
+	<select id = 'selectHistoryDataListByMonthHorizontally' parameterType = 'int' resultType = 'com.noah.app.vo.HistoryDataDto'>
+		select * from history_data where trading_date = (select MIN(trading_date) from history_data where trading_date > to_char(add_months(SYSDATE,-#{month}),'YYYY/MM/DD'))
+	</select>
+	<select id = 'selectHsitoryDataListByTodayHorizontally' resultType = 'com.noah.app.vo.HistoryDataDto'>
+		select * from history_data where trading_date = (select max(trading_date) from history_data where trading_date <![CDATA[<=]]> to_char(SYSDATE,'YYYY/MM/DD'))
+	</select>
+	<select id = 'selectAveragePriceByMonth' parameterType ='int' resultType = 'HashMap'>
+	select item_id, round( avg(NVL(close,-1)),4)as averagePrice from history_data where trading_date >= (select min(trading_date) from history_data where trading_date >= to_char(add_months(sysdate,-#{month}),'yyyy/mmdd')) group by item_id
 	</select>
 </mapper>
