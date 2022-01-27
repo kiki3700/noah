@@ -14,9 +14,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.noah.app.constants.ItemConst;
+import com.noah.app.dto.HistoryDataDto;
+import com.noah.app.dto.ItemDto;
 import com.noah.app.quant.mapper.ItemMapper;
-import com.noah.app.vo.HistoryDataDto;
-import com.noah.app.vo.ItemDto;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

@@ -11,12 +11,11 @@ import java.util.TreeMap;
 
 import org.ojalgo.matrix.Primitive64Matrix;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import com.noah.app.constants.BusinessDays;
+import com.noah.app.dto.IndexHistoryDataDto;
+import com.noah.app.dto.parentClass.HistoryData;
 import com.noah.app.quant.mapper.ItemMapper;
-import com.noah.app.vo.HistoryDataDto;
-import com.noah.app.vo.IndexHistoryDataDto;
 
 /*스트림 공부하고 리팰터링*/
 
@@ -25,22 +24,31 @@ public class QuantUtils {
 	@Autowired
 	ItemMapper itemMapper;
 	
-	public static TreeMap<Date, Float> toPriceMap(List<HistoryDataDto> historyDataDtoList){
+	public static <E extends HistoryData> TreeMap<Date, Float> toHistoryDataMap(List<E> historyDataList){
 		TreeMap<Date, Float> treeMap = new TreeMap<>();
-		for(HistoryDataDto historyDataDto : historyDataDtoList) {
+		for(E historyDataDto : historyDataList) {
 			treeMap.put(historyDataDto.getTradingDate(), historyDataDto.getClose());
 		}
 		return treeMap;
 	}
-	public static TreeMap<Date, Float> toIndexMap(List<IndexHistoryDataDto> indexHistoryDataDtoList){
-		TreeMap<Date, Float> treeMap = new TreeMap<>();
-		for(IndexHistoryDataDto indexHistoryDataDto : indexHistoryDataDtoList) {
-			treeMap.put(indexHistoryDataDto.getIndexDate(), indexHistoryDataDto.getClose());
+	
+	public static TreeMap<Date, Double> toReturnMap(TreeMap<Date, Float> historyDataMap){
+		TreeMap<Date, Double> returnTreeMap = new TreeMap<>();
+		Entry<Date, Float> preData = historyDataMap.pollFirstEntry();
+		float preVal = preData.getValue();
+		Date preDate = preData.getKey();
+		for(Date date : historyDataMap.keySet()) {
+			float curVal= historyDataMap.get(date);
+			double returnRate = (curVal-preVal)/preVal;
+			returnTreeMap.put(date, returnRate);
+			preVal = curVal;
+			preDate = date;
 		}
-		return treeMap;
+		return returnTreeMap;
 	}
 	
-	public static TreeMap<Date, Double> toReturnMap(TreeMap<Date, Float> treeMap){
+	public static <E extends HistoryData> TreeMap<Date, Double> toReturnMap(List<E> historyDataList){
+		TreeMap<Date, Float> treeMap = toHistoryDataMap(historyDataList);
 		TreeMap<Date, Double> returnTreeMap = new TreeMap<>();
 		Entry<Date, Float> preData = treeMap.pollFirstEntry();
 		float preVal = preData.getValue();
@@ -86,7 +94,7 @@ public class QuantUtils {
 	}
 	
 	public static double calBaseRate(List<IndexHistoryDataDto> baseRateList) {
-		TreeMap<Date, Float> map = toIndexMap(baseRateList);
+		TreeMap<Date, Float> map = toHistoryDataMap(baseRateList);
 		double geoMean = 1;
 		for(Date date : map.keySet()) {
 			geoMean *= map.get(date)/100+1;
@@ -153,7 +161,6 @@ public class QuantUtils {
 	}
 	public static BigDecimal calStdv(TreeMap<Date, Double> returnMap) {
 		BigDecimal vol = calVol(returnMap);
-		
 		return new BigDecimal(Math.pow(vol.doubleValue(),0.5));
 	}
 	public static BigDecimal calCov(TreeMap<Date, Double> stock1ReturnMap, TreeMap<Date, Double> stock2ReturnMap) {

@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.noah.app.vo.IndexHistoryDataDto;
+import com.noah.app.dto.IndexHistoryDataDto;
 
 @Mapper
 public interface IndexHistoryDataMapper {

@@ -1,10 +1,11 @@
-package com.noah.app.vo;
+package com.noah.app.dto;
 
 import java.math.BigDecimal;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class IndexHistoryDataDto {
+import com.noah.app.dto.parentClass.HistoryData;
+
+public class IndexHistoryDataDto extends HistoryData{
 	private String id;
 	private String indexName;
 	private Date indexDate;

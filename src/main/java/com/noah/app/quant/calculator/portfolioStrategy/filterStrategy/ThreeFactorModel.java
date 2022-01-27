@@ -21,13 +21,13 @@ import org.springframework.stereotype.Component;
 
 import com.noah.app.constants.BusinessDays;
 import com.noah.app.constants.ItemConst;
+import com.noah.app.dto.BalanceSheetDto;
+import com.noah.app.dto.HistoryDataDto;
+import com.noah.app.dto.ItemDto;
 import com.noah.app.quant.dao.BatchDao;
 import com.noah.app.quant.mapper.BalanceSheetMapper;
 import com.noah.app.quant.mapper.ItemMapper;
 import com.noah.app.util.QuantUtils;
-import com.noah.app.vo.BalanceSheetDto;
-import com.noah.app.vo.HistoryDataDto;
-import com.noah.app.vo.ItemDto;
 
 @Component
 public class ThreeFactorModel {

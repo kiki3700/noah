@@ -4,8 +4,8 @@ import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-import com.noah.app.vo.HistoryDataDto;
-import com.noah.app.vo.ItemDto;
+import com.noah.app.dto.HistoryDataDto;
+import com.noah.app.dto.ItemDto;
 
 /*추가로 넣어줘야하는 기능 
  * 가격가져오고 수익률을 구해준다. 가져왔으면 평균 분산을 구해준다.

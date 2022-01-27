@@ -18,16 +18,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.noah.app.constants.BusinessDays;
+import com.noah.app.dto.HistoryDataDto;
+import com.noah.app.dto.ItemDto;
 import com.noah.app.quant.mapper.ItemMapper;
 import com.noah.app.util.QuantUtils;
-import com.noah.app.vo.HistoryDataDto;
-import com.noah.app.vo.ItemDto;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class QuantUtilsTest {
-	@Autowired
-	QuantUtils quantUtil;
 	
 	@Autowired
 	ItemMapper itemMapper;
@@ -43,7 +41,7 @@ public class QuantUtilsTest {
 //	@Test
 //	public void keySort() {
 //
-//		TreeMap<Date, Float> treeMap = quantUtil.toPriceMap(historyDataDtoList);
+//		TreeMap<Date, Float> treeMap = quantUtil.toHistoryDataMap(historyDataDtoList);
 //		Date[] dArr = treeMap.keySet().toArray(new Date[treeMap.size()]);
 //		for(int i = 0 ; i<dArr.length;i++) {
 //			System.out.println(dArr[i]);
@@ -52,7 +50,7 @@ public class QuantUtilsTest {
 //	}
 //	@Test
 //	public void cumRet() {
-//		TreeMap<Date, Float> priceMap = quantUtil.toPriceMap(historyDataDtoList);
+//		TreeMap<Date, Float> priceMap = quantUtil.toHistoryDataMap(historyDataDtoList);
 //		BigDecimal cumRet = quantUtil.calCumRet(priceMap, BusinessDays.THREEMONTHS);
 //		assertEquals(cumRet.floatValue(),-0.05201177625,0.004 );
 //	}

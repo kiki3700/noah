@@ -14,6 +14,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.noah.app.constants.ItemConst;
+import com.noah.app.dto.ItemDto;
 import com.noah.app.quant.calculator.portfolioStrategy.StockDivider;
 import com.noah.app.quant.calculator.portfolioStrategy.StockPicker;
 import com.noah.app.quant.calculator.portfolioStrategy.filterStrategy.ThreeFactorModel;
@@ -21,7 +22,6 @@ import com.noah.app.quant.dao.BatchDao;
 import com.noah.app.quant.mapper.ItemMapper;
 import com.noah.app.quant.service.QuantService;
 import com.noah.app.util.QuantUtils;
-import com.noah.app.vo.ItemDto;
 import com.noah.app.wrapper.PortfolioWrapper;
 import com.noah.app.wrapper.StockWrapper;
 
@@ -104,7 +104,7 @@ public class ThreeFactorModelTest {
 //			System.out.println(item);
 //			inParams.put("itemDto", item);			
 //			List<HistoryDataDto> historyDataDtoList = itemMapper.selectHistoryDataList(inParams);
-//			TreeMap<Date, Float> priceMap = quant.toPriceMap(historyDataDtoList);
+//			TreeMap<Date, Float> priceMap = quant.toHistoryDataMap(historyDataDtoList);
 //			TreeMap<Date, Double> returnMap = quant.toReturnMap(priceMap);
 //			System.out.println(returnMap.toString());
 //		}

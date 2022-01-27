@@ -7,14 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
+import com.noah.app.dto.ItemDto;
+import com.noah.app.dto.PortfolioDto;
+import com.noah.app.dto.PortfolioTargetListDto;
 import com.noah.app.quant.calculator.portfolioStrategy.StockDivider;
 import com.noah.app.quant.calculator.portfolioStrategy.StockPicker;
 import com.noah.app.quant.mapper.ItemMapper;
 import com.noah.app.quant.mapper.QuantMapper;
 import com.noah.app.quant.service.QuantService;
-import com.noah.app.vo.ItemDto;
-import com.noah.app.vo.PortfolioDto;
-import com.noah.app.vo.PortfolioTargetListDto;
 import com.noah.app.wrapper.PortfolioWrapper;
 import com.noah.app.wrapper.StockWrapper;
 

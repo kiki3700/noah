@@ -16,11 +16,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.noah.app.constants.IndexConst;
+import com.noah.app.dto.HistoryDataDto;
+import com.noah.app.dto.IndexHistoryDataDto;
 import com.noah.app.quant.mapper.IndexHistoryDataMapper;
 import com.noah.app.quant.mapper.ItemMapper;
 import com.noah.app.util.QuantUtils;
-import com.noah.app.vo.HistoryDataDto;
-import com.noah.app.vo.IndexHistoryDataDto;
 import com.noah.app.wrapper.PortfolioWrapper;
 import com.noah.app.wrapper.StockWrapper;
 
@@ -32,8 +32,7 @@ public class Markowitz {
 	ItemMapper itmMapper;
 	
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
-	@Autowired
-	QuantUtils quantUtil;
+
 	
 	public PortfolioWrapper calculateWeightList(List<StockWrapper> stockWrapperList,  Map<String, Object> inParam){
 		logger.debug("=================================");
@@ -48,19 +47,19 @@ public class Markowitz {
 		queryMap.put("indexName", IndexConst.BokIndex.BaseRate.getValue());
 		List<IndexHistoryDataDto> baseRate =indexHistoryMapper.selectIndexHistoryDataListByYear(queryMap);
 		logger.debug(baseRate.toString());
-		TreeMap<Date, Float> kospiPriceMap = quantUtil.toIndexMap(kospiList);
+		TreeMap<Date, Float> kospiPriceMap = QuantUtils.toHistoryDataMap(kospiList);
 		
 		logger.debug("get price list");
 		List<TreeMap<Date, Float>> stockPricemapList  = new ArrayList<TreeMap<Date, Float>>(); 
 		for(StockWrapper stockWrapper: stockWrapperList) {
 			List<HistoryDataDto> historyDataDtoList = itmMapper.selectHistoryDataListByYear(stockWrapper.getItemDto());
-			TreeMap<Date,Float> treeMap = quantUtil.toPriceMap(historyDataDtoList);
+			TreeMap<Date,Float> treeMap = QuantUtils.toHistoryDataMap(historyDataDtoList);
 			stockPricemapList.add(treeMap);
 		}
 		
 		logger.debug("get weight");
-		Primitive64Matrix covMat =quantUtil.toCovMatrix(stockPricemapList);
-		Primitive64Matrix retMat = quantUtil.toExpVector(stockPricemapList, kospiPriceMap, baseRate);
+		Primitive64Matrix covMat =QuantUtils.toCovMatrix(stockPricemapList);
+		Primitive64Matrix retMat = QuantUtils.toExpVector(stockPricemapList, kospiPriceMap, baseRate);
 		MarkowitzModel model = new  MarkowitzModel(covMat,retMat);
 		
 

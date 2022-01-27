@@ -2,8 +2,8 @@ package com.noah.app.quant.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.noah.app.vo.PortfolioDto;
-import com.noah.app.vo.PortfolioTargetListDto;
+import com.noah.app.dto.PortfolioDto;
+import com.noah.app.dto.PortfolioTargetListDto;
 
 @Mapper
 public interface QuantMapper {

@@ -1,10 +1,12 @@
-package com.noah.app.vo;
+package com.noah.app.dto;
 
 
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class HistoryDataDto {
+import com.noah.app.dto.parentClass.HistoryData;
+
+public class HistoryDataDto extends HistoryData{
 	private String id;
 	private Date tradingDate;
 	private String itemId;
@@ -14,6 +16,7 @@ public class HistoryDataDto {
 	private float high;
 	private BigDecimal volume;
 	
+
 	public HistoryDataDto() {
 		super();
 		// TODO Auto-generated constructor stub

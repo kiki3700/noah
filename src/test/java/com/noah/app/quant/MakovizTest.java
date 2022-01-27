@@ -17,13 +17,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.noah.app.dto.HistoryDataDto;
+import com.noah.app.dto.IndexHistoryDataDto;
+import com.noah.app.dto.ItemDto;
 import com.noah.app.quant.calculator.portfolioStrategy.StockDivider;
 import com.noah.app.quant.mapper.IndexHistoryDataMapper;
 import com.noah.app.quant.mapper.ItemMapper;
 import com.noah.app.util.QuantUtils;
-import com.noah.app.vo.HistoryDataDto;
-import com.noah.app.vo.IndexHistoryDataDto;
-import com.noah.app.vo.ItemDto;
 import com.noah.app.wrapper.PortfolioWrapper;
 import com.noah.app.wrapper.StockWrapper;
 
@@ -57,7 +57,7 @@ public class MakovizTest {
 		map.put("indexName", "코스피");
 		map.put("period", 255);
 		List<IndexHistoryDataDto> kospiList = idxMapper.selectIndexHistoryDataList(map);
-		kospiPriceMap = sta.toIndexMap(kospiList);
+		kospiPriceMap = sta.toHistoryDataMap(kospiList);
 		String[] arr = new String[] {"A009810","A121800", "A036830", "A094480", "A086520","A090150", "A064260", "A013360", "A078600","A247540", "A016250", "A064550", "A052690","A078350","A006110","A094820","A009410","A182360","A130660","A096530"};
 		inParam.put("period", 255);
 		stockPricemapList = new ArrayList<TreeMap<Date, Float>>(); 
@@ -66,7 +66,7 @@ public class MakovizTest {
 			item.setId(arr[i]);
 			inParam.put("itemDto", item);
 			List<HistoryDataDto> histList = itmMapper.selectHistoryDataListByYear(item);
-			TreeMap<Date,Float> treeMap = sta.toPriceMap(histList);
+			TreeMap<Date,Float> treeMap = sta.toHistoryDataMap(histList);
 			stockPricemapList.add(treeMap);
 			StockWrapper stockWrapper = new StockWrapper();
 			stockWrapper.setItemDto(item);

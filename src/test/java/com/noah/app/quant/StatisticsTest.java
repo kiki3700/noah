@@ -59,7 +59,7 @@
 //	@Test
 //	public void getStat() {
 //		
-//		TreeMap<Date, Float> treeMap = statistics.toPriceMap(historyList1);
+//		TreeMap<Date, Float> treeMap = statistics.toHistoryDataMap(historyList1);
 //		
 //		TreeMap<Date, Double> returnMap = statistics.toReturnMap(treeMap);
 //		TreeMap<Date, Double> returnMap2 = statistics.toReturnMap(treeMap);
@@ -118,7 +118,7 @@
 //			inParam.put("itemDto", itemArr[i]);
 //			System.out.println(itemArr[i].getId());
 //			historyList1 = itemMapper.selectHistoryDataList(inParam);
-//			treeMapList.add(statistics.toReturnMap(statistics.toPriceMap(historyList1)));
+//			treeMapList.add(statistics.toReturnMap(statistics.toHistoryDataMap(historyList1)));
 //		}
 //		BigDecimal[][] covArr = new BigDecimal[itemArr.length][itemArr.length];
 //		for(int i = 0; i<treeMapList.size();i++) {

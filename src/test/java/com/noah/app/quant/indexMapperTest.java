@@ -58,7 +58,7 @@
 //		
 //		
 //		List<HistoryDataDto> stock = itemMapper.selectHistoryDataList(map1);
-//		TreeMap<Date, Float> sTM = sta.toPriceMap(stock);
+//		TreeMap<Date, Float> sTM = sta.toHistoryDataMap(stock);
 //		
 //		
 //		
@@ -67,7 +67,7 @@
 //		System.out.println(sta.calGeoMean(sRM));
 //		System.out.println(sta.calVol(sRM));
 //				
-//		TreeMap<Date, Float> ma = sta.toIndexMap(list);
+//		TreeMap<Date, Float> ma = sta.toHistoryDataMap(list);
 //		TreeMap<Date, Double> turn = sta.toReturnMap(ma);
 //		
 //		

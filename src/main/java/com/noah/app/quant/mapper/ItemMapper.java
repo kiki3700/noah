@@ -7,8 +7,8 @@ import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.noah.app.vo.HistoryDataDto;
-import com.noah.app.vo.ItemDto;
+import com.noah.app.dto.HistoryDataDto;
+import com.noah.app.dto.ItemDto;
 
 @Mapper
 public interface ItemMapper {

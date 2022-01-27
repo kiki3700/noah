@@ -13,10 +13,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.noah.app.dto.BalanceSheetDto;
+import com.noah.app.dto.HistoryDataDto;
+import com.noah.app.dto.ItemDto;
 import com.noah.app.util.QuantUtils;
-import com.noah.app.vo.BalanceSheetDto;
-import com.noah.app.vo.HistoryDataDto;
-import com.noah.app.vo.ItemDto;
 
 @Repository
 public class BatchDao {
@@ -26,9 +26,8 @@ public class BatchDao {
 	@Autowired
 	protected SqlSessionFactory sqlSessionFactory;
 	
-	@Autowired
-	QuantUtils quantUtil;
-	
+
+		
 	//수정 요망
 	public HashMap<String, TreeMap<Date, Double>> selectReturnDataTreeMap(List<ItemDto> itemDtoList, HashMap<String, Object> inParam){
 		logger.debug("==================================");
@@ -41,8 +40,8 @@ public class BatchDao {
 				inParam.put("itemDto", itemDtoList.get(i));
 				List<HistoryDataDto> historyDataDtoList = sqlSession.selectList("com.noah.app.quant.mapper.ItemMapper.selectHistoryDataListByYear",inParam);
 				if(historyDataDtoList.size()==(int) inParam.get("period")) {
-					TreeMap<Date, Float> priceMap = quantUtil.toPriceMap(historyDataDtoList);
-					TreeMap<Date, Double> returnMap = quantUtil.toReturnMap(priceMap);
+					TreeMap<Date, Float> priceMap = QuantUtils.toHistoryDataMap(historyDataDtoList);
+					TreeMap<Date, Double> returnMap = QuantUtils.toReturnMap(priceMap);
 					resultMap.put(itemDtoList.get(i).getId(), returnMap);
 				}
 			}
@@ -65,7 +64,7 @@ public class BatchDao {
 			for(ItemDto itemDto : itemDtoList) {
 				List<HistoryDataDto> historyDataDtoList = sqlSession.selectList("com.noah.app.quant.mapper.ItemMapper.selectHistoryDataListByYear",itemDto);
 				if(historyDataDtoList.size()==(int) BusinessDates) {
-					TreeMap<Date, Float> priceMap = quantUtil.toPriceMap(historyDataDtoList);
+					TreeMap<Date, Float> priceMap = QuantUtils.toHistoryDataMap(historyDataDtoList);
 					resultMap.put(itemDto.getId(), priceMap);
 				}
 			}
