@@ -24,7 +24,7 @@ public class DataAccessConfig {
 		sessionFactory.setDataSource(dataSource);
 		sessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mybatis/mapper/*.xml"));
 		sessionFactory.setVfs(SpringBootVFS.class);
-		sessionFactory.setTypeAliasesPackage("com.noah.app.vo");
+		sessionFactory.setTypeAliasesPackage("com.noah.app.dto");
 		org.apache.ibatis.session.Configuration configuration = new org.apache.ibatis.session.Configuration();
 		configuration.setMapUnderscoreToCamelCase(true);
 		configuration.setJdbcTypeForNull(null);

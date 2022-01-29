@@ -18,9 +18,9 @@
 //import com.noah.app.quant.mapper.IndexHistoryDataMapper;
 //import com.noah.app.quant.mapper.ItemMapper;
 //import com.noah.app.util.QuantUtils;
-//import com.noah.app.vo.HistoryDataDto;
-//import com.noah.app.vo.IndexHistoryDataDto;
-//import com.noah.app.vo.ItemDto;
+//import com.noah.app.dto.HistoryDataDto;
+//import com.noah.app.dto.IndexHistoryDataDto;
+//import com.noah.app.dto.ItemDto;
 //
 //@RunWith(SpringRunner.class)
 //@SpringBootTest

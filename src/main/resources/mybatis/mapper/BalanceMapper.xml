@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.noah.app.quant.mapper.BalanceSheetMapper">
-	<select id="selectBalanceSheetByYear" parameterType="com.noah.app.vo.ItemDto" resultType="com.noah.app.vo.BalanceSheetDto">
+	<select id="selectBalanceSheetByYear" parameterType="com.noah.app.dto.ItemDto" resultType="com.noah.app.dto.BalanceSheetDto">
 			select * from (select * from balance_sheet where item_id = #{id} AND report_code ='11011' order by id DESC) where ROWNUM =1
 	</select>
-	<select id = "selectBalanceSheetByYearHorizontally"  resultType="com.noah.app.vo.BalanceSheetDto">
+	<select id = "selectBalanceSheetByYearHorizontally"  resultType="com.noah.app.dto.BalanceSheetDto">
 		Select * from (select A.*, count(*) over (partition by ITEM_ID) cnt from balance_sheet A WHERE reporting_year = to_char(ADD_MONTHS(SYSDATE,-12),'YYYY') and report_code = 11011) where cnt = 1 
 		union
 		Select * from (select A.*, count(*) over (partition by ITEM_ID) cnt from balance_sheet A WHERE reporting_year = 2020 and report_code = 11011) where cnt = 2 and fs_nm = '연결재무제표'

@@ -7,7 +7,7 @@
 
 g//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.noah.app.quant.mapper.ItemMapper">
-	<select id = 'selectItemDtoList' parameterType ='HashMap' resultType = 'com.noah.app.vo.ItemDto'>
+	<select id = 'selectItemDtoList' parameterType ='HashMap' resultType = 'com.noah.app.dto.ItemDto'>
 		SELECT *
 			FROM ITEM
 		<where>
@@ -38,14 +38,14 @@ g//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
 	
-	<select id ="selectHistoryDataListByYear" parameterType = 'com.noah.app.vo.ItemDto' resultType = "com.noah.app.vo.HistoryDataDto">
+	<select id ="selectHistoryDataListByYear" parameterType = 'com.noah.app.dto.ItemDto' resultType = "com.noah.app.dto.HistoryDataDto">
 		select * from history_data where item_id = #{id} AND to_char(trading_date, 'YYYY/MM/DD') <![CDATA[>=]]> to_char(add_months(SYSDATE,-12), 'YYYY/MM/DD')  order by id ASC
 	</select>
 	<select id = 'selectBusinessDates' resultType = 'int'>
 		select max(count(*)) from history_data where to_char(trading_date, 'YYYY/MM/DD') <![CDATA[>=]]>  to_char(add_months(SYSDATE,-12), 'YYYY/MM/DD') group by item_id
 	</select>
 	
-	<select id = 'selectHistroyData' parameterType = "hashmap" resultType='com.noah.app.vo.HistoryDataDto'>
+	<select id = 'selectHistroyData' parameterType = "hashmap" resultType='com.noah.app.dto.HistoryDataDto'>
 		select * from history_data
 		<where>
 			<if test = "itemId != null and itemId = ''"> 
@@ -54,17 +54,17 @@ g//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 		</where>
 	</select>
 	
-	<select id = 'selectCurHistroyData' parameterType = "hashmap" resultType='com.noah.app.vo.HistoryDataDto'>
+	<select id = 'selectCurHistroyData' parameterType = "hashmap" resultType='com.noah.app.dto.HistoryDataDto'>
 			SELECT *  from history_data
 				WHERE	ITEM_id = #{itemId} and rownum = 1 
 			ORDER BY ID DESC
 			
 	</select>
 	
-	<select id = 'selectHistoryDataListByMonthHorizontally' parameterType = 'int' resultType = 'com.noah.app.vo.HistoryDataDto'>
+	<select id = 'selectHistoryDataListByMonthHorizontally' parameterType = 'int' resultType = 'com.noah.app.dto.HistoryDataDto'>
 		select * from history_data where trading_date = (select MIN(trading_date) from history_data where trading_date > to_char(add_months(SYSDATE,-#{month}),'YYYY/MM/DD'))
 	</select>
-	<select id = 'selectHsitoryDataListByTodayHorizontally' resultType = 'com.noah.app.vo.HistoryDataDto'>
+	<select id = 'selectHsitoryDataListByTodayHorizontally' resultType = 'com.noah.app.dto.HistoryDataDto'>
 		select * from history_data where trading_date = (select max(trading_date) from history_data where trading_date <![CDATA[<=]]> to_char(SYSDATE,'YYYY/MM/DD'))
 	</select>
 	<select id = 'selectAveragePriceByMonth' parameterType ='int' resultType = 'HashMap'>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.noah.app.quant.mapper.IndexHistoryDataMapper">
-	<select id="selectIndexHistoryDataList" parameterType ='HashMap' resultType='com.noah.app.vo.IndexHistoryDataDto'>
+	<select id="selectIndexHistoryDataList" parameterType ='HashMap' resultType='com.noah.app.dto.IndexHistoryDataDto'>
 			SELECT 
 				*
             FROM(SELECT * FROM INDEX_HISTORY_DATA WHERE INDEX_NAME = #{indexName}
@@ -18,7 +18,7 @@
  			</where>
 	</select>
 	
-	<select id ="selectIndexHistoryDataListByYear" parameterType = 'HashMap' resultType = "com.noah.app.vo.IndexHistoryDataDto">
+	<select id ="selectIndexHistoryDataListByYear" parameterType = 'HashMap' resultType = "com.noah.app.dto.IndexHistoryDataDto">
 		select * from index_history_data where index_name = #{indexName} AND to_char(index_date, 'YYYY/MM/DD') <![CDATA[>=]]> to_char(add_months(SYSDATE,-12), 'YYYY/MM/DD')  order by id ASC
 	</select>
 </mapper>

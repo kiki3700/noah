@@ -4,7 +4,7 @@
 	<select id="selectPortfolioSeqNextVal" parameterType = 'int'>
 		select portfolio_seq.nextval from dual
 	</select>
-	<insert id='insertPortfolio' parameterType = "com.noah.app.vo.PortfolioDto">
+	<insert id='insertPortfolio' parameterType = "com.noah.app.dto.PortfolioDto">
 		INSERT INTO PORTFOLIO(
 			ID,
 			NAME,
@@ -30,7 +30,7 @@
 			SYSDATE
 		)
 	</insert>
-	<insert id = 'insertPorrtfolioTarget' parameterType="com.noah.app.vo.PortfolioTargetListDto">
+	<insert id = 'insertPorrtfolioTarget' parameterType="com.noah.app.dto.PortfolioTargetListDto">
 		INSERT INTO PORTFOLIO_TARGET_LIST(
 			ID,
 			ITEM_ID,

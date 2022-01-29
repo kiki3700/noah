@@ -1,6 +1,5 @@
 package com.noah.app.quant.calculator.portfolioStrategy;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -10,14 +9,10 @@ import org.springframework.stereotype.Component;
 
 import com.noah.app.quant.calculator.portfolioStrategy.portfolioStrategy.Markowitz;
 import com.noah.app.quant.mapper.ItemMapper;
-import com.noah.app.util.QuantUtils;
 import com.noah.app.wrapper.PortfolioWrapper;
 import com.noah.app.wrapper.StockWrapper;
 @Component
 public class StockDivider {
-
-	@Autowired
-	QuantUtils statistics;
 	
 	@Autowired
 	Markowitz markowitz;

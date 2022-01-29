@@ -34,8 +34,6 @@ public class StockPicker {
 	@Autowired
 	BatchDao batchDao;
 	
-	@Autowired
-	QuantUtils quantUtil;
 	
 	@Autowired
 	ThreeFactorModel threeFactorModel;
@@ -81,9 +79,9 @@ public class StockPicker {
 		historyDataDtoKey.retainAll(balanceSheetKey);
 		
 		for(String item : historyDataDtoKey) {
-			BigDecimal oneMonthCumRet =quantUtil.calCumRet(priceListMap.get(item), BusinessDays.ONEMONTH);
-			BigDecimal sixMonthCumRet = quantUtil.calCumRet(priceListMap.get(item), BusinessDays.SIXMONTHS);
-			BigDecimal oneYearCumRet = quantUtil.calCumRet(priceListMap.get(item), BusinessDays.ONEYEAR);
+			BigDecimal oneMonthCumRet =QuantUtils.calCumRet(priceListMap.get(item), BusinessDays.ONEMONTH);
+			BigDecimal sixMonthCumRet = QuantUtils.calCumRet(priceListMap.get(item), BusinessDays.SIXMONTHS);
+			BigDecimal oneYearCumRet = QuantUtils.calCumRet(priceListMap.get(item), BusinessDays.ONEYEAR);
 			
 			oneMonthCumReturnMap.put(item, oneMonthCumRet.doubleValue());
 			sixMonthCumReturnMap.put(item, sixMonthCumRet.doubleValue());
