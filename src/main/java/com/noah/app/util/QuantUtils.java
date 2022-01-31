@@ -5,9 +5,11 @@ import java.math.MathContext;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeMap;
+import java.util.stream.Collectors;
 
 import org.ojalgo.matrix.Primitive64Matrix;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,11 +27,12 @@ public class QuantUtils {
 	ItemMapper itemMapper;
 	
 	public static <E extends HistoryData> TreeMap<Date, Float> toHistoryDataMap(List<E> historyDataList){
-		TreeMap<Date, Float> treeMap = new TreeMap<>();
-		for(E historyDataDto : historyDataList) {
-			treeMap.put(historyDataDto.getTradingDate(), historyDataDto.getClose());
-		}
-		return treeMap;
+		return historyDataList.parallelStream()
+				.collect(Collectors
+						.toMap(HistoryData::getTradingDate,
+								HistoryData::getClose
+								,(o1, o2) -> o1,
+								TreeMap::new));
 	}
 	
 	public static TreeMap<Date, Double> toReturnMap(TreeMap<Date, Float> historyDataMap){
@@ -137,8 +140,7 @@ public class QuantUtils {
 		for(Date date : returnMap.keySet()) {
 			cumReturn= cumReturn.multiply(new BigDecimal(1+ returnMap.get(date)));
 		}
-		cumReturn =new BigDecimal(Math.pow(cumReturn.doubleValue(),(float)1/len)-1);
-		return cumReturn;
+		return new BigDecimal(Math.pow(cumReturn.doubleValue(),(double)1/len)).subtract(new BigDecimal(1));
 	}
 	public static BigDecimal calExpRet(TreeMap<Date,Float> priceMap, TreeMap<Date,Float> indexMap, double riskFreeRate) {
 		TreeMap<Date, Double> stockRetMap = toReturnMap(priceMap);
@@ -146,7 +148,6 @@ public class QuantUtils {
 		BigDecimal rm = calGeoMean(kospiRetMap);
 		BigDecimal beta = calBeta(stockRetMap, kospiRetMap);
 		return new BigDecimal(riskFreeRate).add(beta.multiply(rm.add(new BigDecimal(-riskFreeRate))));
-		
 	}
 	
 	public static BigDecimal calVol(TreeMap<Date, Double> returnMap) {
@@ -156,12 +157,16 @@ public class QuantUtils {
 			sum=sum.add(mean.add(new BigDecimal(-returnMap.get(date))).pow(2));
 		}
 		int n = returnMap.size();
-		return sum.divide(new BigDecimal(n-1),MathContext.DECIMAL128);
-		
+		return sum.divide(new BigDecimal(n),MathContext.DECIMAL128);
 	}
 	public static BigDecimal calStdv(TreeMap<Date, Double> returnMap) {
-		BigDecimal vol = calVol(returnMap);
-		return new BigDecimal(Math.pow(vol.doubleValue(),0.5));
+		BigDecimal mean = calGeoMean(returnMap);
+		BigDecimal sum = new BigDecimal(0);
+		for(Date date : returnMap.keySet()) {
+			sum=sum.add(mean.add(new BigDecimal(-returnMap.get(date))).pow(2));
+		}
+		int n = returnMap.size()-1;
+		return new BigDecimal(Math.pow(sum.divide(new BigDecimal(n),MathContext.DECIMAL128).doubleValue(),0.5));
 	}
 	public static BigDecimal calCov(TreeMap<Date, Double> stock1ReturnMap, TreeMap<Date, Double> stock2ReturnMap) {
 		BigDecimal mean1 = calGeoMean(stock1ReturnMap);
